@@ -12,6 +12,9 @@ let radio1txt = document.getElementById('radio1txt')
 let radio2txt = document.getElementById('radio2txt')
 let radio3txt = document.getElementById('radio3txt')
 let radio4txt = document.getElementById('radio4txt')
+let app = document.getElementById('main-container')
+let end = document.getElementById('end-container')
+let result = document.getElementById('result')
 
 
 async function fetchJSONData() {
@@ -21,6 +24,7 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
+let correct = 0;
 let timer
 let qNo = 0;
 let time = 20;
@@ -54,6 +58,7 @@ function ticktock() {
 function check() {
     let answer = checkRadio()
     if (answer == temp.questions[qNo].answer) {
+        correct++
         if (qNo == temp.questions.length - 1) {
             quizEnd()
         }
@@ -83,7 +88,10 @@ function checkRadio() {
 }
 
 function quizEnd() {
-    clearInterval(timer)
+    clearInterval(timer)  
+    app.classList.add('hide')
+    end.classList.remove('hide')
+    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length
 }
 
 function timerReset() {

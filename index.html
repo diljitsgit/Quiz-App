@@ -4,23 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <style href="style.css"></style>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
 <body>
 
-    <p id="question">Loading question...</p>
-    <input type="radio" id="radio1" name="mcq">
-    <label id="radio1txt"> Option 1 </label>
-    <input type="radio" id="radio2" name="mcq">
-    <label id="radio2txt"> Option 2 </label>
-    <input type="radio" id="radio3" name="mcq">
-    <label id="radio3txt"> Option 3 </label>
-    <input type="radio" id="radio4" name="mcq">
-    <label id="radio4txt"> Option 4 </label>
-    <button id="click">check</button>
-    <p id="timer">20</p>
+    <div class="main-container" id="main-container">
+            <h1>The Quiz App</h1>
+            <p id="question">Loading question...</p>
+            <div class="radio-div" onclick="flip1()">
+                <input type="radio" id="radio1" name="mcq">
+                <label id="radio1txt"> Option 1 </label>
+            </div>
+            <div class="radio-div" onclick="flip2()">
+                <input type="radio" id="radio2" name="mcq">
+                <label id="radio2txt"> Option 2 </label>
+            </div>
+            <br>
+            <div class="radio-div" onclick="flip3()">
+                <input type="radio" id="radio3" name="mcq">
+                <label id="radio3txt"> Option 3 </label>
+            </div>
+            <div class="radio-div" onclick="flip4()">
+                <input type="radio" id="radio4" name="mcq">
+                <label id="radio4txt"> Option 4 </label>
+            </div>
+            <div class="btn-div">
+                <button id="click" class="click">check</button>
+            </div>
+            <p id="timer">20</p>
+    </div>
+    <div class="end-container" id="end-container">
+        <h1>Quiz App</h1>
+        <p id="result"></p>
+    </div>
 
+    <script>
+        let flip1 = ()=>{radio1.checked=true}
+        let flip2 = ()=>{radio2.checked=true}
+        let flip3 = ()=>{radio3.checked=true}
+        let flip4 = ()=>{radio4.checked=true}
+    </script>
     <script type="module" src="main.js"></script>
 </body>
 

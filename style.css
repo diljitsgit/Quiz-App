@@ -1,0 +1,72 @@
+body {
+    background-image: url('Background-Image.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    font-family: poppins;
+    color: white;
+}
+
+.main-container {
+    width: 40%;
+    height: 30%;
+    margin-top: 17.5%;
+    margin-left: 30%;
+    text-align: center;
+}
+
+.end-container {
+    width: 40%;
+    height: 30%;
+    margin-top: 17.5%;
+    margin-left: 30%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.radio-div {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin: 0.2rem;
+    border-radius: 30px;
+    display: inline-block;
+    width: 20%;
+}
+
+.click {
+    color: white;
+    font-size: 1.3rem;
+    font-family: poppins;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0.5rem;
+    margin: 2rem;
+    border-radius: 30px;
+    width: 20%;
+    border-style: solid;
+    border-color: white;
+}
+
+.hide{
+    display: none;
+}
+
+[class*="main-container"] {
+    width: 95%;
+    height: 100%;
+    margin: 0%;
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets: */
+    .main-container {
+        margin-top: 17.5%;
+    }
+}
