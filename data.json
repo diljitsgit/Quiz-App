@@ -3,22 +3,38 @@
         {
             "questionNumber": "1",
             "question": "Question number 1 is this",
-            "answer": "this"
+            "option1": "1",
+            "option2": "2",
+            "option3": "this",
+            "option4": "4",
+            "answer": "3"
         },
         {
             "questionNumber": "2",
             "question": "Question number 2 is this",
-            "answer": "this"
+            "option1": "1",
+            "option2": "this",
+            "option3": "3",
+            "option4": "4",
+            "answer": "2"
         },
         {
             "questionNumber": "3",
             "question": "Question number 3 is this",
-            "answer": "this"
+            "option1": "1",
+            "option2": "2",
+            "option3": "3",
+            "option4": "this",
+            "answer": "4"
         },
         {
             "questionNumber": "4",
             "question": "Question number 4 is this",
-            "answer": "this"
+            "option1": "1",
+            "option2": "2",
+            "option3": "this",
+            "option4": "4",
+            "answer": "3"
         }
     ]
 }

@@ -1,15 +1,27 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <style href="style.css"></style>
 </head>
+
 <body>
-    <p id="question"></p>
-    <input type="text" id="answer">
+
+    <p id="question">Loading question...</p>
+    <input type="radio" id="radio1" name="mcq">
+    <label id="radio1txt"> Option 1 </label>
+    <input type="radio" id="radio2" name="mcq">
+    <label id="radio2txt"> Option 2 </label>
+    <input type="radio" id="radio3" name="mcq">
+    <label id="radio3txt"> Option 3 </label>
+    <input type="radio" id="radio4" name="mcq">
+    <label id="radio4txt"> Option 4 </label>
     <button id="click">check</button>
     <p id="timer">20</p>
+
     <script type="module" src="main.js"></script>
 </body>
+
 </html>
