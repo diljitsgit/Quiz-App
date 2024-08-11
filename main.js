@@ -59,13 +59,13 @@ function check() {
     let answer = checkRadio()
     if (answer == temp.questions[qNo].answer) {
         correct++
-        if (qNo == temp.questions.length - 1) {
-            quizEnd()
-        }
-        else {
-            qNo++
-            timerReset()
-        }
+    }
+    if (qNo == temp.questions.length - 1) {
+        quizEnd()
+    }
+    else {
+        qNo++
+        timerReset()
     }
 }
 
@@ -88,7 +88,7 @@ function checkRadio() {
 }
 
 function quizEnd() {
-    clearInterval(timer)  
+    clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length

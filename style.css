@@ -1,7 +1,8 @@
 body {
     background-image: url('Background-Image.jpg');
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: 100% auto;
+    background-color: #0E152F;
     font-family: poppins;
     color: white;
 }
