@@ -15,6 +15,7 @@ let radio4txt = document.getElementById('radio4txt')
 let app = document.getElementById('main-container')
 let end = document.getElementById('end-container')
 let result = document.getElementById('result')
+let report = document.getElementById('report')
 
 
 async function fetchJSONData() {
@@ -24,6 +25,7 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
+let finalMessage="You got the following answers wrong: <br>" 
 let correct = 0;
 let timer
 let qNo = 0;
@@ -60,6 +62,9 @@ function check() {
     if (answer == temp.questions[qNo].answer) {
         correct++
     }
+    else{
+        updateMessage()
+    }
     if (qNo == temp.questions.length - 1) {
         quizEnd()
     }
@@ -87,11 +92,18 @@ function checkRadio() {
     }
 }
 
+function updateMessage(){
+    let that = 'option'+temp.questions[qNo].answer
+    finalMessage+= '<br>The answer for question number '+(qNo+1)+' was '+ temp.questions[qNo][that]
+}
+
 function quizEnd() {
     clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
+    console.log(finalMessage)
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length
+    report.innerHTML = finalMessage
 }
 
 function timerReset() {
