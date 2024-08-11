@@ -25,11 +25,13 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
-let finalMessage="You got the following answers wrong: <br>" 
-let correct = 0;
+let finalMessage = "You got the following answers wrong: <br>"
+let correct = 0
 let timer
-let qNo = 0;
-let time = 20;
+let qNo = 0
+let time = 20
+let questionArray = []
+createShuffleArr()
 
 function start() {
     timer = setInterval(
@@ -59,10 +61,10 @@ function ticktock() {
 
 function check() {
     let answer = checkRadio()
-    if (answer == temp.questions[qNo].answer) {
+    if (answer == temp.questions[questionArray[qNo]].answer) {
         correct++
     }
-    else{
+    else {
         updateMessage()
     }
     if (qNo == temp.questions.length - 1) {
@@ -76,25 +78,25 @@ function check() {
 
 function checkRadio() {
     if (radio1.checked) {
-        return 1
+        return radio1txt.innerHTML
     }
     else if (radio2.checked) {
-        return 2
+        return radio2txt.innerHTML
     }
     else if (radio3.checked) {
-        return 3
+        return radio3txt.innerHTML
     }
     else if (radio4.checked) {
-        return 4
+        return radio4txt.innerHTML
     }
     else {
         return 0
     }
 }
 
-function updateMessage(){
-    let that = 'option'+temp.questions[qNo].answer
-    finalMessage+= '<br>The answer for question number '+(qNo+1)+' was '+ temp.questions[qNo][that]
+function updateMessage() {
+    let that = 'option' + temp.questions[questionArray[qNo]].answer
+    finalMessage += '<br>The answer for question number ' + (qNo + 1) + ' was ' + temp.questions[questionArray[qNo]][that]
 }
 
 function quizEnd() {
@@ -103,7 +105,9 @@ function quizEnd() {
     end.classList.remove('hide')
     console.log(finalMessage)
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length
-    report.innerHTML = finalMessage
+    if(correct != temp.questions.length){
+        report.innerHTML = finalMessage
+    }
 }
 
 function timerReset() {
@@ -111,9 +115,22 @@ function timerReset() {
 }
 
 function getquestion() {
-    questionSpace.innerHTML = temp.questions[qNo].question
-    radio1txt.innerHTML = temp.questions[qNo].option1
-    radio2txt.innerHTML = temp.questions[qNo].option2
-    radio3txt.innerHTML = temp.questions[qNo].option3
-    radio4txt.innerHTML = temp.questions[qNo].option4
+    questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
+    radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
+    radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
+    radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
+    radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
+}
+
+
+function createShuffleArr(){
+    for (var i = 0; i < temp.questions.length; i++) {
+        questionArray.push(i)
+    }
+    for (let i = questionArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = questionArray[i];
+        questionArray[i] = questionArray[j];
+        questionArray[j] = temp;
+    }
 }
