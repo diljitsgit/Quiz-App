@@ -10,7 +10,11 @@
 
 <body>
 
-    <div class="main-container" id="main-container">
+    <div style="text-align: center;" id="start-container" >
+        <button class="click" id="start">Start Quiz</button>
+    </div>
+
+    <div class="main-container hide" id="main-container">
             <h1>The Quiz App</h1>
             <p id="question">Loading question...</p>
             <div class="radio-div" onclick="flip1()">
@@ -31,7 +35,7 @@
                 <label id="radio4txt"> Option 4 </label>
             </div>
             <div class="btn-div">
-                <button id="click" class="click">check</button>
+                <button id="click" class="click">Next Question</button>
             </div>
             <p id="timer">20</p>
     </div>

@@ -12,11 +12,12 @@ let radio1txt = document.getElementById('radio1txt')
 let radio2txt = document.getElementById('radio2txt')
 let radio3txt = document.getElementById('radio3txt')
 let radio4txt = document.getElementById('radio4txt')
+let begin = document.getElementById('start-container')
 let app = document.getElementById('main-container')
 let end = document.getElementById('end-container')
 let result = document.getElementById('result')
 let report = document.getElementById('report')
-
+let startbtn = document.getElementById('start')
 
 async function fetchJSONData() {
     let res = await fetch("./data.json")
@@ -33,13 +34,19 @@ let time = 20
 let questionArray = []
 createShuffleArr()
 
+
+startbtn.addEventListener("click", () => {
+    app.classList.remove('hide')
+    begin.classList.add('hide')
+    start()
+})
+
 function start() {
     timer = setInterval(
         quiz,
         1000
     )
 }
-start()
 
 function quiz() {
     ticktock()
@@ -105,7 +112,7 @@ function quizEnd() {
     end.classList.remove('hide')
     console.log(finalMessage)
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length
-    if(correct != temp.questions.length){
+    if (correct != temp.questions.length) {
         report.innerHTML = finalMessage
     }
 }
@@ -123,7 +130,7 @@ function getquestion() {
 }
 
 
-function createShuffleArr(){
+function createShuffleArr() {
     for (var i = 0; i < temp.questions.length; i++) {
         questionArray.push(i)
     }

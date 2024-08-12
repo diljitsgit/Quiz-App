@@ -1,40 +1,148 @@
 {
     "questions": [
         {
-            "questionNumber": "1",
-            "question": "Question number 1 is this",
-            "option1": "1",
-            "option2": "2",
-            "option3": "this",
-            "option4": "4",
-            "answer": "this"
+            "question": "A flashing red traffic light signifies that a driver should do what?",
+            "option1": "stop",
+            "option2": "speed up",
+            "option3": "proceed with caution",
+            "option4": "honk the horn",
+            "answer": "stop"
         },
         {
-            "questionNumber": "2",
-            "question": "Question number 2 is this",
-            "option1": "1",
-            "option2": "this",
-            "option3": "3",
-            "option4": "4",
-            "answer": "this"
+            "question": "A knish is traditionally stuffed with what filling?",
+            "option1": "potato",
+            "option2": "creamed corn",
+            "option3": "lemon custard",
+            "option4": "raspberry jelly",
+            "answer": "potato"
         },
         {
-            "questionNumber": "3",
-            "question": "Question number 3 is this",
-            "option1": "1",
-            "option2": "2",
-            "option3": "3",
-            "option4": "this",
-            "answer": "this"
+            "question": "A pita is a type of what?",
+            "option1": "fresh fruit",
+            "option2": "flat bread",
+            "option3": "French tart",
+            "option4": "friend bean dip",
+            "answer": "flat bread"
         },
         {
-            "questionNumber": "4",
-            "question": "Question number 4 is this",
-            "option1": "1",
-            "option2": "2",
-            "option3": "this",
-            "option4": "4",
-            "answer": "this"
+            "question": "A portrait that comically exaggerates a person's physical traits is called a what?",
+            "option1": "landscape",
+            "option2": "caricature",
+            "option3": "still life",
+            "option4": "Impressionism",
+            "answer": "caricature"
+        },
+        {
+            "question": "A second-year college student is usually called a what?",
+            "option1": "sophomore",
+            "option2": "senior",
+            "option3": "freshman ",
+            "option4": "junior ",
+            "answer": "sophomore"
+        },
+        {
+            "question": "A student who earns a J.D. can begin his or her career as a what?",
+            "option1": "lawyer",
+            "option2": "bricklayer",
+            "option3": "doctor",
+            "option4": "accountant",
+            "answer": "lawyer"
+        },
+        {
+            "question": "A triptych is a work of art that is painted on how many panels?",
+            "option1": "two",
+            "option2": "three",
+            "option3": "five",
+            "option4": "eight",
+            "answer": "three"
+        },
+        {
+            "question": "According to a famous line from the existentialist play 'No Exit' what is hell?",
+            "option1": "oneself",
+            "option2": "other people",
+            "option3": "little made large",
+            "option4": "hued in green and blue",
+            "answer": "other people"
+        },
+        {
+            "question": "According to a popular slogan, what state should people not 'mess with'?",
+            "option1": "New York",
+            "option2": "Texas",
+            "option3": "Montana",
+            "option4": "Rhode Island",
+            "answer": "Texas"
+        },
+        {
+            "question": "According to a Yale University study, what smell is the most recognizable to American adults?",
+            "option1": "tuna",
+            "option2": "laundry",
+            "option3": "popcorn",
+            "option4": "coffee",
+            "answer": "coffee"
+        },
+        {
+            "question": "According to folklore, the 'jackalope' is an antlered version of what animal?",
+            "option1": "chicken",
+            "option2": "rabbit",
+            "option3": "moose",
+            "option4": "snake",
+            "answer": "rabbit"
+        },
+        {
+            "question": "According to Greek mythology, who was Apollo's twin sister?",
+            "option1": "Aphrodite",
+            "option2": "Artemis",
+            "option3": "Venus",
+            "option4": "Athena",
+            "answer": "Artemis"
+        },
+        {
+            "question": "According to legend, if you give someone the 'evil eye' what are you doing?",
+            "option1": "cursing them",
+            "option2": "blessing a child",
+            "option3": "counting money",
+            "option4": "passing time",
+            "answer": "cursing them"
+        },
+        {
+            "question": "According to legend, in what country are you most likely to meet a leprechaun?",
+            "option1": "Ireland",
+            "option2": "Poland",
+            "option3": "Greenland",
+            "option4": "Scotland",
+            "answer": "Ireland"
+        },
+        {
+            "question": "According to the American Kennel Club, what is the most popular breed of dog in the US as of 1999?",
+            "option1": "Poodle",
+            "option2": "Beagle",
+            "option3": "German shepherd",
+            "option4": "Labrador retriever",
+            "answer": "Labrador retriever"
+        },
+        {
+            "question": "According to the Bible, Moses and Aaron had a sister named what?",
+            "option1": "Jochebed",
+            "option2": "Ruth",
+            "option3": "Leah",
+            "option4": "Miriam",
+            "answer": "Miriam"
+        },
+        {
+            "question": "According to the children's nursery rhyme, what type of ocean did Columbus sail in 1492?",
+            "option1": "calm",
+            "option2": "blue",
+            "option3": "windy",
+            "option4": "really big",
+            "answer": "blue"
+        },
+        {
+            "question": "According to the Mother Goose nursery rhyme, which child is full of woe?",
+            "option1": "Monday's child",
+            "option2": "Wednesday's child",
+            "option3": "Thursday's child",
+            "option4": "Saturday's child",
+            "answer": "Wednesday's child"
         }
     ]
 }
