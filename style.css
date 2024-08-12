@@ -54,6 +54,10 @@ p {
     border-color: white;
 }
 
+.report{
+    font-size: 1rem;
+}
+
 .hide{
     display: none;
 }

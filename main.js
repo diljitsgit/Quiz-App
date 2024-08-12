@@ -104,7 +104,7 @@ function checkRadio() {
 
 function updateMessage() {
     let that = 'option' + temp.questions[questionArray[qNo]].answer
-    finalMessage += '<br>' + (qNo + 1) + ' : ' + temp.questions[questionArray[qNo]][that]
+    finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' : ' + temp.questions[questionArray[qNo]][that]
 }
 
 function quizEnd() {
