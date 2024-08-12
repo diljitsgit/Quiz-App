@@ -42,6 +42,7 @@ startbtn.addEventListener("click", () => {
 })
 
 function start() {
+    getquestion()
     timer = setInterval(
         quiz,
         1000
@@ -50,7 +51,6 @@ function start() {
 
 function quiz() {
     ticktock()
-    getquestion()
     submits.addEventListener("click", check);
     if (qNo == 9 && time == 0) {
         quizEnd()
@@ -81,6 +81,7 @@ function check() {
         qNo++
         timerReset()
     }
+    getquestion()
 }
 
 function checkRadio() {
@@ -121,8 +122,10 @@ function timerReset() {
 }
 
 function getquestion() {
+    console.log("Question change")
+    document.getElementById('radioDiv3').classList.remove('hide')
+    document.getElementById('radioDiv4').classList.remove('hide')
     questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
-
 
     radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
     radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
@@ -130,13 +133,13 @@ function getquestion() {
     if (temp.questions[questionArray[qNo]].option3 != '') {
         radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
     }
-    else{
+    else {
         document.getElementById('radioDiv3').classList.add('hide')
     }
     if (temp.questions[questionArray[qNo]].option4 != '') {
         radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
     }
-    else{
+    else {
         document.getElementById('radioDiv4').classList.add('hide')
     }
 }
