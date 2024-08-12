@@ -15,6 +15,11 @@ body {
     text-align: center;
 }
 
+.start-container{
+    text-align: center;
+    margin-top: 30%;
+}
+
 .end-container {
     width: 40%;
     height: 30%;
