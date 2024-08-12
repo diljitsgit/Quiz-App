@@ -26,7 +26,7 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
-let finalMessage = "You got the following answers wrong: <br>"
+let finalMessage = "The correct answer for the following answers were: <br>"
 let correct = 0
 let timer
 let qNo = 0
@@ -52,7 +52,7 @@ function quiz() {
     ticktock()
     getquestion()
     submits.addEventListener("click", check);
-    if (qNo == temp.questions.length - 1 && time == 0) {
+    if (qNo == 9 && time == 0) {
         quizEnd()
     }
     else if (time == 0) {
@@ -74,7 +74,7 @@ function check() {
     else {
         updateMessage()
     }
-    if (qNo == temp.questions.length - 1) {
+    if (qNo == 9) {
         quizEnd()
     }
     else {
@@ -85,16 +85,16 @@ function check() {
 
 function checkRadio() {
     if (radio1.checked) {
-        return radio1txt.innerHTML
+        return 1
     }
     else if (radio2.checked) {
-        return radio2txt.innerHTML
+        return 2
     }
     else if (radio3.checked) {
-        return radio3txt.innerHTML
+        return 3
     }
     else if (radio4.checked) {
-        return radio4txt.innerHTML
+        return 4
     }
     else {
         return 0
@@ -103,15 +103,14 @@ function checkRadio() {
 
 function updateMessage() {
     let that = 'option' + temp.questions[questionArray[qNo]].answer
-    finalMessage += '<br>The answer for question number ' + (qNo + 1) + ' was ' + temp.questions[questionArray[qNo]][that]
+    finalMessage += '<br>' + (qNo + 1) + ' : ' + temp.questions[questionArray[qNo]][that]
 }
 
 function quizEnd() {
     clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
-    console.log(finalMessage)
-    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + temp.questions.length
+    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + 10
     if (correct != temp.questions.length) {
         report.innerHTML = finalMessage
     }
@@ -123,10 +122,23 @@ function timerReset() {
 
 function getquestion() {
     questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
+
+
     radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
     radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
-    radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
-    radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
+
+    if (temp.questions[questionArray[qNo]].option3 != '') {
+        radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
+    }
+    else{
+        document.getElementById('radioDiv3').classList.add('hide')
+    }
+    if (temp.questions[questionArray[qNo]].option4 != '') {
+        radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
+    }
+    else{
+        document.getElementById('radioDiv4').classList.add('hide')
+    }
 }
 
 

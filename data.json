@@ -5,16 +5,16 @@
             "option1": "stop",
             "option2": "speed up",
             "option3": "proceed with caution",
-            "option4": "honk the horn",
-            "answer": "stop"
+            "option4": "",
+            "answer": "1"
         },
         {
             "question": "A knish is traditionally stuffed with what filling?",
             "option1": "potato",
             "option2": "creamed corn",
-            "option3": "lemon custard",
-            "option4": "raspberry jelly",
-            "answer": "potato"
+            "option3": "",
+            "option4": "",
+            "answer": "1"
         },
         {
             "question": "A pita is a type of what?",
@@ -22,7 +22,7 @@
             "option2": "flat bread",
             "option3": "French tart",
             "option4": "friend bean dip",
-            "answer": "flat bread"
+            "answer": "2"
         },
         {
             "question": "A portrait that comically exaggerates a person's physical traits is called a what?",
@@ -30,7 +30,7 @@
             "option2": "caricature",
             "option3": "still life",
             "option4": "Impressionism",
-            "answer": "caricature"
+            "answer": "2"
         },
         {
             "question": "A second-year college student is usually called a what?",
@@ -38,7 +38,7 @@
             "option2": "senior",
             "option3": "freshman ",
             "option4": "junior ",
-            "answer": "sophomore"
+            "answer": "1"
         },
         {
             "question": "A student who earns a J.D. can begin his or her career as a what?",
@@ -46,7 +46,7 @@
             "option2": "bricklayer",
             "option3": "doctor",
             "option4": "accountant",
-            "answer": "lawyer"
+            "answer": "1"
         },
         {
             "question": "A triptych is a work of art that is painted on how many panels?",
@@ -54,7 +54,7 @@
             "option2": "three",
             "option3": "five",
             "option4": "eight",
-            "answer": "three"
+            "answer": "2"
         },
         {
             "question": "According to a famous line from the existentialist play 'No Exit' what is hell?",
@@ -62,7 +62,7 @@
             "option2": "other people",
             "option3": "little made large",
             "option4": "hued in green and blue",
-            "answer": "other people"
+            "answer": "2"
         },
         {
             "question": "According to a popular slogan, what state should people not 'mess with'?",
@@ -70,7 +70,7 @@
             "option2": "Texas",
             "option3": "Montana",
             "option4": "Rhode Island",
-            "answer": "Texas"
+            "answer": "2"
         },
         {
             "question": "According to a Yale University study, what smell is the most recognizable to American adults?",
@@ -78,7 +78,7 @@
             "option2": "laundry",
             "option3": "popcorn",
             "option4": "coffee",
-            "answer": "coffee"
+            "answer": "4"
         },
         {
             "question": "According to folklore, the 'jackalope' is an antlered version of what animal?",
@@ -86,7 +86,7 @@
             "option2": "rabbit",
             "option3": "moose",
             "option4": "snake",
-            "answer": "rabbit"
+            "answer": "2"
         },
         {
             "question": "According to Greek mythology, who was Apollo's twin sister?",
@@ -94,7 +94,7 @@
             "option2": "Artemis",
             "option3": "Venus",
             "option4": "Athena",
-            "answer": "Artemis"
+            "answer": "2"
         },
         {
             "question": "According to legend, if you give someone the 'evil eye' what are you doing?",
@@ -102,7 +102,7 @@
             "option2": "blessing a child",
             "option3": "counting money",
             "option4": "passing time",
-            "answer": "cursing them"
+            "answer": "1"
         },
         {
             "question": "According to legend, in what country are you most likely to meet a leprechaun?",
@@ -110,7 +110,7 @@
             "option2": "Poland",
             "option3": "Greenland",
             "option4": "Scotland",
-            "answer": "Ireland"
+            "answer": "1"
         },
         {
             "question": "According to the American Kennel Club, what is the most popular breed of dog in the US as of 1999?",
@@ -118,7 +118,7 @@
             "option2": "Beagle",
             "option3": "German shepherd",
             "option4": "Labrador retriever",
-            "answer": "Labrador retriever"
+            "answer": "4"
         },
         {
             "question": "According to the Bible, Moses and Aaron had a sister named what?",
@@ -126,7 +126,7 @@
             "option2": "Ruth",
             "option3": "Leah",
             "option4": "Miriam",
-            "answer": "Miriam"
+            "answer": "4"
         },
         {
             "question": "According to the children's nursery rhyme, what type of ocean did Columbus sail in 1492?",
@@ -134,7 +134,7 @@
             "option2": "blue",
             "option3": "windy",
             "option4": "really big",
-            "answer": "blue"
+            "answer": "2"
         },
         {
             "question": "According to the Mother Goose nursery rhyme, which child is full of woe?",
@@ -142,7 +142,7 @@
             "option2": "Wednesday's child",
             "option3": "Thursday's child",
             "option4": "Saturday's child",
-            "answer": "Wednesday's child"
+            "answer": "2"
         }
     ]
 }
