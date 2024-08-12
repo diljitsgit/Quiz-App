@@ -10,11 +10,12 @@
 
 <body>
 
-    <div id="start-container" class="start-container" >
+    <div id="start-container" class="start-container">
         <button class="click" id="start">Start Quiz</button>
     </div>
 
     <div class="main-container hide" id="main-container">
+        <div class="flex-container">
             <h1>The Quiz App</h1>
             <p id="question">Loading question...</p>
             <div class="radio-div" onclick="flip1()">
@@ -38,18 +39,21 @@
                 <button id="click" class="click">Next Question</button>
             </div>
             <p id="timer">20</p>
+        </div>
     </div>
     <div class="end-container hide" id="end-container">
-        <h1>Quiz App</h1>
-        <p id="result"></p>
-        <p id="report" class="report"></p>
+        <div class="flex-container">
+            <h1>Quiz App</h1>
+            <p id="result"></p>
+            <p id="report" class="report"></p>
+        </div>
     </div>
 
     <script>
-        let flip1 = ()=>{radio1.checked=true}
-        let flip2 = ()=>{radio2.checked=true}
-        let flip3 = ()=>{radio3.checked=true}
-        let flip4 = ()=>{radio4.checked=true}
+        let flip1 = () => { radio1.checked = true }
+        let flip2 = () => { radio2.checked = true }
+        let flip3 = () => { radio3.checked = true }
+        let flip4 = () => { radio4.checked = true }
     </script>
     <script type="module" src="main.js"></script>
 </body>
