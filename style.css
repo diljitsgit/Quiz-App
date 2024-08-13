@@ -1,5 +1,5 @@
 body {
-    background-image: url('Background-Image.jpg');
+    background-image: url('Background-Image.webp');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-color: #0E152F;
@@ -15,7 +15,7 @@ body {
     text-align: center;
 }
 
-.start-container{
+.start-container {
     text-align: center;
     margin-top: 30%;
 }
@@ -59,11 +59,23 @@ p {
     border-color: white;
 }
 
-.report{
+.input-answer {
+    color: white;
+    border-radius: 30px;
+    width: 30%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 3px solid #FFF;
+    outline: none;
+}
+
+.report {
     font-size: 1rem;
 }
 
-.hide{
+.hide {
     display: none;
 }
 

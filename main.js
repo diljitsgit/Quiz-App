@@ -18,6 +18,7 @@ let end = document.getElementById('end-container')
 let result = document.getElementById('result')
 let report = document.getElementById('report')
 let startbtn = document.getElementById('start')
+let input = document.getElementById('input')
 
 async function fetchJSONData() {
     let res = await fetch("./data.json")
@@ -26,6 +27,7 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
+let timetaken = 0
 let finalMessage = "The correct answer for the following answers were: <br>"
 let correct = 0
 let timer
@@ -51,7 +53,7 @@ function start() {
 
 function quiz() {
     ticktock()
-    submits.addEventListener("click", check);
+    submits.addEventListener("click", check)
     if (qNo == 9 && time == 0) {
         quizEnd()
     }
@@ -63,16 +65,28 @@ function quiz() {
 
 function ticktock() {
     time--
+    timetaken++
     document.getElementById('timer').innerHTML = time
 }
 
 function check() {
-    let answer = checkRadio()
-    if (answer == temp.questions[questionArray[qNo]].answer) {
-        correct++
+    if (getQuestionType() == 'mcq') {
+        let answer = checkRadio()
+        if (answer == temp.questions[questionArray[qNo]].answer) {
+            correct++
+        }
+        else {
+            updateMessage()
+        }
     }
     else {
-        updateMessage()
+        let answer = input.value
+        if (answer == temp.questions[questionArray[qNo]].answer) {
+            correct++
+        }
+        else {
+            updateMessage()
+        }
     }
     if (qNo == 9) {
         quizEnd()
@@ -81,6 +95,8 @@ function check() {
         qNo++
         timerReset()
     }
+    document.getElementById('input-container').classList.add('hide')
+    document.getElementById('radio-container').classList.add('hide')
     getquestion()
 }
 
@@ -103,15 +119,20 @@ function checkRadio() {
 }
 
 function updateMessage() {
-    let that = 'option' + temp.questions[questionArray[qNo]].answer
-    finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' : ' + temp.questions[questionArray[qNo]][that]
+    if (getQuestionType() == 'mcq') {
+        let that = 'option' + temp.questions[questionArray[qNo]].answer
+        finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' :<br><strong> ' + temp.questions[questionArray[qNo]][that] + '</strong><hr>'
+    }
+    else {
+        finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' :<br><strong> ' + temp.questions[questionArray[qNo]].answer + '</strong><hr>'
+    }
 }
 
 function quizEnd() {
     clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
-    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + 10
+    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + 10 + '<br> time taken: ' + timetaken + ' seconds'
     if (correct != temp.questions.length) {
         report.innerHTML = finalMessage
     }
@@ -122,25 +143,30 @@ function timerReset() {
 }
 
 function getquestion() {
-    console.log("Question change")
     document.getElementById('radioDiv3').classList.remove('hide')
     document.getElementById('radioDiv4').classList.remove('hide')
     questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
 
-    radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
-    radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
+    if (getQuestionType() == 'mcq') {
+        document.getElementById('radio-container').classList.remove('hide')
+        radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
+        radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
 
-    if (temp.questions[questionArray[qNo]].option3 != '') {
-        radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
+        if (temp.questions[questionArray[qNo]].option3 != '') {
+            radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
+        }
+        else {
+            document.getElementById('radioDiv3').classList.add('hide')
+        }
+        if (temp.questions[questionArray[qNo]].option4 != '') {
+            radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
+        }
+        else {
+            document.getElementById('radioDiv4').classList.add('hide')
+        }
     }
     else {
-        document.getElementById('radioDiv3').classList.add('hide')
-    }
-    if (temp.questions[questionArray[qNo]].option4 != '') {
-        radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
-    }
-    else {
-        document.getElementById('radioDiv4').classList.add('hide')
+        document.getElementById('input-container').classList.remove('hide')
     }
 }
 
@@ -155,4 +181,8 @@ function createShuffleArr() {
         questionArray[i] = questionArray[j];
         questionArray[j] = temp;
     }
+}
+
+function getQuestionType() {
+    return temp.questions[questionArray[qNo]].type
 }
