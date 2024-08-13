@@ -18,7 +18,10 @@ let end = document.getElementById('end-container')
 let result = document.getElementById('result')
 let report = document.getElementById('report')
 let startbtn = document.getElementById('start')
+let restartbtn = document.getElementById('restart')
 let input = document.getElementById('input')
+let prevResult = document.getElementById('prev-result')
+let currResult = document.getElementById('curr-result')
 
 async function fetchJSONData() {
     let res = await fetch("./data.json")
@@ -27,8 +30,9 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
+let exportResult
 let timetaken = 0
-let finalMessage = "The correct answer for the following answers were: <br>"
+let finalMessage 
 let correct = 0
 let timer
 let qNo = 0
@@ -37,13 +41,42 @@ let questionArray = []
 createShuffleArr()
 
 
+prevResult.addEventListener("click", () => {
+    result.innerHTML = localStorage.getItem('result')
+    if (correct != temp.questions.length) {
+        report.innerHTML ='<br>'+ localStorage.getItem('report')
+    }
+    prevResult.classList.add('hide')
+    currResult.classList.remove('hide')
+})
+
+currResult.addEventListener("click", () => {
+    displayCurrResult()
+    prevResult.classList.remove('hide')
+    currResult.classList.add('hide')
+})
+
 startbtn.addEventListener("click", () => {
     app.classList.remove('hide')
     begin.classList.add('hide')
     start()
 })
 
+restartbtn.addEventListener("click", () => {
+    storeResult()
+    app.classList.remove('hide')
+    end.classList.add('hide')
+    qNo = 0
+    timetaken = 0
+    correct = 0
+    finalMessage = ""
+    time = 20
+    start()
+})
+
 function start() {
+    prevResult.classList.remove('hide')
+    currResult.classList.add('hide')
     getquestion()
     timer = setInterval(
         quiz,
@@ -132,10 +165,20 @@ function quizEnd() {
     clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
+    displayCurrResult()
+}
+
+function displayCurrResult() {
+    exportResult = 'You got ' + correct + ' answers correct out of ' + 10 + '<br> time taken: ' + timetaken + ' seconds <br>'
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + 10 + '<br> time taken: ' + timetaken + ' seconds'
     if (correct != temp.questions.length) {
-        report.innerHTML = finalMessage
+        report.innerHTML = "The correct answer for the following answers were: <br>"+ finalMessage
     }
+}
+
+function storeResult() {
+    localStorage.setItem('result', exportResult)
+    localStorage.setItem('report', finalMessage)
 }
 
 function timerReset() {
