@@ -30,13 +30,14 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
+let timePerQuestion = 5
 let exportResult
 let timetaken = 0
 let finalMessage 
 let correct = 0
 let timer
 let qNo = 0
-let time = 20
+let time = timePerQuestion
 let questionArray = []
 createShuffleArr()
 
@@ -49,6 +50,8 @@ prevResult.addEventListener("click", () => {
     prevResult.classList.add('hide')
     currResult.classList.remove('hide')
 })
+
+
 
 currResult.addEventListener("click", () => {
     displayCurrResult()
@@ -70,14 +73,15 @@ restartbtn.addEventListener("click", () => {
     timetaken = 0
     correct = 0
     finalMessage = ""
-    time = 20
+    time = timePerQuestion
     start()
 })
+
+
 
 function start() {
     prevResult.classList.remove('hide')
     currResult.classList.add('hide')
-    getquestion()
     timer = setInterval(
         quiz,
         1000
@@ -94,6 +98,7 @@ function quiz() {
         qNo++
         timerReset()
     }
+    getquestion()
 }
 
 function ticktock() {
@@ -182,10 +187,12 @@ function storeResult() {
 }
 
 function timerReset() {
-    time = 20
+    time = timePerQuestion
 }
 
 function getquestion() {
+    document.getElementById('input-container').classList.add('hide')
+    document.getElementById('radio-container').classList.add('hide')
     document.getElementById('radioDiv3').classList.remove('hide')
     document.getElementById('radioDiv4').classList.remove('hide')
     questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
