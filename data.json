@@ -1,40 +1,40 @@
 {
     "questions": [
         {
-            "question": "A flashing red traffic light signifies that a driver should do what?",
+            "question": "JSON stands for...",
             "type":"mcq",
-            "option1": "stop",
-            "option2": "speed up",
-            "option3": "proceed with caution",
-            "option4": "",
+            "option1": "JavaScript Object Notation",
+            "option2": "Java Object Notation",
+            "option3": "JavaScript Object Normalization",
+            "option4": "JavaScript Object-Oriented Notation",
             "answer": "1"
         },
         {
-            "question": "A knish is traditionally stuffed with what filling?",
+            "question": "JSON is a _____ for storing and transporting data.",
             "type":"mcq",
-            "option1": "potato",
-            "option2": "creamed corn",
+            "option1": "xml format",
+            "option2": "text format",
             "option3": "",
             "option4": "",
-            "answer": "1"
-        },
-        {
-            "question": "A pita is a type of what?",
-            "type":"mcq",
-            "option1": "fresh fruit",
-            "option2": "flat bread",
-            "option3": "French tart",
-            "option4": "friend bean dip",
             "answer": "2"
         },
         {
-            "question": "A portrait that comically exaggerates a person's physical traits is called a what?",
+            "question": "Who is the creator of JSON?",
             "type":"mcq",
-            "option1": "landscape",
-            "option2": "caricature",
-            "option3": "still life",
-            "option4": "Impressionism",
-            "answer": "2"
+            "option1": "Alvin Alexander",
+            "option2": "Rasmus Lerdorf",
+            "option3": "Douglas Crockford",
+            "option4": "Jesse James Garrett",
+            "answer": "3"
+        },
+        {
+            "question": "The principles of software engineering are applied during software engineering process by ____ .",
+            "type":"mcq",
+            "option1": "All of the mentioned below",
+            "option2": "Mechanical engineers",
+            "option3": "Electrical engineers",
+            "option4": "Software engineers",
+            "answer": "4"
         },
         {
             "question": "A second-year college student is usually called a what?",
@@ -46,104 +46,104 @@
             "answer": "1"
         },
         {
-            "question": "A student who earns a J.D. can begin his or her career as a what?",
+            "question": "Which HTML tag is used to create a hyperlink?",
             "type":"mcq",
-            "option1": "lawyer",
-            "option2": "bricklayer",
-            "option3": "doctor",
-            "option4": "accountant",
+            "option1": "<link>",
+            "option2": "<href>",
+            "option3": "<a>",
+            "option4": "<hyperlink>",
+            "answer": "3"
+        },
+        {
+            "question": "Which of the following is a popular front-end framework for building user interfaces in JavaScript?",
+            "type":"mcq",
+            "option1": "Django",
+            "option2": "Angular",
+            "option3": "Flask",
+            "option4": "Node.js",
+            "answer": "2"
+        },
+        {
+            "question": "Which of the following is not associated with web socket communication?",
+            "type":"mcq",
+            "option1": "http",
+            "option2": "wss",
+            "option3": "https",
+            "option4": "ws",
             "answer": "1"
         },
         {
-            "question": "A triptych is a work of art that is painted on how many panels?",
+            "question": "Which of the following property is used to control the space between the border and content in a table?",
             "type":"mcq",
-            "option1": "two",
-            "option2": "three",
-            "option3": "five",
-            "option4": "eight",
+            "option1": "border",
+            "option2": "padding",
+            "option3": "margin",
+            "option4": "",
             "answer": "2"
         },
         {
-            "question": "According to a famous line from the existentialist play 'No Exit' what is hell?",
+            "question": "ich of the following is the Web application equivalent to querySelectorAll()?",
             "type":"mcq",
-            "option1": "oneself",
-            "option2": "other people",
-            "option3": "little made large",
-            "option4": "hued in green and blue",
-            "answer": "2"
+            "option1": "#()",
+            "option2": "&()",
+            "option3": "!()",
+            "option4": "$()",
+            "answer": "d"
         },
         {
-            "question": "According to a popular slogan, what state should people not 'mess with'?",
-            "type":"mcq",
-            "option1": "New York",
-            "option2": "Texas",
-            "option3": "Montana",
-            "option4": "Rhode Island",
-            "answer": "2"
-        },
-        {
-            "question": "According to a Yale University study, what smell is the most recognizable to American adults?",
-            "type":"mcq",
-            "option1": "tuna",
-            "option2": "laundry",
-            "option3": "popcorn",
-            "option4": "coffee",
-            "answer": "4"
-        },
-        {
-            "question": "According to folklore, the 'jackalope' is an antlered version of what animal?",
+            "question": "React.js is written in which language?",
             "type":"input",
-            "answer": "rabbit"
+            "answer": "javascript"
         },
         {
-            "question": "According to Greek mythology, who was Apollo's twin sister?",
+            "question": "Which of the following directives is used to start an angularJS application?",
             "type":"mcq",
-            "option1": "Aphrodite",
-            "option2": "Artemis",
-            "option3": "Venus",
-            "option4": "Athena",
-            "answer": "2"
-        },
-        {
-            "question": "According to legend, if you give someone the 'evil eye' what are you doing?",
-            "type":"mcq",
-            "option1": "cursing them",
-            "option2": "blessing a child",
-            "option3": "counting money",
-            "option4": "passing time",
+            "option1": "ng-app",
+            "option2": "ng-init",
+            "option3": "ng-repeat",
+            "option4": "ng-model",
             "answer": "1"
         },
         {
-            "question": "According to legend, in what country are you most likely to meet a leprechaun?",
-            "type":"input",
-            "answer": "Ireland"
+            "question": "What is the JavaScript keyword used to define a function?",
+            "type":"mcq",
+            "option1": "var",
+            "option2": "function",
+            "option3": "let",
+            "option4": "const",
+            "answer": "2"
         },
         {
-            "question": "According to the American Kennel Club, what is the most popular breed of dog in the US as of 1999?",
+            "question": "Which CSS property is used to specify the width of an element?",
+            "type":"input",
+            "answer": "width"
+        },
+        {
+            "question": "What is Vue JS?",
             "type":"mcq",
-            "option1": "Poodle",
-            "option2": "Beagle",
-            "option3": "German shepherd",
-            "option4": "Labrador retriever",
+            "option1": "Scripting Language",
+            "option2": "A framework",
+            "option3": "Programming Language",
+            "option4": "Directives",
+            "answer": "2"
+        },
+        {
+            "question": "Which font format is used in web pages?",
+            "type":"input",
+            "answer": "WOFF"
+        },
+        {
+            "question": "How many classes does bootstrap grid system has?",
+            "type":"input",
             "answer": "4"
         },
         {
-            "question": "According to the Bible, Moses and Aaron had a sister named what?",
-            "type":"input",
-            "answer": "Miriam"
-        },
-        {
-            "question": "According to the children's nursery rhyme, what type of ocean did Columbus sail in 1492?",
-            "type":"input",
-            "answer": "blue"
-        },
-        {
-            "question": "According to the Mother Goose nursery rhyme, which child is full of woe?",
+            "question": "Which of the following CSS Property controls how an element is positioned?",
             "type":"mcq",
-            "option1": "Monday's child",
-            "option2": "Wednesday's child",
-            "option3": "Thursday's child",
-            "option4": "Saturday's child",
+            "option1": "fix",
+            "option2": "set",
+            "option3": "static",
+            "option4": "position",
             "answer": "2"
         }
     ]
