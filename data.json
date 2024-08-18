@@ -82,7 +82,7 @@
             "answer": "2"
         },
         {
-            "question": "ich of the following is the Web application equivalent to querySelectorAll()?",
+            "question": "Which of the following is the Web application equivalent to querySelectorAll()?",
             "type":"mcq",
             "option1": "#()",
             "option2": "&()",

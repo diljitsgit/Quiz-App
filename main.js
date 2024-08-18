@@ -30,7 +30,7 @@ async function fetchJSONData() {
 
 let temp = await fetchJSONData()
 
-let timePerQuestion = 5
+let timePerQuestion = 20
 let exportResult
 let timetaken = 0
 let finalMessage 
