@@ -133,6 +133,7 @@ function check() {
         qNo++
         timerReset()
     }
+    input.value = ""
     document.getElementById('input-container').classList.add('hide')
     document.getElementById('radio-container').classList.add('hide')
     getquestion()

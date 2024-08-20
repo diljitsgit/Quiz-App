@@ -48,10 +48,10 @@
         {
             "question": "Which HTML tag is used to create a hyperlink?",
             "type":"mcq",
-            "option1": "<link>",
-            "option2": "<href>",
-            "option3": "<a>",
-            "option4": "<hyperlink>",
+            "option1": "link",
+            "option2": "href",
+            "option3": "a",
+            "option4": "hyperlink",
             "answer": "3"
         },
         {
