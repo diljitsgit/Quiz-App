@@ -17,7 +17,7 @@ body {
 
 .start-container {
     text-align: center;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 
 .end-container {
@@ -55,6 +55,18 @@ p {
     margin: 2rem;
     border-radius: 30px;
     width: 20%;
+    border-style: solid;
+    border-color: white;
+}
+
+.clickRes {
+    color: white;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-family: poppins;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0.5rem;
+    border-radius: 30px;
     border-style: solid;
     border-color: white;
 }

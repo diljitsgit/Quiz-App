@@ -31,9 +31,10 @@ async function fetchJSONData() {
 let temp = await fetchJSONData()
 
 let timePerQuestion = 20
+let numberOfQuestions = 10
 let exportResult
 let timetaken = 0
-let finalMessage 
+let finalMessage
 let correct = 0
 let timer
 let qNo = 0
@@ -45,7 +46,7 @@ createShuffleArr()
 prevResult.addEventListener("click", () => {
     result.innerHTML = localStorage.getItem('result')
     if (correct != temp.questions.length) {
-        report.innerHTML ='<br>'+ localStorage.getItem('report')
+        report.innerHTML = '<br>' + localStorage.getItem('report')
     }
     prevResult.classList.add('hide')
     currResult.classList.remove('hide')
@@ -91,7 +92,7 @@ function start() {
 function quiz() {
     ticktock()
     submits.addEventListener("click", check)
-    if (qNo == 9 && time == 0) {
+    if (qNo == numberOfQuestions - 1 && time == 0) {
         quizEnd()
     }
     else if (time == 0) {
@@ -126,7 +127,7 @@ function check() {
             updateMessage()
         }
     }
-    if (qNo == 9) {
+    if (qNo == numberOfQuestions - 1) {
         quizEnd()
     }
     else {
@@ -175,10 +176,10 @@ function quizEnd() {
 }
 
 function displayCurrResult() {
-    exportResult = 'You got ' + correct + ' answers correct out of ' + 10 + '<br> time taken: ' + timetaken + ' seconds <br>'
-    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + 10 + '<br> time taken: ' + timetaken + ' seconds'
+    exportResult = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds <br>'
+    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds'
     if (correct != temp.questions.length) {
-        report.innerHTML = "The correct answer for the following answers were: <br>"+ finalMessage
+        report.innerHTML = "The correct answer for the following answers were: <br>" + finalMessage
     }
 }
 
@@ -236,4 +237,21 @@ function createShuffleArr() {
 
 function getQuestionType() {
     return temp.questions[questionArray[qNo]].type
+}
+
+document.getElementById("qNoDown").addEventListener("click", qNoLow);
+document.getElementById("qNoUp").addEventListener("click", qNoHigh);
+
+function qNoLow() {
+    if (numberOfQuestions != temp.questions.length) {
+        numberOfQuestions--
+        document.getElementById("qNoText").innerHTML = numberOfQuestions
+    }
+}
+
+function qNoHigh() {
+    if (numberOfQuestions != temp.questions.length) {
+        numberOfQuestions++
+        document.getElementById("qNoText").innerHTML = numberOfQuestions
+    }
 }

@@ -6,12 +6,26 @@
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
 
     <div id="start-container" class="start-container">
-        <button class="click" id="start">Start Quiz</button>
+        <button class="click" id="start">Start Quiz</button> <br>
+        <div>
+            <p>How many questions should the test have?</p>
+            <button class="clickRes" id="qNoUp">
+                <span class="material-symbols-outlined">
+                    arrow_upward
+                </span></button>
+            <p id="qNoText">10</p>
+            <button class="clickRes" id="qNoDown">
+                <span class="material-symbols-outlined">
+                    arrow_downward
+                </span></button>
+        </div>
     </div>
 
     <div class="main-container hide" id="main-container">
@@ -49,9 +63,9 @@
     <div class="end-container hide" id="end-container">
         <h1>Quiz App</h1>
         <p id="result"></p>
-            <button id="prev-result" class="click">Previous result</button>
-            <button id="curr-result" class="click">Current result</button>
-            <button id="restart" class="click">Restart</button>
+        <button id="prev-result" class="click">Previous result</button>
+        <button id="curr-result" class="click">Current result</button>
+        <button id="restart" class="click">Restart</button>
         <p id="report" class="report"></p>
     </div>
 
