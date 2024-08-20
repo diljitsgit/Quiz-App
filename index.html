@@ -15,15 +15,15 @@
     <div id="start-container" class="start-container">
         <button class="click" id="start">Start Quiz</button> <br>
         <div>
-            <p>How many questions should the test have?</p>
-            <button class="clickRes" id="qNoUp">
-                <span class="material-symbols-outlined">
-                    arrow_upward
-                </span></button>
-            <p id="qNoText">10</p>
+            <p style="display: inline; padding-right: 10px;">How many questions should the test have?</p>
             <button class="clickRes" id="qNoDown">
                 <span class="material-symbols-outlined">
-                    arrow_downward
+                    arrow_left
+                </span></button>
+            <p id="qNoText" style="display: inline;">10</p>
+            <button class="clickRes" id="qNoUp">
+                <span class="material-symbols-outlined">
+                    arrow_right
                 </span></button>
         </div>
     </div>
@@ -57,14 +57,15 @@
 
         <div class="btn-div">
             <button id="click" class="click">Next Question</button>
+            <button id="Prevclick" class="click">Previous Question</button>
         </div>
         <p id="timer">20</p>
     </div>
     <div class="end-container hide" id="end-container">
         <h1>Quiz App</h1>
         <p id="result"></p>
-        <button id="prev-result" class="click">Previous result</button>
         <button id="curr-result" class="click">Current result</button>
+        <button id="prev-result" class="click">Previous result</button>
         <button id="restart" class="click">Restart</button>
         <p id="report" class="report"></p>
     </div>

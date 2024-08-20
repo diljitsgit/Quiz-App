@@ -1,9 +1,6 @@
-function test() {
-    console.log('testing')
-}
-
 let questionSpace = document.getElementById('question')
-let submits = document.getElementById('click')
+let nextQues = document.getElementById('click')
+let prevQues = document.getElementById('Prevclick')
 let radio1 = document.getElementById('radio1')
 let radio2 = document.getElementById('radio2')
 let radio3 = document.getElementById('radio3')
@@ -38,8 +35,9 @@ let finalMessage
 let correct = 0
 let timer
 let qNo = 0
-let time = timePerQuestion
 let questionArray = []
+let timerArray = []
+let answerArray = []
 createShuffleArr()
 
 
@@ -74,7 +72,7 @@ restartbtn.addEventListener("click", () => {
     timetaken = 0
     correct = 0
     finalMessage = ""
-    time = timePerQuestion
+    createTimerArray()
     start()
 })
 
@@ -83,6 +81,8 @@ restartbtn.addEventListener("click", () => {
 function start() {
     prevResult.classList.remove('hide')
     currResult.classList.add('hide')
+    createTimerArray()
+    getquestion()
     timer = setInterval(
         quiz,
         1000
@@ -91,53 +91,59 @@ function start() {
 
 function quiz() {
     ticktock()
-    submits.addEventListener("click", check)
-    if (qNo == numberOfQuestions - 1 && time == 0) {
+    nextQues.addEventListener("click", nextQuesFunction)
+    prevQues.addEventListener("click", prevQuesFunction)
+    if (qNo == numberOfQuestions - 1 && timerArray[qNo] == 0) {
         quizEnd()
     }
-    else if (time == 0) {
+    else if (timerArray[qNo] == 0) {
         qNo++
-        timerReset()
+        qNo = goToNextValidQuestion()
     }
-    getquestion()
 }
 
 function ticktock() {
-    time--
+    timerArray[qNo]--
     timetaken++
-    document.getElementById('timer').innerHTML = time
+    document.getElementById('timer').innerHTML = timerArray[qNo]
 }
 
-function check() {
-    if (getQuestionType() == 'mcq') {
-        let answer = checkRadio()
-        if (answer == temp.questions[questionArray[qNo]].answer) {
-            correct++
-        }
-        else {
-            updateMessage()
-        }
-    }
-    else {
-        let answer = input.value
-        if (answer == temp.questions[questionArray[qNo]].answer) {
-            correct++
-        }
-        else {
-            updateMessage()
-        }
-    }
+function nextQuesFunction() {
+    inputAnswer()
     if (qNo == numberOfQuestions - 1) {
         quizEnd()
     }
     else {
         qNo++
-        timerReset()
+        qNo = goToNextValidQuestion()
     }
     input.value = ""
     document.getElementById('input-container').classList.add('hide')
     document.getElementById('radio-container').classList.add('hide')
     getquestion()
+}
+
+function inputAnswer() {
+    if (getQuestionType(qNo) == 'mcq') {
+        answerArray[qNo] = checkRadio()
+    }
+    else {
+        if (input.value != '') {
+            answerArray[qNo] = input.value
+        }
+    }
+}
+
+function prevQuesFunction() {
+    inputAnswer()
+    if (qNo != 0) {
+        qNo--
+        qNo = goToPrevValidQuestion()
+        input.value = ""
+        document.getElementById('input-container').classList.add('hide')
+        document.getElementById('radio-container').classList.add('hide')
+        getquestion()
+    }
 }
 
 function checkRadio() {
@@ -158,21 +164,28 @@ function checkRadio() {
     }
 }
 
-function updateMessage() {
-    if (getQuestionType() == 'mcq') {
-        let that = 'option' + temp.questions[questionArray[qNo]].answer
-        finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' :<br><strong> ' + temp.questions[questionArray[qNo]][that] + '</strong><hr>'
-    }
-    else {
-        finalMessage += '<br>' + temp.questions[questionArray[qNo]].question + ' :<br><strong> ' + temp.questions[questionArray[qNo]].answer + '</strong><hr>'
-    }
-}
-
 function quizEnd() {
     clearInterval(timer)
     app.classList.add('hide')
     end.classList.remove('hide')
+    getResults()
     displayCurrResult()
+}
+
+function getResults() {
+    for (var i = 0; i < numberOfQuestions; i++) {
+        if (temp.questions[questionArray[i]].answer == answerArray[i]) {
+            correct++
+        } else {
+            if (getQuestionType(i) === 'mcq') {
+                let that = 'option' + temp.questions[questionArray[i]].answer
+                finalMessage += '<br>' + temp.questions[questionArray[i]].question + ' :<br><strong> ' + temp.questions[questionArray[i]][that] + '</strong><hr>'
+            }
+            else {
+                finalMessage += '<br>' + temp.questions[questionArray[i]].question + ' :<br><strong> ' + temp.questions[questionArray[i]].answer + '</strong><hr>'
+            }
+        }
+    }
 }
 
 function displayCurrResult() {
@@ -188,18 +201,15 @@ function storeResult() {
     localStorage.setItem('report', finalMessage)
 }
 
-function timerReset() {
-    time = timePerQuestion
-}
-
 function getquestion() {
+    activate()
     document.getElementById('input-container').classList.add('hide')
     document.getElementById('radio-container').classList.add('hide')
     document.getElementById('radioDiv3').classList.remove('hide')
     document.getElementById('radioDiv4').classList.remove('hide')
     questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
 
-    if (getQuestionType() == 'mcq') {
+    if (getQuestionType(qNo) == 'mcq') {
         document.getElementById('radio-container').classList.remove('hide')
         radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
         radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
@@ -235,8 +245,31 @@ function createShuffleArr() {
     }
 }
 
-function getQuestionType() {
-    return temp.questions[questionArray[qNo]].type
+function createTimerArray() {
+    if (timerArray.length > 0) {
+        for (var i = 0; i < numberOfQuestions; i++) {
+            timerArray[i] = timePerQuestion
+        }
+    }
+    else {
+        for (var i = 0; i < numberOfQuestions; i++) {
+            timerArray.push(timePerQuestion)
+        }
+    }
+    if (timerArray.length > 0) {
+        for (var i = 0; i < numberOfQuestions; i++) {
+            answerArray[i] = ''
+        }
+    }
+    else {
+        for (var i = 0; i < numberOfQuestions; i++) {
+            answerArray.push('')
+        }
+    }
+}
+
+function getQuestionType(p) {
+    return temp.questions[questionArray[p]].type
 }
 
 document.getElementById("qNoDown").addEventListener("click", qNoLow);
@@ -253,5 +286,41 @@ function qNoHigh() {
     if (numberOfQuestions != temp.questions.length) {
         numberOfQuestions++
         document.getElementById("qNoText").innerHTML = numberOfQuestions
+    }
+}
+
+function goToPrevValidQuestion() {
+    if (timerArray[qNo] == 0) {
+        qNo--
+        return goToPrevValidQuestion()
+    }
+    else { return qNo }
+}
+
+function goToNextValidQuestion() {
+    if (timerArray[qNo] == 0) {
+        qNo--
+        return goToNextValidQuestion()
+    }
+    else { return qNo }
+}
+
+function activate() {
+    if (getQuestionType(qNo) == 'mcq') {
+        if (answerArray[qNo] == '1') {
+            radio1.checked = true;
+        }
+        else if (answerArray[qNo] == '2') {
+            radio2.checked = true;
+        }
+        else if (answerArray[qNo] == '3') {
+            radio3.checked = true;
+        }
+        else if (answerArray[qNo] == '4') {
+            radio4.checked = true;
+        }
+    }
+    else {
+        input.value = answerArray[qNo]
     }
 }
