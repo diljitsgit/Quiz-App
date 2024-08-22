@@ -1,4 +1,5 @@
 let questionSpace = document.getElementById('question')
+let codeSpace = document.getElementById('code')
 let nextQues = document.getElementById('click')
 let prevQues = document.getElementById('Prevclick')
 let radio1 = document.getElementById('radio1')
@@ -20,13 +21,15 @@ let input = document.getElementById('input')
 let prevResult = document.getElementById('prev-result')
 let currResult = document.getElementById('curr-result')
 
+
+// Getting Data of questions from json
 async function fetchJSONData() {
-    let res = await fetch("./data.json")
+    let res = await fetch("./Questions Folder/Javascript.json")
     return await res.json()
 }
+let jsonData = await fetchJSONData()
 
-let temp = await fetchJSONData()
-
+// Initializing App variables
 let timePerQuestion = 20
 let numberOfQuestions = 10
 let exportResult
@@ -43,14 +46,12 @@ createShuffleArr()
 
 prevResult.addEventListener("click", () => {
     result.innerHTML = localStorage.getItem('result')
-    if (correct != temp.questions.length) {
+    if (correct != jsonData.questions.length) {
         report.innerHTML = '<br>' + localStorage.getItem('report')
     }
     prevResult.classList.add('hide')
     currResult.classList.remove('hide')
 })
-
-
 
 currResult.addEventListener("click", () => {
     displayCurrResult()
@@ -83,10 +84,10 @@ function start() {
     currResult.classList.add('hide')
     createTimerArray()
     getquestion()
-    timer = setInterval(
-        quiz,
-        1000
-    )
+    // timer = setInterval(
+    //     quiz,
+    //     1000
+    // )
 }
 
 function quiz() {
@@ -99,6 +100,7 @@ function quiz() {
     else if (timerArray[qNo] == 0) {
         qNo++
         qNo = goToNextValidQuestion()
+        getquestion()
     }
 }
 
@@ -123,17 +125,6 @@ function nextQuesFunction() {
     getquestion()
 }
 
-function inputAnswer() {
-    if (getQuestionType(qNo) == 'mcq') {
-        answerArray[qNo] = checkRadio()
-    }
-    else {
-        if (input.value != '') {
-            answerArray[qNo] = input.value
-        }
-    }
-}
-
 function prevQuesFunction() {
     inputAnswer()
     if (qNo != 0) {
@@ -146,21 +137,32 @@ function prevQuesFunction() {
     }
 }
 
-function checkRadio() {
-    if (radio1.checked) {
-        return 1
-    }
-    else if (radio2.checked) {
-        return 2
-    }
-    else if (radio3.checked) {
-        return 3
-    }
-    else if (radio4.checked) {
-        return 4
+function inputAnswer() {
+    if (getQuestionType(qNo) == 'mcq') {
+        answerArray[qNo] = checkRadio()
     }
     else {
+        if (input.value != '') {
+            answerArray[qNo] = input.value
+        }
+    }
+}
+
+function checkRadio() {
+    if (radio1.checked) {
         return 0
+    }
+    else if (radio2.checked) {
+        return 1
+    }
+    else if (radio3.checked) {
+        return 2
+    }
+    else if (radio4.checked) {
+        return 3
+    }
+    else {
+        return -1
     }
 }
 
@@ -174,15 +176,15 @@ function quizEnd() {
 
 function getResults() {
     for (var i = 0; i < numberOfQuestions; i++) {
-        if (temp.questions[questionArray[i]].answer == answerArray[i]) {
+        if (jsonData.questions[questionArray[i]].answer == answerArray[i]) {
             correct++
         } else {
             if (getQuestionType(i) === 'mcq') {
-                let that = 'option' + temp.questions[questionArray[i]].answer
-                finalMessage += '<br>' + temp.questions[questionArray[i]].question + ' :<br><strong> ' + temp.questions[questionArray[i]][that] + '</strong><hr>'
+                let answerIndex = jsonData.questions[questionArray[i]].answer
+                finalMessage += '<br>' + jsonData.questions[questionArray[i]].question + jsonData.questions[questionArray[i]].code + ' :<br><strong> ' + jsonData.questions[questionArray[i]].options[answerIndex] + '</strong><hr>'
             }
             else {
-                finalMessage += '<br>' + temp.questions[questionArray[i]].question + ' :<br><strong> ' + temp.questions[questionArray[i]].answer + '</strong><hr>'
+                finalMessage += '<br>' + jsonData.questions[questionArray[i]].question + jsonData.questions[questionArray[i]].code + ' :<br><strong> ' + jsonData.questions[questionArray[i]].answer + '</strong><hr>'
             }
         }
     }
@@ -191,7 +193,7 @@ function getResults() {
 function displayCurrResult() {
     exportResult = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds <br>'
     result.innerHTML = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds'
-    if (correct != temp.questions.length) {
+    if (correct != jsonData.questions.length) {
         report.innerHTML = "The correct answer for the following answers were: <br>" + finalMessage
     }
 }
@@ -202,26 +204,32 @@ function storeResult() {
 }
 
 function getquestion() {
+    timerReset()
     activate()
     document.getElementById('input-container').classList.add('hide')
     document.getElementById('radio-container').classList.add('hide')
     document.getElementById('radioDiv3').classList.remove('hide')
     document.getElementById('radioDiv4').classList.remove('hide')
-    questionSpace.innerHTML = temp.questions[questionArray[qNo]].question
+    codeSpace.classList.add('hide')
+    questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
+    if(jsonData.questions[questionArray[qNo]].question == 'What will be the output of the following code snippet?'){
+        codeSpace.classList.remove('hide')
+        codeSpace.innerHTML = jsonData.questions[questionArray[qNo]].code
+    }
 
     if (getQuestionType(qNo) == 'mcq') {
         document.getElementById('radio-container').classList.remove('hide')
-        radio1txt.innerHTML = temp.questions[questionArray[qNo]].option1
-        radio2txt.innerHTML = temp.questions[questionArray[qNo]].option2
+        radio1txt.innerHTML = jsonData.questions[questionArray[qNo]].options[0]
+        radio2txt.innerHTML = jsonData.questions[questionArray[qNo]].options[1]
 
-        if (temp.questions[questionArray[qNo]].option3 != '') {
-            radio3txt.innerHTML = temp.questions[questionArray[qNo]].option3
+        if (jsonData.questions[questionArray[qNo]].options[2] != '') {
+            radio3txt.innerHTML = jsonData.questions[questionArray[qNo]].options[2]
         }
         else {
             document.getElementById('radioDiv3').classList.add('hide')
         }
-        if (temp.questions[questionArray[qNo]].option4 != '') {
-            radio4txt.innerHTML = temp.questions[questionArray[qNo]].option4
+        if (jsonData.questions[questionArray[qNo]].options[3] != '') {
+            radio4txt.innerHTML = jsonData.questions[questionArray[qNo]].options[3]
         }
         else {
             document.getElementById('radioDiv4').classList.add('hide')
@@ -230,18 +238,19 @@ function getquestion() {
     else {
         document.getElementById('input-container').classList.remove('hide')
     }
+    document.getElementById('timer').innerHTML = timerArray[qNo]
 }
 
 
 function createShuffleArr() {
-    for (var i = 0; i < temp.questions.length; i++) {
+    for (var i = 0; i < jsonData.questions.length; i++) {
         questionArray.push(i)
     }
     for (let i = questionArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        const temp = questionArray[i];
+        const jsonData = questionArray[i];
         questionArray[i] = questionArray[j];
-        questionArray[j] = temp;
+        questionArray[j] = jsonData;
     }
 }
 
@@ -269,21 +278,21 @@ function createTimerArray() {
 }
 
 function getQuestionType(p) {
-    return temp.questions[questionArray[p]].type
+    return jsonData.questions[questionArray[p]].type
 }
 
 document.getElementById("qNoDown").addEventListener("click", qNoLow);
 document.getElementById("qNoUp").addEventListener("click", qNoHigh);
 
 function qNoLow() {
-    if (numberOfQuestions != temp.questions.length) {
+    if (numberOfQuestions != jsonData.questions.length) {
         numberOfQuestions--
         document.getElementById("qNoText").innerHTML = numberOfQuestions
     }
 }
 
 function qNoHigh() {
-    if (numberOfQuestions != temp.questions.length) {
+    if (numberOfQuestions != jsonData.questions.length) {
         numberOfQuestions++
         document.getElementById("qNoText").innerHTML = numberOfQuestions
     }
@@ -299,7 +308,7 @@ function goToPrevValidQuestion() {
 
 function goToNextValidQuestion() {
     if (timerArray[qNo] == 0) {
-        qNo--
+        qNo++
         return goToNextValidQuestion()
     }
     else { return qNo }
@@ -323,4 +332,11 @@ function activate() {
     else {
         input.value = answerArray[qNo]
     }
+}
+
+function timerReset() {
+    if (timer) {
+        clearInterval(timer)
+    }
+    timer = setInterval(quiz, 1000)
 }

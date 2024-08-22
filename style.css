@@ -83,6 +83,13 @@ p {
     outline: none;
 }
 
+.code{
+    width: 50%;
+    margin-left: 25%;
+    text-align: left;
+    font-size: 20px;
+}
+
 .report {
     font-size: 1rem;
 }
