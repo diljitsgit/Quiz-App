@@ -1,0 +1,583 @@
+{
+  "questions": [
+    {
+      "question": "What will be the result of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    char ch[10] = \"abcdefghij\";\n    int ans = 0;\n    for(int i = 0; i &lt; 10; i++) {\n        ans += (ch[i] - 'a');\n    }\n    printf(\"%d\", ans);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "45",
+        "36",
+        "20",
+        "100"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nstruct School {\n    int age, rollNo;\n};\nvoid solve() {\n    struct School sc;\n    sc.age = 19;\n    sc.rollNo = 82;\n    printf(\"%d %d\", sc.age, sc.rollNo);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "19 82",
+        "Compilation Error",
+        "82 19",
+        "None of the above."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int a[] = {1, 2, 3, 4, 5};\n    int sum = 0;\n    for(int i = 0; i &lt; 5; i++) {\n        if(i % 2 == 0) {\n            sum += *(a + i);\n        }\n        else {\n            sum -= *(a + i);\n        }\n    }\n    printf(\"%d\", sum);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "2",
+        "15",
+        "Syntax Error",
+        "3"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int x = 2;\n    printf(\"%d\", (x &lt;&lt; 1) + (x &gt;&gt; 1));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "5",
+        "4",
+        "2",
+        "1"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\n#define VAL 5\nint getInput() {\n    return VAL;\n}\nvoid solve() {\n    const int x = getInput();\n    printf(\"%d\", x);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "5",
+        "Garbage Value",
+        "Compilation Error",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\n#define CUBE(x) x * x * x\nvoid solve() {\n    int ans = 216 / CUBE(3);\n    printf(\"%d\", ans);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "8",
+        "648",
+        "72",
+        "None of the above."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int n = 24;\n    int l = 0, r = 100, ans = n;\n    while(l &lt;= r) {\n        int mid = (l + r) / 2;\n        if(mid * mid &lt;= n) {\n            ans = mid;\n            l = mid + 1;\n        }\n        else {\n            r = mid - 1;\n        }\n    }\n    printf(\"%d\", ans);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int x = 1, y = 2;\n    printf(x &gt; y ? \"Greater\" : x == y ? \"Equal\" : \"Lesser\");\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "Greater",
+        "Lesser",
+        "Equal",
+        "None of the above."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    printf(\"%d \", 9 / 2);\n    printf(\"%f\", 9.0 / 2);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "4 4.5000",
+        "4 4.000",
+        "4.5000 4.5000",
+        "4 4"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int first = 10, second = 20;\n    int third = first + second;\n    {\n        int third = second - first;\n        printf(\"%d \", third);\n    }\n    printf(\"%d\", third);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "10 30",
+        "30 10",
+        "10 20",
+        "20 10"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    bool ok = false;\n    printf(ok ? \"YES\" : \"NO\");\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "Yes",
+        "No",
+        "Compilation Error",
+        "None of the above"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\n#define VAL 3 * (2 + 6)\nvoid solve() {\n    int a = 10 + VAL;\n    printf(\"%d\", a);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "104",
+        "24",
+        "10",
+        "34"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-meta-keyword\">include</span> <span class=\"hljs-meta-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n\t<span class=\"hljs-keyword\">int</span> a = <span class=\"hljs-number\">3</span>, b = <span class=\"hljs-number\">5</span>;\n\t<span class=\"hljs-keyword\">int</span> t = a;\n\ta = b;\n\tb = t;\n\t<span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">\"%d %d\"</span>, a, b);\n\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}",
+      "type": "mcq",
+      "options": [
+        "3 5",
+        "3 3",
+        "5 5",
+        "5 3"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int ch = 2;\n    switch(ch) {\n        case 1: printf(\"1 \");\n        case 2: printf(\"2 \");\n        case 3: printf(\"3 \");\n        default: printf(\"None\");\n    }\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "1 2 3 None",
+        "2",
+        "2 3 None",
+        "None"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the value of x in the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int x = printf(\"Hello\");\n    printf(\" %d\", x);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "10",
+        "5",
+        "1",
+        "0"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which data structure is used to handle recursion in C?",
+      "type": "mcq",
+      "options": [
+        "Stack.",
+        "Queue.",
+        "Deque.",
+        "Trees."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following are correct file opening modes in C?",
+      "type": "mcq",
+      "options": [
+        "r",
+        "rb",
+        "w",
+        "All of the above."
+      ],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following are not standard header files in C?",
+      "type": "mcq",
+      "options": [
+        "stdio.h",
+        "stdlib.h",
+        "conio.h",
+        "None of the above."
+      ],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following function is used to open a file in C++?",
+      "type": "mcq",
+      "options": [
+        "fopen",
+        "fclose",
+        "fseek",
+        "fgets"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is an exit controlled loop?",
+      "type": "mcq",
+      "options": [
+        "While loop.",
+        "For loop.",
+        "do-while loop.",
+        "None of the above."
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is not a storage class specifier in C?",
+      "type": "mcq",
+      "options": [
+        "volatile",
+        "extern",
+        "typedef",
+        "static"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is not true about structs in C?",
+      "type": "mcq",
+      "options": [
+        "No Data Hiding.",
+        "Functions are allowed inside structs.",
+        "Constructors are not allowed inside structs.",
+        "Cannot have static members in the struct body."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is the proper syntax for declaring macros in C?",
+      "type": "mcq",
+      "options": [
+        "#define long long ll",
+        "#define ll long long",
+        "#define ll",
+        "#define long long"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following should be used to free memory from a pointer allocated using the “new” operator?",
+      "type": "mcq",
+      "options": [
+        "free()",
+        "delete",
+        "realloc()",
+        "None of the above."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following will occur if we call the free() function on a NULL pointer?",
+      "type": "mcq",
+      "options": [
+        "Compilation Error.",
+        "Runtime Error.",
+        "Undefined Behaviour.",
+        "The program will execute normally."
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What is the output of the following code snippet?",
+      "code": "int main() {\n\tint sum = 2 + 4 / 2 + 6 * 2;\n\tprintf(\"%d\", sum);\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "2",
+        "15",
+        "16",
+        "18"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "&nbsp;What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nunion School {\n    int age, rollNo;\n    double marks;\n};\nvoid solve() {\n    union School sc;\n    sc.age = 19;\n    sc.rollNo = 82;\n    sc.marks = 19.04;\n    printf(\"%d\", (int)sizeof(sc));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "12"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How are String represented in memory in C?",
+      "type": "mcq",
+      "options": [
+        "An array of characters.",
+        "The object of some class.",
+        "Same as other primitive data types.",
+        "LinkedList of characters."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "How is an array initialized in C language?",
+      "type": "mcq",
+      "options": [
+        "int a[3] = {1, 2, 3};",
+        "int a = {1, 2, 3};",
+        "int a[] = new int[3]",
+        "int a(3) = [1, 2, 3];"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "How is the 3rd element in an array accessed based on pointer notation?",
+      "type": "mcq",
+      "options": [
+        "*a + 3",
+        "*(a + 3)",
+        "*(*a + 3)",
+        "&amp;(a + 3)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How to declare a double-pointer in C?",
+      "type": "mcq",
+      "options": [
+        "int *val",
+        "int **val",
+        "int &amp;val",
+        "int *&amp;val"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How to find the length of an array in C?",
+      "type": "mcq",
+      "options": [
+        "sizeof(a)",
+        "sizeof(a[0])",
+        "sizeof(a) / sizeof(a[0])",
+        "sizeof(a) * sizeof(a[0])"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "If p is an integer pointer with a value 1000, then what will the value of p + 5 be?",
+      "type": "mcq",
+      "options": [
+        "1020",
+        "1005",
+        "1004",
+        "1010"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "In which of the following languages is function overloading not possible?",
+      "type": "mcq",
+      "options": [
+        "C",
+        "C++",
+        "Java",
+        "Python"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What does the following declaration indicate?",
+      "code": "int x: 8;",
+      "type": "mcq",
+      "options": [
+        "x stores a value of 8.",
+        "x is an 8-bit integer.",
+        "Both A and B.",
+        "None of the above."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the disadvantage of arrays in C?",
+      "type": "mcq",
+      "options": [
+        "The amount of memory to be allocated should be known beforehand.",
+        "Elements of an array can be accessed in constant time.",
+        "Elements are stored in contiguous memory blocks.",
+        "Multiple other data structures can be implemented using arrays."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the output of the following code snippet?",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-meta-keyword\">include</span> <span class=\"hljs-meta-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n\t<span class=\"hljs-keyword\">int</span> a[] = {<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>};\n\t<span class=\"hljs-keyword\">int</span> sum = <span class=\"hljs-number\">0</span>;\n\t<span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-number\">4</span>; i++) {\n\t    sum += a[i];\n\t}\n\t<span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">\"%d\"</span>, sum);\n\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}",
+      "type": "mcq",
+      "options": [
+        "1",
+        "4",
+        "20",
+        "10"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What is the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\n#include&lt;stdlib.h&gt;\nvoid set(int *to) {\n    to = (int*)malloc(5 * sizeof(int));\n}\nvoid solve() {\n    int *ptr;\n    set(ptr);\n    *ptr = 10;\n    printf(\"%d\", *ptr);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "10",
+        "Garbage Value",
+        "Cannot Say",
+        "The program may crash."
+      ],
+      "answer": 3
+    },
+    {
+      "question": "&nbsp;What is the range of values that can be stored by int datatype in C?",
+      "type": "mcq",
+      "options": [
+        "-(2^31) to (2^31) - 1",
+        "-256 to 255",
+        "-(2^63) to (2^63) - 1",
+        "0 to (2^31) - 1"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the return type of the fopen() function in C?",
+      "type": "mcq",
+      "options": [
+        "Pointer to a FILE object.",
+        "Pointer to an integer.",
+        "An integer.",
+        "An integer."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the size of the int data type (in bytes) in C?",
+      "type": "mcq",
+      "options": [
+        "4",
+        "8",
+        "2",
+        "1"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nint get(int n) {\n    if(n &lt;= 1) {\n        return n;\n    }\n    return get(n - 1) + get(n - 2);\n}\nvoid solve() {\n    int ans = get(6);\n    printf(\"%d\", ans);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "5",
+        "1",
+        "0",
+        "8"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    printf(\"%d %d\", (023), (23));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "023 23",
+        "23 23",
+        "19 23",
+        "23 19"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nstruct School {\n    int age, rollNo;\n};\nvoid solve() {\n    struct School sc;\n    sc.age = 19;\n    sc.rollNo = 82;\n    printf(\"%d\", (int)sizeof(sc));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "1",
+        "4",
+        "8",
+        "16"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    int a = 3;\n    int res = a++ + ++a + a++ + ++a;\n    printf(\"%d\", res);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "12",
+        "24",
+        "20",
+        "18"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve() {\n    printf(\"%d %d %d\", (076), (28), (0x87));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "76 28 87",
+        "076 28 0x87",
+        "62 28 135",
+        "0 0 0"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\n#include&lt;string.h&gt;\nvoid solve() {\n    char s[] = \"Hello\";\n    printf(\"%s \", s);\n    char t[40];\n    strcpy(t, s);\n    printf(\"%s\", t);\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "Hello Hello",
+        "Hello",
+        "Compilation Error",
+        "None of the above."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid solve(int x) {\n    if(x == 0) {\n        printf(\"%d \", x);\n        return;\n    }\n    printf(\"%d \", x);\n    solve(x - 1);\n    printf(\"%d \", x);\n}\nint main() {\n    solve(3);\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "3 2 1 0 1 2 3",
+        "3 2 1 0",
+        "0 1 2 3",
+        "None of the above"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nvoid swap(int *a, int *b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\nvoid solve() {\n    int a = 3, b = 5;\n    swap(&amp;a, &amp;b);\n    printf(\"%d %d\", a, b);\n}\nint main() {\n\tsolve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "3 5",
+        "5 3",
+        "5 5",
+        "3 3"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What will be the output of the following code snippet?",
+      "code": "#include &lt;stdio.h&gt;\nint search(int l, int r, int target, int a[]) {\n    int mid = (l + r) / 2;\n    if(a[mid] == target) {\n        return mid;\n    }\n    else if(a[mid] &lt; target) {\n        return search(mid + 1, r, target, a);\n    }\n    else {\n        return search(0, mid - 1, target, a);\n    }\n}\nvoid solve() {\n    int a[] = {1, 2, 3, 4, 5};\n    printf(\"%d\", search(0, 5, 3, a));\n}\nint main() {\n    solve();\n\treturn 0;\n}",
+      "type": "mcq",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": 0
+    }
+  ]
+}
