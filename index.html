@@ -16,22 +16,36 @@
         <button class="click" id="start">Start Quiz</button> <br>
         <div>
             <p style="display: inline; padding-right: 10px;">How many questions should the test have?</p>
-            <button class="clickRes" id="qNoDown">
-                <span class="material-symbols-outlined">
-                    arrow_left
-                </span></button>
-            <p id="qNoText" style="display: inline;">10</p>
-            <button class="clickRes" id="qNoUp">
-                <span class="material-symbols-outlined">
-                    arrow_right
-                </span></button>
+            <select name="NumberOfQuestions" class="click" id="qNo">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+            </select>
+        </div>
+        <div>
+            <p style="display: inline; padding-right: 10px;">Of what topic should the test have questions?</p>
+            <select name="QuestionTopic" class="click" id="QuesTopic">
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+                <option value="DSA">DSA</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
         </div>
     </div>
 
     <div class="main-container hide" id="main-container">
         <h1>The Quiz App</h1>
         <p id="question">Loading question...</p>
-        <div style="text-align: center;"><pre class="code"><code id="code">Loading code...</code></pre></div>
+        <div style="text-align: center;">
+            <pre class="code"><code id="code">Loading code...</code></pre>
+        </div>
 
         <div class="radio-container hide" id="radio-container">
             <div class="radio-div" onclick="flip1()">

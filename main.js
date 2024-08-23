@@ -23,13 +23,16 @@ let currResult = document.getElementById('curr-result')
 
 
 // Getting Data of questions from json
-async function fetchJSONData() {
-    let res = await fetch("./Questions Folder/Javascript.json")
+async function fetchJSONData(name) {
+    let fileName = "./Questions-Folder/" + name + ".json"
+    let res = await fetch(fileName)
+    console.log(fileName)
     return await res.json()
 }
-let jsonData = await fetchJSONData()
 
 // Initializing App variables
+let jsonData
+let Topic
 let timePerQuestion = 20
 let numberOfQuestions = 10
 let exportResult
@@ -41,7 +44,6 @@ let qNo = 0
 let questionArray = []
 let timerArray = []
 let answerArray = []
-createShuffleArr()
 
 
 prevResult.addEventListener("click", () => {
@@ -79,9 +81,11 @@ restartbtn.addEventListener("click", () => {
 
 
 
-function start() {
+async function start() {
     prevResult.classList.remove('hide')
     currResult.classList.add('hide')
+    await getDetails()
+    createShuffleArr()
     createTimerArray()
     getquestion()
     // timer = setInterval(
@@ -212,7 +216,7 @@ function getquestion() {
     document.getElementById('radioDiv4').classList.remove('hide')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
-    if(jsonData.questions[questionArray[qNo]].question == 'What will be the output of the following code snippet?'){
+    if (jsonData.questions[questionArray[qNo]].question == 'What will be the output of the following code snippet?') {
         codeSpace.classList.remove('hide')
         codeSpace.innerHTML = jsonData.questions[questionArray[qNo]].code
     }
@@ -281,23 +285,6 @@ function getQuestionType(p) {
     return jsonData.questions[questionArray[p]].type
 }
 
-document.getElementById("qNoDown").addEventListener("click", qNoLow);
-document.getElementById("qNoUp").addEventListener("click", qNoHigh);
-
-function qNoLow() {
-    if (numberOfQuestions != jsonData.questions.length) {
-        numberOfQuestions--
-        document.getElementById("qNoText").innerHTML = numberOfQuestions
-    }
-}
-
-function qNoHigh() {
-    if (numberOfQuestions != jsonData.questions.length) {
-        numberOfQuestions++
-        document.getElementById("qNoText").innerHTML = numberOfQuestions
-    }
-}
-
 function goToPrevValidQuestion() {
     if (timerArray[qNo] == 0) {
         qNo--
@@ -339,4 +326,10 @@ function timerReset() {
         clearInterval(timer)
     }
     timer = setInterval(quiz, 1000)
+}
+
+async function getDetails() {
+    Topic = document.getElementById('QuesTopic').value
+    numberOfQuestions = document.getElementById('qNo').value
+    jsonData = await fetchJSONData(Topic)
 }

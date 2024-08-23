@@ -7,6 +7,10 @@ body {
     color: white;
 }
 
+option{
+    color: #0E152F;
+}
+
 .main-container {
     width: 40%;
     height: 30%;
