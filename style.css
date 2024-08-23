@@ -88,6 +88,10 @@ p {
 }
 
 .code{
+    background-color: black;
+    opacity: 70%;
+    padding: 5%;
+    border-radius: 20px;
     width: 50%;
     margin-left: 25%;
     text-align: left;
