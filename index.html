@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.svg">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet"
@@ -11,78 +12,101 @@
 </head>
 
 <body>
+    <nav>
+        <div class="logo">
+            <img src="favicon.svg" style="filter: invert(1);" alt="Logo Here!">
+            <p style="padding-left: 0.2rem;">Quiz App</p>
+        </div>
+    </nav>
 
-    <div id="start-container" class="start-container">
-        <button class="click" id="start">Start Quiz</button> <br>
-        <div>
-            <p style="display: inline; padding-right: 10px;">How many questions should the test have?</p>
-            <select name="NumberOfQuestions" class="click" id="qNo">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="25">25</option>
-                <option value="30">30</option>
-            </select>
-        </div>
-        <div>
-            <p style="display: inline; padding-right: 10px;">Of what topic should the test have questions?</p>
-            <select name="QuestionTopic" class="click" id="QuesTopic">
-                <option value="C">C</option>
-                <option value="C++">C++</option>
-                <option value="Java">Java</option>
-                <option value="DSA">DSA</option>
-                <option value="Javascript">Javascript</option>
-                <option value="Python">Python</option>
-                <option value="HTML">HTML</option>
-                <option value="CSS">CSS</option>
-            </select>
-        </div>
-    </div>
+    <div class="app-div">
+        <div class="app-container">
 
-    <div class="main-container hide" id="main-container">
-        <h1>The Quiz App</h1>
-        <p id="question">Loading question...</p>
-        <div style="text-align: center;">
-            <pre class="code" id="code"><code id="code">Loading code...</code></pre>
-        </div>
+            <div class="start-container" id="start-container">
+                <div class="number-of-questions-div">
+                    <p style="display: inline;">Choose the number of questions you wish to answer:</p>
+                    <select name="QuestionNumbers" class="dropdown-master" id="number-of-questions"></select>
+                </div>
 
-        <div class="radio-container hide" id="radio-container">
-            <div class="radio-div" onclick="flip1()">
-                <input type="radio" id="radio1" name="mcq">
-                <label id="radio1txt"> Option 1 </label>
-            </div>
-            <div class="radio-div" onclick="flip2()">
-                <input type="radio" id="radio2" name="mcq">
-                <label id="radio2txt"> Option 2 </label>
-            </div>
-            <br>
-            <div class="radio-div" id="radioDiv3" onclick="flip3()">
-                <input type="radio" id="radio3" name="mcq">
-                <label id="radio3txt"> Option 3 </label>
-            </div>
-            <div class="radio-div" id="radioDiv4" onclick="flip4()">
-                <input type="radio" id="radio4" name="mcq">
-                <label id="radio4txt"> Option 4 </label>
-            </div>
-        </div>
-        <div class="input-container hide" id="input-container">
-            <input type="text" id="input" class="input-answer">
-        </div>
+                <div class="choose-topic-div">
+                    <p style="display: inline;">Choose the topic of the questions:</p>
+                    <select name="QuestionTopic" class="dropdown-master" id="topic-of-questions"></select>
+                </div>
 
-        <div class="btn-div">
-            <button id="Prevclick" class="click">Previous Question</button>
-            <button id="click" class="click">Next Question</button>
+                <div class="choose-difficulty-div">
+                    <p style="display: inline;">Choose the difficulty of the questions:</p>
+                    <select name="QuestionDifficulty" class="dropdown-master" id="difficulty-of-questions"></select>                
+                </div>
+                
+
+                <div class="navigate-div">
+                    <button class="btn-dark" id="start">Start Quiz</button>
+                </div>
+            </div>
+
+
+
+            <div class="quiz-container hide" id="quiz-container">
+                <div class="questionSpace">
+                    <p class="question" id="question">
+                        Question Comes Here
+                    </p>
+
+                    <div class="codeSpace" id="codeSpace">
+                        <pre style="padding: 0rem 1rem; font-size: 1rem;"><code id="code"></code></pre>
+                    </div>
+                </div>
+
+                <div class="action">
+                    <div class="options-div" id="options-div">
+                        <div class="radio-div" id="radioDiv1" onclick="flip1()">
+                            <input type="radio" name="mcq" id="radio1">
+                            <label id="radio1txt"> Option 1 </label>
+                        </div>
+                        <div class="radio-div" id="radioDiv2" onclick="flip2()">
+                            <input type="radio" name="mcq" id="radio2">
+                            <label id="radio2txt"> Option 2 </label>
+                        </div>
+                        <div class="radio-div hide" id="radioDiv3" onclick="flip3()">
+                            <input type="radio" name="mcq" id="radio3">
+                            <label id="radio3txt"> Option 3 </label>
+                        </div>
+                        <div class="radio-div hide" id="radioDiv4" onclick="flip4()">
+                            <input type="radio" name="mcq" id="radio4">
+                            <label id="radio4txt"> Option 4 </label>
+                        </div>
+                    </div>
+                    <div class="timer-div">
+                        <h3 class="Timer" id="timer">Time</h3>
+                    </div>
+                    <div class="input-container hide" id="input-container">
+                        <input type="text" id="input" class="input-answer">
+                    </div>
+                    <div class="navigate-div">
+                        <button class="btn" id="previous-btn">Previous</button>
+                        <button class="btn" id="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="report-container hide" id="report-container">
+                <div class="report-container-summary-text">
+                    <h2>Report</h2>
+                    <p>correct: <span  id="correct"></span></p>
+                    <p>incorrect: <span  id="incorrect"></span></p>
+                    <p>time taken: <span id="time-taken"></span></p>
+                </div>
+
+                <div class="report-container-main-text">
+                        <h4 style="margin: 0; padding: 1rem 2rem;">How can i improve?</h4>
+                        <p class="report" id="report">
+                        </p>
+                </div>
+            </div>
+
         </div>
-        <p id="timer">20</p>
-    </div>
-    <div class="end-container hide" id="end-container">
-        <h1>Quiz App</h1>
-        <p id="result"></p>
-        <button id="curr-result" class="click">Current result</button>
-        <button id="prev-result" class="click">Previous result</button>
-        <button id="restart" class="click">Restart</button>
-        <p id="report" class="report"></p>
     </div>
 
     <script>

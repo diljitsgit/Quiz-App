@@ -1,121 +1,266 @@
 body {
-    background-image: url('Background-Image.webp');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-color: #0E152F;
+    background-color: #EFEFEF;
     font-family: poppins;
-    color: white;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
 }
 
-option{
-    color: #0E152F;
+nav {
+    background-color: white;
+    margin: 1.5rem;
+    font-size: 1.25rem;
+    height: 4rem;
+    width: auto;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 }
 
-.main-container {
-    width: 40%;
-    height: 30%;
-    margin-top: 17.5%;
-    margin-left: 30%;
-    text-align: center;
+.logo {
+    display: flex;
+    padding: 2rem;
 }
 
-.start-container {
-    text-align: center;
-    margin-top: 20%;
+.app-div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.end-container {
-    width: 40%;
-    height: 30%;
-    margin-top: 17.5%;
-    margin-left: 30%;
-    text-align: center;
+/* take care of this for mobile screens */
+.app-container {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    min-height: 500px;
+    max-height: 500px;
+    width: 60%;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.01) */
 }
 
-h1 {
-    font-weight: 900;
-    font-size: 4rem;
+.quiz-container {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
 }
 
-p {
-    font-size: 1.5rem;
+.questionSpace {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #EFEFEF;
+    border-radius: 1rem;
+    width: 50%;
+    min-width: 50%;
+    word-wrap: break-word;
+}
+
+.codeSpace {
+    color: #EFEFEF;
+    flex: 1;
+    overflow-x: scroll;
+    margin: 7px 0px 7px 7px;
+    background-color: rgb(117, 116, 116);
+    border-radius: 1rem;
+}
+
+.question {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.options-div {
+    flex-direction: column;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .radio-div {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    margin: 0.2rem;
-    border-radius: 30px;
-    display: inline-block;
-    width: 20%;
-}
-
-.click {
-    color: white;
-    font-size: 1.3rem;
-    font-family: poppins;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 0.5rem;
-    margin: 2rem;
-    border-radius: 30px;
-    width: 20%;
-    border-style: solid;
-    border-color: white;
-}
-
-.clickRes {
-    color: white;
-    display: inline-block;
-    font-size: 1.3rem;
-    font-family: poppins;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 0.5rem;
-    border-radius: 30px;
-    border-style: solid;
-    border-color: white;
-}
-
-.input-answer {
-    color: white;
-    border-radius: 30px;
-    width: 30%;
-    padding: 0.6rem;
+    border-width: 3px;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
-    background-color: transparent;
-    box-sizing: border-box;
-    border: 3px solid #FFF;
-    outline: none;
+    height: 3rem;
+    border-style: solid;
+    border-color: #EFEFEF;
+    border-radius: 1rem;
+    width: 100%;
 }
 
-.code{
-    background-color: black;
-    opacity: 70%;
-    padding: 5%;
-    border-radius: 20px;
+input {
+    margin-left: 1rem;
+    accent-color: rgb(138, 137, 137);
+}
+
+label {
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+}
+
+.timer-div{align-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+.navigate-div {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: end;
+    justify-content: center;
+}
+
+.btn {
+    border-width: 3px;
     width: 50%;
-    margin-left: 25%;
-    text-align: left;
-    font-size: 20px;
+    font-family: poppins;
+    font-size: 1.2rem;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: #EFEFEF;
+    border-radius: 1rem;
+    height: 3rem;
 }
 
-.report {
+.start-container {
+    width: 100%;
+    font-size: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.btn-dark {
+    border-width: 3px;
+    color: #FFF;
+    width: 50%;
+    font-family: poppins;
+    font-size: 1.2rem;
+    background-color: #464646;
+    border-style: none;
+    border-color: #EFEFEF;
+    border-radius: 1rem;
+    height: 3rem;
+}
+
+.dropdown-master {
+    margin-left: 1rem;
+    border-width: 3px;
+    width: 30%;
+    font-family: poppins;
+    font-size: 1.2rem;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: #EFEFEF;
+    display: inline;
+    border-radius: 1rem;
+    padding: 0rem 0.5rem;
+    height: 2.5rem;
+}
+
+.report-container {
+    width: 100%;
+    font-size: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.report-container-summary-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1px;
+}
+
+.report-container-main-text {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #EFEFEF;
+    border-radius: 1rem;
+}
+
+.report-container-main-text>p {
     font-size: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.incorrect {
+    background-color: red;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.3rem;
+    margin-left: 0.5rem;
+}
+
+.correct {
+    background-color: green;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.3rem;
+    margin-left: 0.5rem;
+}
+
+::-webkit-scrollbar {
+    margin-right: 7px;
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cecece;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+::-webkit-scrollbar-button:single-button {
+    background-color: rgba(64, 64, 64,0);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.report>p {
+    margin: 10px;
+}
+
+hr {
+    align-self: center;
+    width: 90%;
+    margin: 2rem;
+    border-top: 1px solid rgb(211, 211, 211);
 }
 
 .hide {
     display: none;
-}
-
-[class*="main-container"] {
-    width: 95%;
-    height: 100%;
-    margin: 0%;
-}
-
-@media only screen and (min-width: 600px) {
-
-    /* For tablets: */
-    .main-container {
-        margin-top: 17.5%;
-    }
 }

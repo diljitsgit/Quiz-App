@@ -1,40 +1,84 @@
-let questionSpace = document.getElementById('question')
-let codeSpace = document.getElementById('code')
-let nextQues = document.getElementById('click')
-let prevQues = document.getElementById('Prevclick')
-let radio1 = document.getElementById('radio1')
-let radio2 = document.getElementById('radio2')
-let radio3 = document.getElementById('radio3')
-let radio4 = document.getElementById('radio4')
-let radio1txt = document.getElementById('radio1txt')
-let radio2txt = document.getElementById('radio2txt')
-let radio3txt = document.getElementById('radio3txt')
-let radio4txt = document.getElementById('radio4txt')
-let begin = document.getElementById('start-container')
-let app = document.getElementById('main-container')
-let end = document.getElementById('end-container')
-let result = document.getElementById('result')
-let report = document.getElementById('report')
-let startbtn = document.getElementById('start')
-let restartbtn = document.getElementById('restart')
-let input = document.getElementById('input')
-let prevResult = document.getElementById('prev-result')
-let currResult = document.getElementById('curr-result')
+const startbtn = document.getElementById('start')
+const restartbtn = document.getElementById('restart')
+const app = document.getElementById('quiz-container')
+const questionSpace = document.getElementById('question')
+const codeSpace = document.getElementById('codeSpace')
+const code = document.getElementById('code')
+const nextQues = document.getElementById('next-btn')
+const prevQues = document.getElementById('previous-btn')
+const radio1 = document.getElementById('radio1')
+const radio2 = document.getElementById('radio2')
+const radio3 = document.getElementById('radio3')
+const radio4 = document.getElementById('radio4')
+const radio1txt = document.getElementById('radio1txt')
+const radio2txt = document.getElementById('radio2txt')
+const radio3txt = document.getElementById('radio3txt')
+const radio4txt = document.getElementById('radio4txt')
+const begin = document.getElementById('start-container')
+const end = document.getElementById('report-container')
+const correctOut = document.getElementById('correct')
+const incorrectOut = document.getElementById('incorrect')
+const timerTakenOut = document.getElementById('time-taken')
+const report = document.getElementById('report')
+const prevResult = document.getElementById('prev-result')
+const currResult = document.getElementById('curr-result')
 
+const numberOfQuestionsDropdown = document.getElementById("number-of-questions");
+const topicsDropdown = document.getElementById("topic-of-questions");
+const difficultyDropdown = document.getElementById("difficulty-of-questions");
+
+const topicOptions = {
+    C: "C.json",
+    Cpp: "C++.json",
+    Css: "Css.json",
+    DSA: "DSA.json",
+    HTML: "HTML.json",
+    Java: "Java.json",
+    Javascript: "Javascript.json",
+    Python: "Python.json"
+}
+
+const questionNumbers = {
+    Five: "5",
+    Ten: "10",
+    Fifteen: "15",
+    Twenty: "20",
+    Twentyfive: "25",
+    Thirty: "30"
+}
+
+const difficulty = {
+    Easy: '40',
+    Medium: '25',
+    Hard: '10'
+}
+
+const renderStart = () => {
+    addToDropdown(questionNumbers, numberOfQuestionsDropdown)
+    addToDropdown(topicOptions, topicsDropdown)
+    addToDropdown(difficulty, difficultyDropdown)
+}
+renderStart()
+
+function addToDropdown(object, dropdown) {
+    for (var i = 0; i < Object.keys(object).length; i++) {
+        let option = document.createElement("option")
+        option.innerText = Object.keys(object)[i]
+        dropdown.appendChild(option)
+    }
+}
 
 // Getting Data of questions from json
 async function fetchJSONData(name) {
     let fileName = "./Questions-Folder/" + name + ".json"
     let res = await fetch(fileName)
-    console.log(fileName)
     return await res.json()
 }
 
 // Initializing App variables
 let jsonData
-let Topic
-let timePerQuestion = 20
-let numberOfQuestions = 10
+let timePerQuestion
+let numberOfQuestions
 let exportResult
 let timetaken = 0
 let finalMessage
@@ -46,20 +90,20 @@ let timerArray = []
 let answerArray = []
 
 
-prevResult.addEventListener("click", () => {
-    result.innerHTML = localStorage.getItem('result')
-    if (correct != jsonData.questions.length) {
-        report.innerHTML = '<br>' + localStorage.getItem('report')
-    }
-    prevResult.classList.add('hide')
-    currResult.classList.remove('hide')
-})
+// prevResult.addEventListener("click", () => {
+//     result.innerHTML = localStorage.getItem('result')
+//     if (correct != jsonData.questions.length) {
+//         report.innerHTML = '<br>' + localStorage.getItem('report')
+//     }
+//     prevResult.classList.add('hide')
+//     currResult.classList.remove('hide')
+// })
 
-currResult.addEventListener("click", () => {
-    displayCurrResult()
-    prevResult.classList.remove('hide')
-    currResult.classList.add('hide')
-})
+// currResult.addEventListener("click", () => {
+//     displayCurrResult()
+//     prevResult.classList.remove('hide')
+//     currResult.classList.add('hide')
+// })
 
 startbtn.addEventListener("click", () => {
     app.classList.remove('hide')
@@ -67,31 +111,27 @@ startbtn.addEventListener("click", () => {
     start()
 })
 
-restartbtn.addEventListener("click", () => {
-    storeResult()
-    app.classList.remove('hide')
-    end.classList.add('hide')
-    qNo = 0
-    timetaken = 0
-    correct = 0
-    finalMessage = ""
-    createTimerArray()
-    start()
-})
+// restartbtn.addEventListener("click", () => {
+//     storeResult()
+//     app.classList.remove('hide')
+//     end.classList.add('hide')
+//     qNo = 0
+//     timetaken = 0
+//     correct = 0
+//     finalMessage = ""
+//     createTimerArray()
+//     start()
+// })
 
 
 
 async function start() {
-    prevResult.classList.remove('hide')
-    currResult.classList.add('hide')
+    // prevResult.classList.remove('hide')
+    // currResult.classList.add('hide')
     await getDetails()
     createShuffleArr()
     createTimerArray()
     getquestion()
-    // timer = setInterval(
-    //     quiz,
-    //     1000
-    // )
 }
 
 function quiz() {
@@ -109,6 +149,7 @@ function quiz() {
 }
 
 function ticktock() {
+    console.log(timer)
     timerArray[qNo]--
     timetaken++
     document.getElementById('timer').innerHTML = timerArray[qNo]
@@ -125,7 +166,7 @@ function nextQuesFunction() {
     }
     input.value = ""
     document.getElementById('input-container').classList.add('hide')
-    document.getElementById('radio-container').classList.add('hide')
+    document.getElementById('options-div').classList.add('hide')
     getquestion()
 }
 
@@ -136,7 +177,7 @@ function prevQuesFunction() {
         qNo = goToPrevValidQuestion()
         input.value = ""
         document.getElementById('input-container').classList.add('hide')
-        document.getElementById('radio-container').classList.add('hide')
+        document.getElementById('options-div').classList.add('hide')
         getquestion()
     }
 }
@@ -166,12 +207,15 @@ function checkRadio() {
         return 3
     }
     else {
-        return -1
+        return ''
     }
 }
 
 function quizEnd() {
-    clearInterval(timer)
+    console.log('ending timer')
+    if (timer) {
+        clearInterval(timer)
+    }
     app.classList.add('hide')
     end.classList.remove('hide')
     getResults()
@@ -183,23 +227,43 @@ function getResults() {
         if (jsonData.questions[questionArray[i]].answer == answerArray[i]) {
             correct++
         } else {
-            if (getQuestionType(i) === 'mcq') {
-                let answerIndex = jsonData.questions[questionArray[i]].answer
-                finalMessage += '<br>' + jsonData.questions[questionArray[i]].question + jsonData.questions[questionArray[i]].code + ' :<br><strong> ' + jsonData.questions[questionArray[i]].options[answerIndex] + '</strong><hr>'
-            }
-            else {
-                finalMessage += '<br>' + jsonData.questions[questionArray[i]].question + jsonData.questions[questionArray[i]].code + ' :<br><strong> ' + jsonData.questions[questionArray[i]].answer + '</strong><hr>'
-            }
+            let questionNo = document.createElement('p')
+            let strongQuestionNo = document.createElement('strong')
+            strongQuestionNo.innerHTML = 'Question '+(i+1)
+            let questionout = document.createElement('p')
+            questionout.innerHTML = jsonData.questions[questionArray[i]].question
+            let yourAnswertxt = document.createElement('p')
+            yourAnswertxt.innerHTML = 'your answer: '
+            let crrAnswertxt = document.createElement('p')
+            crrAnswertxt.innerHTML = 'correct answer: '
+            let yourAnswer = document.createElement('span')
+            yourAnswer.innerHTML = jsonData.questions[questionArray[i]].options[answerArray[i]]
+            yourAnswer.classList.add('incorrect')
+            let crrAnswer = document.createElement('span')
+            crrAnswer.innerHTML = jsonData.questions[questionArray[i]].options[jsonData.questions[questionArray[i]].answer]
+            crrAnswer.classList.add('correct')
+            let hr = document.createElement('hr')
+            
+            questionNo.appendChild(strongQuestionNo)
+            yourAnswertxt.appendChild(yourAnswer)
+            crrAnswertxt.appendChild(crrAnswer)
+
+            report.appendChild(questionNo)
+            report.appendChild(questionout)
+            report.appendChild(yourAnswertxt)
+            report.appendChild(crrAnswertxt)
+            report.appendChild(hr)
         }
     }
 }
 
 function displayCurrResult() {
-    exportResult = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds <br>'
-    result.innerHTML = 'You got ' + correct + ' answers correct out of ' + numberOfQuestions + '<br> time taken: ' + timetaken + ' seconds'
-    if (correct != jsonData.questions.length) {
-        report.innerHTML = "The correct answer for the following answers were: <br>" + finalMessage
-    }
+    correctOut.innerHTML = correct
+    incorrectOut.innerHTML = numberOfQuestions - correct
+    timerTakenOut.innerHTML = timetaken
+    // if (correct != jsonData.questions.length) {
+    //     report.innerHTML = finalMessage
+    // }
 }
 
 function storeResult() {
@@ -211,18 +275,18 @@ function getquestion() {
     timerReset()
     activate()
     document.getElementById('input-container').classList.add('hide')
-    document.getElementById('radio-container').classList.add('hide')
+    document.getElementById('options-div').classList.add('hide')
     document.getElementById('radioDiv3').classList.remove('hide')
     document.getElementById('radioDiv4').classList.remove('hide')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
     if (jsonData.questions[questionArray[qNo]].question == 'What will be the output of the following code snippet?') {
         codeSpace.classList.remove('hide')
-        codeSpace.innerHTML = jsonData.questions[questionArray[qNo]].code
+        code.innerHTML = jsonData.questions[questionArray[qNo]].code
     }
 
     if (getQuestionType(qNo) == 'mcq') {
-        document.getElementById('radio-container').classList.remove('hide')
+        document.getElementById('options-div').classList.remove('hide')
         radio1txt.innerHTML = jsonData.questions[questionArray[qNo]].options[0]
         radio2txt.innerHTML = jsonData.questions[questionArray[qNo]].options[1]
 
@@ -322,6 +386,7 @@ function activate() {
 }
 
 function timerReset() {
+    console.log('making timer')
     if (timer) {
         clearInterval(timer)
     }
@@ -329,7 +394,7 @@ function timerReset() {
 }
 
 async function getDetails() {
-    Topic = document.getElementById('QuesTopic').value
-    numberOfQuestions = document.getElementById('qNo').value
-    jsonData = await fetchJSONData(Topic)
+    numberOfQuestions = questionNumbers[numberOfQuestionsDropdown.value]
+    timePerQuestion = difficulty[difficultyDropdown.value]
+    jsonData = await fetchJSONData(topicsDropdown.value)
 }
