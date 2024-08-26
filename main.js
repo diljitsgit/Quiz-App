@@ -149,7 +149,6 @@ function quiz() {
 }
 
 function ticktock() {
-    console.log(timer)
     timerArray[qNo]--
     timetaken++
     document.getElementById('timer').innerHTML = timerArray[qNo]
@@ -163,11 +162,11 @@ function nextQuesFunction() {
     else {
         qNo++
         qNo = goToNextValidQuestion()
+        input.value = ""
+        document.getElementById('input-container').classList.add('hide')
+        document.getElementById('options-div').classList.add('hide')
+        getquestion()
     }
-    input.value = ""
-    document.getElementById('input-container').classList.add('hide')
-    document.getElementById('options-div').classList.add('hide')
-    getquestion()
 }
 
 function prevQuesFunction() {
@@ -207,12 +206,11 @@ function checkRadio() {
         return 3
     }
     else {
-        return ''
+        return -1
     }
 }
 
 function quizEnd() {
-    console.log('ending timer')
     if (timer) {
         clearInterval(timer)
     }
@@ -229,7 +227,7 @@ function getResults() {
         } else {
             let questionNo = document.createElement('p')
             let strongQuestionNo = document.createElement('strong')
-            strongQuestionNo.innerHTML = 'Question '+(i+1)
+            strongQuestionNo.innerHTML = 'Question ' + (i + 1)
             let questionout = document.createElement('p')
             questionout.innerHTML = jsonData.questions[questionArray[i]].question
             let yourAnswertxt = document.createElement('p')
@@ -237,7 +235,12 @@ function getResults() {
             let crrAnswertxt = document.createElement('p')
             crrAnswertxt.innerHTML = 'correct answer: '
             let yourAnswer = document.createElement('span')
-            yourAnswer.innerHTML = jsonData.questions[questionArray[i]].options[answerArray[i]]
+            if (answerArray[i] == -1) {
+                yourAnswer.innerHTML = ''
+            }
+            else {
+                yourAnswer.innerHTML = jsonData.questions[questionArray[i]].options[answerArray[i]]
+            }
             yourAnswer.classList.add('incorrect')
             let crrAnswer = document.createElement('span')
             crrAnswer.innerHTML = jsonData.questions[questionArray[i]].options[jsonData.questions[questionArray[i]].answer]
@@ -247,9 +250,17 @@ function getResults() {
             questionNo.appendChild(strongQuestionNo)
             yourAnswertxt.appendChild(yourAnswer)
             crrAnswertxt.appendChild(crrAnswer)
-
+            
             report.appendChild(questionNo)
             report.appendChild(questionout)
+            if (Object.keys(jsonData.questions[questionArray[i]]).length == 5) {
+                console.log('hello')
+                let preout = document.createElement('pre')
+                let codeout = document.createElement('code')
+                codeout.innerHTML = jsonData.questions[questionArray[i]].code
+                preout.appendChild(codeout)
+                report.appendChild(preout)
+            }
             report.appendChild(yourAnswertxt)
             report.appendChild(crrAnswertxt)
             report.appendChild(hr)
@@ -280,7 +291,7 @@ function getquestion() {
     document.getElementById('radioDiv4').classList.remove('hide')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
-    if (jsonData.questions[questionArray[qNo]].question == 'What will be the output of the following code snippet?') {
+    if (Object.keys(jsonData.questions[questionArray[qNo]]).length == 5) {
         codeSpace.classList.remove('hide')
         code.innerHTML = jsonData.questions[questionArray[qNo]].code
     }
@@ -386,7 +397,6 @@ function activate() {
 }
 
 function timerReset() {
-    console.log('making timer')
     if (timer) {
         clearInterval(timer)
     }

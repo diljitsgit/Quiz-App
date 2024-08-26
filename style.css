@@ -254,6 +254,14 @@ p {
     margin: 10px;
 }
 
+.report>pre {
+    color:white;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #646363;
+    margin: 10px;
+}
+
 hr {
     align-self: center;
     width: 90%;
