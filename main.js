@@ -90,20 +90,17 @@ let timerArray = []
 let answerArray = []
 
 
-// prevResult.addEventListener("click", () => {
-//     result.innerHTML = localStorage.getItem('result')
-//     if (correct != jsonData.questions.length) {
-//         report.innerHTML = '<br>' + localStorage.getItem('report')
-//     }
-//     prevResult.classList.add('hide')
-//     currResult.classList.remove('hide')
-// })
+prevResult.addEventListener("click", () => {
+    report.innerHTML = localStorage.getItem('report')
+    prevResult.classList.add('hide')
+    currResult.classList.remove('hide')
+})
 
-// currResult.addEventListener("click", () => {
-//     displayCurrResult()
-//     prevResult.classList.remove('hide')
-//     currResult.classList.add('hide')
-// })
+currResult.addEventListener("click", () => {
+    displayCurrResult()
+    prevResult.classList.remove('hide')
+    currResult.classList.add('hide')
+})
 
 startbtn.addEventListener("click", () => {
     app.classList.remove('hide')
@@ -111,23 +108,23 @@ startbtn.addEventListener("click", () => {
     start()
 })
 
-// restartbtn.addEventListener("click", () => {
-//     storeResult()
-//     app.classList.remove('hide')
-//     end.classList.add('hide')
-//     qNo = 0
-//     timetaken = 0
-//     correct = 0
-//     finalMessage = ""
-//     createTimerArray()
-//     start()
-// })
+restartbtn.addEventListener("click", () => {
+    storeResult()
+    app.classList.remove('hide')
+    end.classList.add('hide')
+    qNo = 0
+    timetaken = 0
+    correct = 0
+    finalMessage = ""
+    createTimerArray()
+    start()
+})
 
 
 
 async function start() {
-    // prevResult.classList.remove('hide')
-    // currResult.classList.add('hide')
+    prevResult.classList.remove('hide')
+    currResult.classList.add('hide')
     await getDetails()
     createShuffleArr()
     createTimerArray()
@@ -236,7 +233,7 @@ function getResults() {
             crrAnswertxt.innerHTML = 'correct answer: '
             let yourAnswer = document.createElement('span')
             if (answerArray[i] == -1) {
-                yourAnswer.innerHTML = ''
+                yourAnswer.innerHTML = 'Question not answered'
             }
             else {
                 yourAnswer.innerHTML = jsonData.questions[questionArray[i]].options[answerArray[i]]
@@ -266,20 +263,18 @@ function getResults() {
             report.appendChild(hr)
         }
     }
+    exportResult = report.innerHTML
 }
 
 function displayCurrResult() {
     correctOut.innerHTML = correct
     incorrectOut.innerHTML = numberOfQuestions - correct
     timerTakenOut.innerHTML = timetaken
-    // if (correct != jsonData.questions.length) {
-    //     report.innerHTML = finalMessage
-    // }
+    storeResult()
 }
 
 function storeResult() {
-    localStorage.setItem('result', exportResult)
-    localStorage.setItem('report', finalMessage)
+    localStorage.setItem('report', exportResult)
 }
 
 function getquestion() {

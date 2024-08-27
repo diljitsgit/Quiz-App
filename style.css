@@ -42,11 +42,11 @@ nav {
     min-height: 500px;
     max-height: 500px;
     width: 60%;
-    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.01) */
 }
 
 .quiz-container {
     display: flex;
+    flex-direction: row;
     width: 100%;
     gap: 1rem;
 }
@@ -111,7 +111,8 @@ label {
     margin-left: 0.2rem;
 }
 
-.timer-div{align-self: flex-start;
+.timer-div {
+    align-self: flex-start;
     width: 100%;
     text-align: center;
 }
@@ -188,6 +189,11 @@ label {
     gap: 1px;
 }
 
+.report-container-summary-text-sub{
+    display: flex;
+    flex-direction: row;
+}
+
 .report-container-main-text {
     display: flex;
     flex-direction: column;
@@ -195,6 +201,19 @@ label {
     overflow-x: hidden;
     background-color: #EFEFEF;
     border-radius: 1rem;
+}
+
+.left-report{
+    width: 50%;
+    text-align: left;
+}
+
+.right-report{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    gap: 0.3rem;
 }
 
 .report-container-main-text>p {
@@ -239,7 +258,7 @@ label {
 }
 
 ::-webkit-scrollbar-button:single-button {
-    background-color: rgba(64, 64, 64,0);
+    background-color: rgba(64, 64, 64, 0);
 }
 
 h2 {
@@ -255,7 +274,7 @@ p {
 }
 
 .report>pre {
-    color:white;
+    color: white;
     padding: 1rem;
     border-radius: 1rem;
     background-color: #646363;
@@ -271,4 +290,62 @@ hr {
 
 .hide {
     display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .app-container {
+        width: 70%;
+    }
+    .quiz-container{
+        flex-direction: column;
+    }
+    .questionSpace{
+        min-width: 100%;
+        min-height: 50%;
+    }
+    .action{
+        min-width: 100%;
+        min-height: 50%;
+    }
+    .options-div{
+        max-width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .radio-div{
+        width: 50%;
+        flex: 1;
+    }
+    .report-container-main-text>p{
+        font-size: 0.8rem;
+    }
+    .report{
+        padding: 0rem;
+    }
+    .report>p {
+        margin: 0.8rem 0rem;
+    }
+    .report>pre {
+        color: white;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        overflow-x: scroll;
+        background-color: #646363;
+        margin: 0px;
+    }
+    hr{
+        margin: 1rem;
+    }
+    .left-report{
+        font-size: 0.9rem;
+    }
+    .right-report>button{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .report-container-summary-text-sub{
+        margin-top: 1rem;
+    }
 }

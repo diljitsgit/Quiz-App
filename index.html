@@ -35,9 +35,9 @@
 
                 <div class="choose-difficulty-div">
                     <p style="display: inline;">Choose the difficulty of the questions:</p>
-                    <select name="QuestionDifficulty" class="dropdown-master" id="difficulty-of-questions"></select>                
+                    <select name="QuestionDifficulty" class="dropdown-master" id="difficulty-of-questions"></select>
                 </div>
-                
+
 
                 <div class="navigate-div">
                     <button class="btn-dark" id="start">Start Quiz</button>
@@ -94,15 +94,24 @@
             <div class="report-container hide" id="report-container">
                 <div class="report-container-summary-text">
                     <h2>Report</h2>
-                    <p>correct: <span  id="correct"></span></p>
-                    <p>incorrect: <span  id="incorrect"></span></p>
-                    <p>time taken: <span id="time-taken"></span></p>
+                    <div class="report-container-summary-text-sub">
+                        <div class="left-report">
+                            <p>Correct: <span id="correct"></span></p>
+                            <p>Incorrect: <span id="incorrect"></span></p>
+                            <p>Time taken: <span id="time-taken"></span></p>
+                        </div>
+                        <div class="right-report">
+                            <button class="btn" id="prev-result">Previous Result</button>
+                            <button class="btn hide" id="curr-result">Next Result</button>
+                            <button class="btn-dark" id="restart">Restart Quiz</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="report-container-main-text">
-                        <h4 style="margin: 0; padding: 1rem 2rem;">How can i improve?</h4>
-                        <p class="report" id="report">
-                        </p>
+                    <h4 style="margin: 0; padding: 1rem 2rem;">How can i improve?</h4>
+                    <p class="report" id="report">
+                    </p>
                 </div>
             </div>
 
