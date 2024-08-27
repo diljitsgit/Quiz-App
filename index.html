@@ -59,19 +59,19 @@
 
                 <div class="action">
                     <div class="options-div" id="options-div">
-                        <div class="radio-div" id="radioDiv1" onclick="flip1()">
+                        <div class="radio-div" id="radioDiv1" onclick="flip(this.id)">
                             <input type="radio" name="mcq" id="radio1">
                             <label id="radio1txt"> Option 1 </label>
                         </div>
-                        <div class="radio-div" id="radioDiv2" onclick="flip2()">
+                        <div class="radio-div" id="radioDiv2" onclick="flip(this.id)">
                             <input type="radio" name="mcq" id="radio2">
                             <label id="radio2txt"> Option 2 </label>
                         </div>
-                        <div class="radio-div hide" id="radioDiv3" onclick="flip3()">
+                        <div class="radio-div hide" id="radioDiv3" onclick="flip(this.id)">
                             <input type="radio" name="mcq" id="radio3">
                             <label id="radio3txt"> Option 3 </label>
                         </div>
-                        <div class="radio-div hide" id="radioDiv4" onclick="flip4()">
+                        <div class="radio-div hide" id="radioDiv4" onclick="flip(this.id)">
                             <input type="radio" name="mcq" id="radio4">
                             <label id="radio4txt"> Option 4 </label>
                         </div>
@@ -119,10 +119,16 @@
     </div>
 
     <script>
-        let flip1 = () => { radio1.checked = true }
-        let flip2 = () => { radio2.checked = true }
-        let flip3 = () => { radio3.checked = true }
-        let flip4 = () => { radio4.checked = true }
+        let flip = (e)=>{
+            let getDiv = document.getElementById(e)
+            let getElement = document.getElementById(getDiv.children[0].id)
+            if(getElement.checked == true){
+                getElement.checked = false
+            }
+            else{
+                getElement.checked = true
+            }
+        }
     </script>
     <script type="module" src="main.js"></script>
 </body>

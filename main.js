@@ -384,6 +384,9 @@ function activate() {
         }
         else if (answerArray[qNo] == '4') {
             radio4.checked = true;
+        }else{
+            radio4.checked = true;
+            radio4.checked = false;
         }
     }
     else {
