@@ -6,14 +6,6 @@ const codeSpace = document.getElementById('codeSpace')
 const code = document.getElementById('code')
 const nextQues = document.getElementById('next-btn')
 const prevQues = document.getElementById('previous-btn')
-const radio1 = document.getElementById('radio1')
-const radio2 = document.getElementById('radio2')
-const radio3 = document.getElementById('radio3')
-const radio4 = document.getElementById('radio4')
-const radio1txt = document.getElementById('radio1txt')
-const radio2txt = document.getElementById('radio2txt')
-const radio3txt = document.getElementById('radio3txt')
-const radio4txt = document.getElementById('radio4txt')
 const begin = document.getElementById('start-container')
 const end = document.getElementById('report-container')
 const correctOut = document.getElementById('correct')
@@ -22,6 +14,7 @@ const timerTakenOut = document.getElementById('time-taken')
 const report = document.getElementById('report')
 const prevResult = document.getElementById('prev-result')
 const currResult = document.getElementById('curr-result')
+const optionsContainer = document.getElementById('options-div')
 
 const numberOfQuestionsDropdown = document.getElementById("number-of-questions");
 const topicsDropdown = document.getElementById("topic-of-questions");
@@ -159,9 +152,6 @@ function nextQuesFunction() {
     else {
         qNo++
         qNo = goToNextValidQuestion()
-        input.value = ""
-        document.getElementById('input-container').classList.add('hide')
-        document.getElementById('options-div').classList.add('hide')
         getquestion()
     }
 }
@@ -171,9 +161,6 @@ function prevQuesFunction() {
     if (qNo != 0) {
         qNo--
         qNo = goToPrevValidQuestion()
-        input.value = ""
-        document.getElementById('input-container').classList.add('hide')
-        document.getElementById('options-div').classList.add('hide')
         getquestion()
     }
 }
@@ -190,16 +177,16 @@ function inputAnswer() {
 }
 
 function checkRadio() {
-    if (radio1.checked) {
+    if (getRadio(0).checked) {
         return 0
     }
-    else if (radio2.checked) {
+    else if (getRadio(1).checked) {
         return 1
     }
-    else if (radio3.checked) {
+    else if (getRadio(2).checked) {
         return 2
     }
-    else if (radio4.checked) {
+    else if (getRadio(3).checked) {
         return 3
     }
     else {
@@ -251,7 +238,6 @@ function getResults() {
             report.appendChild(questionNo)
             report.appendChild(questionout)
             if (Object.keys(jsonData.questions[questionArray[i]]).length == 5) {
-                console.log('hello')
                 let preout = document.createElement('pre')
                 let codeout = document.createElement('code')
                 codeout.innerHTML = jsonData.questions[questionArray[i]].code
@@ -279,11 +265,6 @@ function storeResult() {
 
 function getquestion() {
     timerReset()
-    activate()
-    document.getElementById('input-container').classList.add('hide')
-    document.getElementById('options-div').classList.add('hide')
-    document.getElementById('radioDiv3').classList.remove('hide')
-    document.getElementById('radioDiv4').classList.remove('hide')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
     if (Object.keys(jsonData.questions[questionArray[qNo]]).length == 5) {
@@ -291,27 +272,26 @@ function getquestion() {
         code.innerHTML = jsonData.questions[questionArray[qNo]].code
     }
 
-    if (getQuestionType(qNo) == 'mcq') {
-        document.getElementById('options-div').classList.remove('hide')
-        radio1txt.innerHTML = jsonData.questions[questionArray[qNo]].options[0]
-        radio2txt.innerHTML = jsonData.questions[questionArray[qNo]].options[1]
-
-        if (jsonData.questions[questionArray[qNo]].options[2] != '') {
-            radio3txt.innerHTML = jsonData.questions[questionArray[qNo]].options[2]
-        }
-        else {
-            document.getElementById('radioDiv3').classList.add('hide')
-        }
-        if (jsonData.questions[questionArray[qNo]].options[3] != '') {
-            radio4txt.innerHTML = jsonData.questions[questionArray[qNo]].options[3]
-        }
-        else {
-            document.getElementById('radioDiv4').classList.add('hide')
-        }
+    optionsContainer.innerHTML=''
+    for(var i=0;i<jsonData.questions[questionArray[qNo]].options.length;i++){
+        let radioDiv = document.createElement('div')
+        radioDiv.setAttribute('class', 'radio-div')
+        let idName = 'radio-div-'+i
+        radioDiv.setAttribute('id', idName)
+        radioDiv.setAttribute('onclick', 'flip(this.id)')
+        let inputTag = document.createElement('input')
+        inputTag.setAttribute('type', 'radio')
+        inputTag.setAttribute('name', 'mcq')
+        let idNameInput = 'radio-'+i
+        inputTag.setAttribute('id', idNameInput)
+        let labelTag = document.createElement('label')
+        labelTag.innerHTML = jsonData.questions[questionArray[qNo]].options[i]
+        
+        radioDiv.appendChild(inputTag)
+        radioDiv.appendChild(labelTag)
+        optionsContainer.appendChild(radioDiv)
     }
-    else {
-        document.getElementById('input-container').classList.remove('hide')
-    }
+    activate()
     document.getElementById('timer').innerHTML = timerArray[qNo]
 }
 
@@ -373,20 +353,20 @@ function goToNextValidQuestion() {
 
 function activate() {
     if (getQuestionType(qNo) == 'mcq') {
-        if (answerArray[qNo] == '1') {
-            radio1.checked = true;
+        if (answerArray[qNo] == '0') {
+            getRadio(0).checked = true;
+        }
+        else if (answerArray[qNo] == '1') {
+            getRadio(1).checked = true;
         }
         else if (answerArray[qNo] == '2') {
-            radio2.checked = true;
+            getRadio(2).checked = true;
         }
         else if (answerArray[qNo] == '3') {
-            radio3.checked = true;
-        }
-        else if (answerArray[qNo] == '4') {
-            radio4.checked = true;
+            getRadio(3).checked = true;
         }else{
-            radio4.checked = true;
-            radio4.checked = false;
+            getRadio(3).checked = true;
+            getRadio(3).checked = false;
         }
     }
     else {
@@ -405,4 +385,8 @@ async function getDetails() {
     numberOfQuestions = questionNumbers[numberOfQuestionsDropdown.value]
     timePerQuestion = difficulty[difficultyDropdown.value]
     jsonData = await fetchJSONData(topicsDropdown.value)
+}
+
+function getRadio(a){
+    return optionsContainer.children[a].firstChild
 }
