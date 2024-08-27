@@ -103,13 +103,19 @@
 
     <script>
         let flip = (e)=>{
+            let allDiv = document.querySelectorAll('.radio-div')
+            allDiv.forEach((a)=>{
+                a.classList.remove('selected')
+            })
             let getDiv = document.getElementById(e)
             let getElement = document.getElementById(getDiv.children[0].id)
             if(getElement.checked == true){
                 getElement.checked = false
+                getDiv.classList.remove('selected')
             }
             else{
                 getElement.checked = true
+                getDiv.classList.add('selected')
             }
         }
     </script>
