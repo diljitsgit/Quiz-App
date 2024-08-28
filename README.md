@@ -2,4 +2,4 @@
 
 You can see a live demo of the project at: diljits.com
 
-more content will be added soon :)....
+more content will be added soon :)
