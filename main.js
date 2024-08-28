@@ -81,18 +81,32 @@ let qNo = 0
 let questionArray = []
 let timerArray = []
 let answerArray = []
+let reportNo = 0;
 
+// localStorage.clear()    
 
 prevResult.addEventListener("click", () => {
-    report.innerHTML = localStorage.getItem('report')
-    prevResult.classList.add('hide')
-    currResult.classList.remove('hide')
+    if (reportNo == 0) {
+        prevResult.classList.add('hide')
+    }
+    else {
+        reportNo--
+        report.innerHTML = localStorage.getItem(reportNo)
+        prevResult.classList.remove('hide')
+        currResult.classList.remove('hide')
+    }
 })
 
 currResult.addEventListener("click", () => {
-    displayCurrResult()
-    prevResult.classList.remove('hide')
-    currResult.classList.add('hide')
+    console.log(reportNo)
+    if (reportNo == localStorage.length - 1) {
+        currResult.classList.add('hide')
+    } else {
+        prevResult.classList.remove('hide')
+        currResult.classList.remove('hide')
+        reportNo++
+        report.innerHTML = localStorage.getItem(reportNo)
+    }
 })
 
 startbtn.addEventListener("click", () => {
@@ -102,7 +116,6 @@ startbtn.addEventListener("click", () => {
 })
 
 restartbtn.addEventListener("click", () => {
-    storeResult()
     app.classList.remove('hide')
     end.classList.add('hide')
     qNo = 0
@@ -141,9 +154,9 @@ function quiz() {
 function ticktock() {
     timerArray[qNo]--
     timetaken++
-    if(timerArray[qNo]<=5){
+    if (timerArray[qNo] <= 5) {
         document.getElementById('timer').classList.add('red')
-    }else{
+    } else {
         document.getElementById('timer').classList.remove('red')
     }
     document.getElementById('timer').innerHTML = timerArray[qNo]
@@ -210,6 +223,7 @@ function quizEnd() {
 }
 
 function getResults() {
+    report.innerHTML = ''
     for (var i = 0; i < numberOfQuestions; i++) {
         if (jsonData.questions[questionArray[i]].answer == answerArray[i]) {
             correct++
@@ -235,11 +249,11 @@ function getResults() {
             crrAnswer.innerHTML = jsonData.questions[questionArray[i]].options[jsonData.questions[questionArray[i]].answer]
             crrAnswer.classList.add('correct')
             let hr = document.createElement('hr')
-            
+
             questionNo.appendChild(strongQuestionNo)
             yourAnswertxt.appendChild(yourAnswer)
             crrAnswertxt.appendChild(crrAnswer)
-            
+
             report.appendChild(questionNo)
             report.appendChild(questionout)
             if (Object.keys(jsonData.questions[questionArray[i]]).length == 5) {
@@ -260,12 +274,15 @@ function getResults() {
 function displayCurrResult() {
     correctOut.innerHTML = correct
     incorrectOut.innerHTML = numberOfQuestions - correct
-    timerTakenOut.innerHTML = timetaken
+    if (timetaken > 60) {
+        timerTakenOut.innerHTML = (Math.floor(timetaken / 60)) + ' minute and ' + timetaken % 60 + ' seconds'
+    }else timerTakenOut.innerHTML = timetaken + ' seconds'
     storeResult()
 }
 
 function storeResult() {
-    localStorage.setItem('report', exportResult)
+    localStorage.setItem(localStorage.length, exportResult)
+    reportNo = localStorage.length - 1;
 }
 
 function getquestion() {
@@ -278,21 +295,21 @@ function getquestion() {
         code.innerHTML = jsonData.questions[questionArray[qNo]].code
     }
 
-    optionsContainer.innerHTML=''
-    for(var i=0;i<jsonData.questions[questionArray[qNo]].options.length;i++){
+    optionsContainer.innerHTML = ''
+    for (var i = 0; i < jsonData.questions[questionArray[qNo]].options.length; i++) {
         let radioDiv = document.createElement('div')
         radioDiv.setAttribute('class', 'radio-div')
-        let idName = 'radio-div-'+i
+        let idName = 'radio-div-' + i
         radioDiv.setAttribute('id', idName)
         radioDiv.setAttribute('onclick', 'flip(this.id)')
         let inputTag = document.createElement('input')
         inputTag.setAttribute('type', 'radio')
         inputTag.setAttribute('name', 'mcq')
-        let idNameInput = 'radio-'+i
+        let idNameInput = 'radio-' + i
         inputTag.setAttribute('id', idNameInput)
         let labelTag = document.createElement('label')
         labelTag.innerHTML = jsonData.questions[questionArray[qNo]].options[i]
-        
+
         radioDiv.appendChild(inputTag)
         radioDiv.appendChild(labelTag)
         optionsContainer.appendChild(radioDiv)
@@ -370,7 +387,7 @@ function activate() {
         }
         else if (answerArray[qNo] == '3') {
             getRadio(3).checked = true;
-        }else{
+        } else {
             getRadio(3).checked = true;
             getRadio(3).checked = false;
         }
@@ -393,6 +410,6 @@ async function getDetails() {
     jsonData = await fetchJSONData(topicsDropdown.value)
 }
 
-function getRadio(a){
+function getRadio(a) {
     return optionsContainer.children[a].firstChild
 }

@@ -154,6 +154,15 @@ label {
     border-color: #EFEFEF;
     border-radius: 1rem;
     height: 3rem;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    transition: 0.5s;
+    color: #FFF;
+    border-color: #EFEFEF;
+    background-color: #464646;
+    border-style: none; 
 }
 
 .start-container {
