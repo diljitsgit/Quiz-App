@@ -15,6 +15,7 @@ let report = document.getElementById('report')
 const prevResult = document.getElementById('prev-result')
 const currResult = document.getElementById('curr-result')
 const optionsContainer = document.getElementById('options-div')
+const muteButton = document.getElementById('mute-btn')
 
 const numberOfQuestionsDropdown = document.getElementById("number-of-questions");
 const topicsDropdown = document.getElementById("topic-of-questions");
@@ -22,7 +23,9 @@ const difficultyDropdown = document.getElementById("difficulty-of-questions");
 const downloadPDF = document.getElementById("download")
 
 let pop = new Audio('./audio/pop.mp3')
+let tick = new Audio('./audio/Tick.mp3')
 pop.volume = 0.2
+tick.volume = 0.5
 
 const topicOptions = {
     C: "C.json",
@@ -86,11 +89,30 @@ let questionArray = []
 let timerArray = []
 let answerArray = []
 let reportNo = 0;
+let soundsOn = true
 
 // localStorage.clear()             
 
+muteButton.addEventListener("click",()=>{
+    playSound(pop)
+    if(soundsOn){
+        soundsOn=false
+        muteButton.innerHTML = '<span class="material-symbols-outlined">volume_mute</span>'
+    }
+    else {
+        soundsOn=true
+        muteButton.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'
+    }
+})
+
+function playSound(sound){
+    if(soundsOn){
+        sound.play()
+    }
+}
+
 prevResult.addEventListener("click", () => {
-    pop.play()
+    playSound(pop)
     if (reportNo == 0) {
         prevResult.classList.add('hide')
     }
@@ -108,7 +130,7 @@ prevResult.addEventListener("click", () => {
 })
 
 currResult.addEventListener("click", () => {
-    pop.play()
+    playSound(pop)
     if (reportNo == localStorage.length - 1) {
         currResult.classList.add('hide')
     } else {
@@ -127,7 +149,7 @@ currResult.addEventListener("click", () => {
 startbtn.addEventListener("click", () => {
     app.classList.remove('hide')
     begin.classList.add('hide')
-    pop.play()
+    playSound(pop)
     start()
 })
 
@@ -139,7 +161,7 @@ restartbtn.addEventListener("click", () => {
     correct = 0
     finalMessage = ""
     createTimerArray()
-    pop.play()
+    playSound(pop)
     start()
 })
 
@@ -169,6 +191,7 @@ function quiz() {
 }
 
 function ticktock() {
+    playSound(tick)
     timerArray[qNo]--
     timetaken++
     if (timerArray[qNo] <= 5) {
@@ -180,7 +203,7 @@ function ticktock() {
 }
 
 function nextQuesFunction() {
-    pop.play()
+    playSound(pop)
     inputAnswer()
     if (qNo == numberOfQuestions - 1) {
         quizEnd()
@@ -199,7 +222,7 @@ function prevQuesFunction() {
         qNo = goToPrevValidQuestion()
         getquestion()
     }
-    pop.play()
+    playSound(pop)
 }
 
 function inputAnswer() {
@@ -451,5 +474,5 @@ downloadPDF.addEventListener("click", () => {
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
     html2pdf().from(report).set(opt).save();
-    pop.play()
+    playSound(pop)
 })

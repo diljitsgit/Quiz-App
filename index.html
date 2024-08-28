@@ -17,24 +17,29 @@
             <img src="favicon.svg" style="filter: invert(1);" alt="Logo Here!">
             <p style="padding-left: 0.2rem;">Quiz App</p>
         </div>
+        <div class="mute-btn" id="mute-btn">
+            <span class="material-symbols-outlined">
+                volume_up
+            </span>
+        </div>
     </nav>
 
     <div class="app-div">
         <div class="app-container">
 
             <div class="start-container" id="start-container">
-                <div class="number-of-questions-div">
-                    <p style="display: inline;">Choose the number of questions you wish to answer:</p>
+                <div class="number-of-questions-div start-container-subdiv">
+                    <p>Choose the number of questions you wish to answer:</p>
                     <select name="QuestionNumbers" class="dropdown-master" id="number-of-questions"></select>
                 </div>
 
-                <div class="choose-topic-div">
-                    <p style="display: inline;">Choose the topic of the questions:</p>
+                <div class="choose-topic-div start-container-subdiv">
+                    <p>Choose the topic of the questions:</p>
                     <select name="QuestionTopic" class="dropdown-master" id="topic-of-questions"></select>
                 </div>
 
-                <div class="choose-difficulty-div">
-                    <p style="display: inline;">Choose the difficulty of the questions:</p>
+                <div class="difficulty-of-questions-div start-container-subdiv">
+                    <p>Choose the difficulty of the questions:</p>
                     <select name="QuestionDifficulty" class="dropdown-master" id="difficulty-of-questions"></select>
                 </div>
 
