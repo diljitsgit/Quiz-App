@@ -141,6 +141,11 @@ function quiz() {
 function ticktock() {
     timerArray[qNo]--
     timetaken++
+    if(timerArray[qNo]<=5){
+        document.getElementById('timer').classList.add('red')
+    }else{
+        document.getElementById('timer').classList.remove('red')
+    }
     document.getElementById('timer').innerHTML = timerArray[qNo]
 }
 
@@ -265,6 +270,7 @@ function storeResult() {
 
 function getquestion() {
     timerReset()
+    document.getElementById('timer').classList.remove('red')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
     if (Object.keys(jsonData.questions[questionArray[qNo]]).length == 5) {
