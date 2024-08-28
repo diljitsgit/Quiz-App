@@ -8,10 +8,10 @@ const nextQues = document.getElementById('next-btn')
 const prevQues = document.getElementById('previous-btn')
 const begin = document.getElementById('start-container')
 const end = document.getElementById('report-container')
-const correctOut = document.getElementById('correct')
-const incorrectOut = document.getElementById('incorrect')
-const timerTakenOut = document.getElementById('time-taken')
-const report = document.getElementById('report')
+let correctOut = document.getElementById('correct')
+let incorrectOut = document.getElementById('incorrect')
+let timerTakenOut = document.getElementById('time-taken')
+let report = document.getElementById('report')
 const prevResult = document.getElementById('prev-result')
 const currResult = document.getElementById('curr-result')
 const optionsContainer = document.getElementById('options-div')
@@ -19,6 +19,10 @@ const optionsContainer = document.getElementById('options-div')
 const numberOfQuestionsDropdown = document.getElementById("number-of-questions");
 const topicsDropdown = document.getElementById("topic-of-questions");
 const difficultyDropdown = document.getElementById("difficulty-of-questions");
+const downloadPDF = document.getElementById("download")
+
+let pop = new Audio('./audio/pop.mp3')
+pop.volume = 0.2
 
 const topicOptions = {
     C: "C.json",
@@ -83,35 +87,47 @@ let timerArray = []
 let answerArray = []
 let reportNo = 0;
 
-// localStorage.clear()    
+// localStorage.clear()             
 
 prevResult.addEventListener("click", () => {
+    pop.play()
     if (reportNo == 0) {
         prevResult.classList.add('hide')
     }
     else {
         reportNo--
-        report.innerHTML = localStorage.getItem(reportNo)
+        let data = JSON.parse(localStorage.getItem(reportNo))
+        console.log(data)
+        report.innerHTML = data.reportKey   
+        correctOut.innerHTML = data.correctKey
+        incorrectOut.innerHTML = data.incorrectKey
+        timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
         prevResult.classList.remove('hide')
         currResult.classList.remove('hide')
     }
 })
 
 currResult.addEventListener("click", () => {
-    console.log(reportNo)
+    pop.play()
     if (reportNo == localStorage.length - 1) {
         currResult.classList.add('hide')
     } else {
         prevResult.classList.remove('hide')
         currResult.classList.remove('hide')
         reportNo++
-        report.innerHTML = localStorage.getItem(reportNo)
+        let data = JSON.parse(localStorage.getItem(reportNo))
+        console.log(data)
+        report.innerHTML = data.reportKey   
+        correctOut.innerHTML = data.correctKey
+        incorrectOut.innerHTML = data.incorrectKey
+        timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
     }
 })
 
 startbtn.addEventListener("click", () => {
     app.classList.remove('hide')
     begin.classList.add('hide')
+    pop.play()
     start()
 })
 
@@ -123,6 +139,7 @@ restartbtn.addEventListener("click", () => {
     correct = 0
     finalMessage = ""
     createTimerArray()
+    pop.play()
     start()
 })
 
@@ -163,6 +180,7 @@ function ticktock() {
 }
 
 function nextQuesFunction() {
+    pop.play()
     inputAnswer()
     if (qNo == numberOfQuestions - 1) {
         quizEnd()
@@ -181,6 +199,7 @@ function prevQuesFunction() {
         qNo = goToPrevValidQuestion()
         getquestion()
     }
+    pop.play()
 }
 
 function inputAnswer() {
@@ -268,21 +287,30 @@ function getResults() {
             report.appendChild(hr)
         }
     }
-    exportResult = report.innerHTML
 }
 
 function displayCurrResult() {
     correctOut.innerHTML = correct
     incorrectOut.innerHTML = numberOfQuestions - correct
-    if (timetaken > 60) {
-        timerTakenOut.innerHTML = (Math.floor(timetaken / 60)) + ' minute and ' + timetaken % 60 + ' seconds'
-    }else timerTakenOut.innerHTML = timetaken + ' seconds'
-    storeResult()
+    timerTakenOut.innerHTML = timeTakenConvertUnits(timetaken)
+    exportResult = {
+        reportKey: report.innerHTML,
+        correctKey: correct,
+        incorrectKey: numberOfQuestions - correct,
+        timeTakenKey: timetaken
+}
+storeResult()
 }
 
 function storeResult() {
-    localStorage.setItem(localStorage.length, exportResult)
+    localStorage.setItem(localStorage.length, JSON.stringify(exportResult))
     reportNo = localStorage.length - 1;
+}
+
+function timeTakenConvertUnits(t) {
+    if (t > 60) {
+        return (Math.floor(t / 60)) + ' minute and ' + t % 60 + ' seconds'
+    } else return t + ' seconds'
 }
 
 function getquestion() {
@@ -413,3 +441,15 @@ async function getDetails() {
 function getRadio(a) {
     return optionsContainer.children[a].firstChild
 }
+
+downloadPDF.addEventListener("click", () => {
+    var opt = {
+        margin: 1,
+        filename: 'Quiz-app-result.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().from(report).set(opt).save();
+    pop.play()
+})

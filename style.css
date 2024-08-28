@@ -231,11 +231,27 @@ label {
 }
 
 .left-report{
-    width: 50%;
+    width: 80%;
     text-align: left;
 }
 
+.right-report-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    gap: 0.3rem;
+}
+
+.right-report>button{
+    width: 100%;
+}
+
 .right-report{
+    padding: 0.2rem;
+}
+
+.right-report-right{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -304,7 +320,7 @@ p {
     color: white;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: #646363;
+    background-color: rgb(46, 46, 46);
     margin: 10px;
 }
 
@@ -372,7 +388,11 @@ hr {
     .left-report{
         font-size: 0.9rem;
     }
-    .right-report>button{
+    .right-report-right>button{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .right-report-left>button{
         width: 100%;
         font-size: 0.8rem;
     }

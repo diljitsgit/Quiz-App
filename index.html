@@ -83,10 +83,13 @@
                             <p>Incorrect: <span id="incorrect"></span></p>
                             <p>Time taken: <span id="time-taken"></span></p>
                         </div>
-                        <div class="right-report">
+                        <div class="right-report-left right-report">
                             <button class="btn" id="prev-result">Previous Result</button>
                             <button class="btn hide" id="curr-result">Next Result</button>
+                        </div>
+                        <div class="right-report-right right-report">
                             <button class="btn-dark" id="restart">Restart Quiz</button>
+                            <button class="btn-dark" id="download">Download PDF</button>
                         </div>
                     </div>
                 </div>
@@ -102,23 +105,24 @@
     </div>
 
     <script>
-        let flip = (e)=>{
+        let flip = (e) => {
             let allDiv = document.querySelectorAll('.radio-div')
-            allDiv.forEach((a)=>{
+            allDiv.forEach((a) => {
                 a.classList.remove('selected')
             })
             let getDiv = document.getElementById(e)
             let getElement = document.getElementById(getDiv.children[0].id)
-            if(getElement.checked == true){
+            if (getElement.checked == true) {
                 getElement.checked = false
                 getDiv.classList.remove('selected')
             }
-            else{
+            else {
                 getElement.checked = true
                 getDiv.classList.add('selected')
             }
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script type="module" src="main.js"></script>
 </body>
 
