@@ -11,6 +11,7 @@ body {
 nav {
     background-color: white;
     margin: 1.5rem;
+    padding: 0rem 2rem;
     font-size: 1.25rem;
     height: 4rem;
     width: auto;
@@ -20,9 +21,37 @@ nav {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 }
 
+.modal {
+    position: fixed;
+    box-shadow: 0 0px 10px rgb(0 0 0 / 0.1);
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: #FFF;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.modal>span {
+    cursor: pointer;
+}
+
+.modal>button {
+    font-size: 1rem;
+    width: 70%;
+    display: inline;
+}
+
 .logo {
     display: flex;
-    padding: 2rem;
+    cursor: pointer;
 }
 
 .app-div {
@@ -104,14 +133,14 @@ nav {
     transition: 0.5s;
 }
 
-.radio-div:hover{
+.radio-div:hover {
     background-color: #dadada;
     border-color: darkgray;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.selected{
+.selected {
     background-color: #dadada;
     border-color: darkgray;
     transition: 0.5s;
@@ -157,12 +186,12 @@ label {
     transition: 0.5s;
 }
 
-.btn:hover{
+.btn:hover {
     transition: 0.5s;
     color: #FFF;
     border-color: #EFEFEF;
     background-color: #464646;
-    border-style: none; 
+    border-style: none;
     cursor: pointer;
 }
 
@@ -174,12 +203,12 @@ label {
     gap: 2rem;
 }
 
-.start-container-subdiv{
+.start-container-subdiv {
     display: flex;
     flex-direction: row;
 }
 
-.start-container-subdiv>p{
+.start-container-subdiv>p {
     width: 70%;
 }
 
@@ -227,7 +256,7 @@ label {
     gap: 1px;
 }
 
-.report-container-summary-text-sub{
+.report-container-summary-text-sub {
     display: flex;
     flex-direction: row;
 }
@@ -241,12 +270,13 @@ label {
     border-radius: 1rem;
 }
 
-.left-report{
+.left-report {
     width: 80%;
+    font-size: 1rem;
     text-align: left;
 }
 
-.right-report-left{
+.right-report-left {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -254,15 +284,18 @@ label {
     gap: 0.3rem;
 }
 
-.right-report>button{
+.right-report>button {
     width: 100%;
 }
 
-.right-report{
+.right-report {
     padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
-.right-report-right{
+.right-report-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -291,9 +324,10 @@ label {
     margin-left: 0.5rem;
 }
 
-.mute-btn{
+.mute-btn {
     margin-left: auto;
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -351,8 +385,12 @@ hr {
     display: none;
 }
 
-.red{
+.red {
     color: red;
+}
+
+.left-report>p{
+    font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -360,36 +398,48 @@ hr {
     /* For mobile phones: */
     .app-container {
         width: 70%;
+        min-height: 450px;
+        max-height: 450px;
+        overflow-y: scroll;
     }
-    .quiz-container{
+
+    .quiz-container {
         flex-direction: column;
     }
-    .questionSpace{
+
+    .questionSpace {
         min-width: 100%;
         min-height: 50%;
     }
-    .action{
+
+    .action {
         min-width: 100%;
         min-height: 50%;
     }
-    .options-div{
+
+    .options-div {
         max-width: 100%;
         flex-wrap: wrap;
         flex-direction: row;
     }
-    .radio-div{
+
+    .radio-div {
         width: 50%;
         flex: 1;
     }
-    .report-container-main-text>p{
+
+    .report-container-main-text>p {
         font-size: 0.8rem;
     }
-    .report{
+
+    .report {
         padding: 0rem;
     }
+
     .report>p {
         margin: 0.8rem 0rem;
     }
+
     .report>pre {
         color: white;
         padding: 0.5rem;
@@ -398,30 +448,47 @@ hr {
         background-color: #646363;
         margin: 0px;
     }
-    hr{
+
+    hr {
         margin: 1rem;
     }
-    .left-report{
+
+    .left-report {
         font-size: 0.9rem;
     }
-    .right-report-right>button{
+
+    .right-report-right>button {
         width: 100%;
         font-size: 0.8rem;
     }
-    .right-report-left>button{
+
+    .right-report-left>button {
         width: 100%;
         font-size: 0.8rem;
     }
-    .report-container-summary-text-sub{
+
+    .report-container-summary-text-sub {
         margin-top: 1rem;
     }
-    .start-container-subdiv>p{
+
+    .start-container-subdiv>p {
         width: 100%;
     }
-    .start-container-subdiv{
+
+    .start-container-subdiv {
         flex-direction: column;
     }
-    .start-container-subdiv>select{
+
+    .start-container-subdiv>select {
         width: 90%;
+    }
+    .modal{
+        width: 60%;
+    }
+    .modal>button{
+        font-size: 0.8rem;
+    }
+    .right-report>button{
+        font-size: 0.8rem;
     }
 }

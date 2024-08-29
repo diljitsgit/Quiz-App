@@ -13,7 +13,7 @@
 
 <body>
     <nav>
-        <div class="logo">
+        <div class="logo" id="logo">
             <img src="favicon.svg" style="filter: invert(1);" alt="Logo Here!">
             <p style="padding-left: 0.2rem;">Quiz App</p>
         </div>
@@ -22,7 +22,22 @@
                 volume_up
             </span>
         </div>
+        <div style="cursor:pointer;" id="report-btn">
+            <span class="material-symbols-outlined">
+                Description
+            </span>
+        </div>
     </nav>
+
+
+    <div class="modal hide" id="restart-modal">
+        <span class="material-symbols-outlined" id="close-modal">
+            close
+        </span>
+        <h2>Would you like to change paramaters of the test?</h2>
+        <button class="btn-dark" id="restart-confirm">Restart Quiz Anyway</button>
+        <button class="btn" id="home-confirm">Change Parameters</button>
+    </div>
 
     <div class="app-div">
         <div class="app-container">
@@ -84,9 +99,12 @@
                     <h2>Report</h2>
                     <div class="report-container-summary-text-sub">
                         <div class="left-report">
-                            <p>Correct: <span id="correct"></span></p>
-                            <p>Incorrect: <span id="incorrect"></span></p>
-                            <p>Time taken: <span id="time-taken"></span></p>
+                            <p><strong>Correct: </strong><span id="correct"></span></p>
+                            <p><strong>Incorrect: </strong><span id="incorrect"></span></p>
+                            <p><strong>Time taken: </strong><span id="time-taken"></span></p>
+                            <p><strong>Language of Quiz: </strong><span id="topic-of-questions-report"></span></p>
+                            <p><strong>Number Of Questions: </strong><span id="number-of-questions-report"></span></p>
+                            <p><strong>Difficulty: </strong><span id="difficulty-report"></span></p>
                         </div>
                         <div class="right-report-left right-report">
                             <button class="btn" id="prev-result">Previous Result</button>

@@ -1,5 +1,8 @@
 const startbtn = document.getElementById('start')
 const restartbtn = document.getElementById('restart')
+const closeModal = document.getElementById('close-modal')
+const restartConfirmbtn = document.getElementById('restart-confirm')
+const homeConfirmbtn = document.getElementById('home-confirm')
 const app = document.getElementById('quiz-container')
 const questionSpace = document.getElementById('question')
 const codeSpace = document.getElementById('codeSpace')
@@ -16,10 +19,15 @@ const prevResult = document.getElementById('prev-result')
 const currResult = document.getElementById('curr-result')
 const optionsContainer = document.getElementById('options-div')
 const muteButton = document.getElementById('mute-btn')
+const reportButton = document.getElementById('report-btn')
+const logo = document.getElementById('logo')
 
-const numberOfQuestionsDropdown = document.getElementById("number-of-questions");
-const topicsDropdown = document.getElementById("topic-of-questions");
-const difficultyDropdown = document.getElementById("difficulty-of-questions");
+const numberOfQuestionsDropdown = document.getElementById("number-of-questions")
+const topicsDropdown = document.getElementById("topic-of-questions")
+const difficultyDropdown = document.getElementById("difficulty-of-questions")
+let numberOfQuestionsReport = document.getElementById("number-of-questions-report")
+let topicReport = document.getElementById("topic-of-questions-report")
+let difficultyReport = document.getElementById("difficulty-report")
 const downloadPDF = document.getElementById("download")
 
 let pop = new Audio('./audio/pop.mp3')
@@ -79,9 +87,9 @@ async function fetchJSONData(name) {
 let jsonData
 let timePerQuestion
 let numberOfQuestions
+let topic
 let exportResult
 let timetaken = 0
-let finalMessage
 let correct = 0
 let timer
 let qNo = 0
@@ -90,23 +98,28 @@ let timerArray = []
 let answerArray = []
 let reportNo = 0;
 let soundsOn = true
+let exportPDF = ''
 
 // localStorage.clear()             
 
-muteButton.addEventListener("click",()=>{
+muteButton.addEventListener("click", () => {
     playSound(pop)
-    if(soundsOn){
-        soundsOn=false
+    if (soundsOn) {
+        soundsOn = false
         muteButton.innerHTML = '<span class="material-symbols-outlined">volume_mute</span>'
     }
     else {
-        soundsOn=true
+        soundsOn = true
         muteButton.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'
     }
 })
 
-function playSound(sound){
-    if(soundsOn){
+reportButton.addEventListener('click', ()=>{
+    window.location.href = '/reports.html'
+})
+
+function playSound(sound) {
+    if (soundsOn) {
         sound.play()
     }
 }
@@ -117,15 +130,20 @@ prevResult.addEventListener("click", () => {
         prevResult.classList.add('hide')
     }
     else {
+        prevResult.classList.remove('hide')
+        currResult.classList.remove('hide')
         reportNo--
+        if (reportNo == 0) {
+            prevResult.classList.add('hide')
+        }
         let data = JSON.parse(localStorage.getItem(reportNo))
-        console.log(data)
-        report.innerHTML = data.reportKey   
+        report.innerHTML = data.reportKey
         correctOut.innerHTML = data.correctKey
         incorrectOut.innerHTML = data.incorrectKey
         timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
-        prevResult.classList.remove('hide')
-        currResult.classList.remove('hide')
+        topicReport.innerHTML = data.topicKey
+        numberOfQuestionsReport.innerHTML = data.numberOfQuestionsKey
+        difficultyReport.innerHTML = data.difficultyKey
     }
 })
 
@@ -137,12 +155,17 @@ currResult.addEventListener("click", () => {
         prevResult.classList.remove('hide')
         currResult.classList.remove('hide')
         reportNo++
+        if (reportNo == localStorage.length - 1) {
+            currResult.classList.add('hide')
+        }
         let data = JSON.parse(localStorage.getItem(reportNo))
-        console.log(data)
-        report.innerHTML = data.reportKey   
+        report.innerHTML = data.reportKey
         correctOut.innerHTML = data.correctKey
         incorrectOut.innerHTML = data.incorrectKey
         timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
+        topicReport.innerHTML = data.topicKey
+        numberOfQuestionsReport.innerHTML = data.numberOfQuestionsKey
+        difficultyReport.innerHTML = data.difficultyKey
     }
 })
 
@@ -153,19 +176,32 @@ startbtn.addEventListener("click", () => {
     start()
 })
 
-restartbtn.addEventListener("click", () => {
+restartConfirmbtn.addEventListener("click", () => {
     app.classList.remove('hide')
     end.classList.add('hide')
     qNo = 0
     timetaken = 0
     correct = 0
-    finalMessage = ""
+    document.getElementById('restart-modal').classList.add('hide')
     createTimerArray()
     playSound(pop)
     start()
 })
 
+restartbtn.addEventListener('click', () => {
+    document.getElementById('restart-modal').classList.remove('hide')
+})
 
+closeModal.addEventListener('click', () => {
+    document.getElementById('restart-modal').classList.add('hide')
+})
+
+homeConfirmbtn.addEventListener('click', home)
+logo.addEventListener('click', home)
+
+function home() {
+    window.location.href = '/'
+}
 
 async function start() {
     prevResult.classList.remove('hide')
@@ -316,18 +352,25 @@ function displayCurrResult() {
     correctOut.innerHTML = correct
     incorrectOut.innerHTML = numberOfQuestions - correct
     timerTakenOut.innerHTML = timeTakenConvertUnits(timetaken)
+    topicReport.innerHTML = topic
+    numberOfQuestionsReport.innerHTML = numberOfQuestions
+    difficultyReport.innerHTML = difficultyDropdown.value
+
     exportResult = {
         reportKey: report.innerHTML,
         correctKey: correct,
         incorrectKey: numberOfQuestions - correct,
-        timeTakenKey: timetaken
-}
-storeResult()
+        timeTakenKey: timetaken,
+        topicKey:topic,
+        numberOfQuestionsKey: numberOfQuestions,
+        difficultyKey: difficultyDropdown.value
+    }
+    storeResult()
 }
 
 function storeResult() {
     localStorage.setItem(localStorage.length, JSON.stringify(exportResult))
-    reportNo = localStorage.length - 1;
+    reportNo = localStorage.length - 1
 }
 
 function timeTakenConvertUnits(t) {
@@ -341,9 +384,11 @@ function getquestion() {
     document.getElementById('timer').classList.remove('red')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
+    exportPDF += '<strong>Question ' + (qNo + 1) + ':</strong><br>' + questionSpace.outerHTML
     if (Object.keys(jsonData.questions[questionArray[qNo]]).length == 5) {
         codeSpace.classList.remove('hide')
         code.innerHTML = jsonData.questions[questionArray[qNo]].code
+        exportPDF += codeSpace.outerHTML
     }
 
     optionsContainer.innerHTML = ''
@@ -364,7 +409,10 @@ function getquestion() {
         radioDiv.appendChild(inputTag)
         radioDiv.appendChild(labelTag)
         optionsContainer.appendChild(radioDiv)
+
+        exportPDF += 'option ' + i + ' ' + labelTag.outerHTML + '<br>'
     }
+    exportPDF += '<br><br>'
     activate()
     document.getElementById('timer').innerHTML = timerArray[qNo]
 }
@@ -376,9 +424,9 @@ function createShuffleArr() {
     }
     for (let i = questionArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        const jsonData = questionArray[i];
-        questionArray[i] = questionArray[j];
-        questionArray[j] = jsonData;
+        const jsonData = questionArray[i]
+        questionArray[i] = questionArray[j]
+        questionArray[j] = jsonData
     }
 }
 
@@ -428,19 +476,19 @@ function goToNextValidQuestion() {
 function activate() {
     if (getQuestionType(qNo) == 'mcq') {
         if (answerArray[qNo] == '0') {
-            getRadio(0).checked = true;
+            getRadio(0).checked = true
         }
         else if (answerArray[qNo] == '1') {
-            getRadio(1).checked = true;
+            getRadio(1).checked = true
         }
         else if (answerArray[qNo] == '2') {
-            getRadio(2).checked = true;
+            getRadio(2).checked = true
         }
         else if (answerArray[qNo] == '3') {
-            getRadio(3).checked = true;
+            getRadio(3).checked = true
         } else {
-            getRadio(3).checked = true;
-            getRadio(3).checked = false;
+            getRadio(3).checked = true
+            getRadio(3).checked = false
         }
     }
     else {
@@ -458,6 +506,7 @@ function timerReset() {
 async function getDetails() {
     numberOfQuestions = questionNumbers[numberOfQuestionsDropdown.value]
     timePerQuestion = difficulty[difficultyDropdown.value]
+    topic = topicsDropdown.value
     jsonData = await fetchJSONData(topicsDropdown.value)
 }
 
@@ -472,7 +521,10 @@ downloadPDF.addEventListener("click", () => {
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-    html2pdf().from(report).set(opt).save();
+    }
+    html2pdf().set({
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    })
+    html2pdf().from(exportPDF).set(opt).save()
     playSound(pop)
 })
