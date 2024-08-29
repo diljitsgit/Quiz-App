@@ -389,12 +389,12 @@ hr {
     color: red;
 }
 
-.left-report>p{
-    font-size: 0.8rem;
-}
 
 @media only screen and (max-width: 768px) {
-
+    
+    .left-report>p{
+        font-size: 0.8rem;
+    }
     /* For mobile phones: */
     .app-container {
         width: 70%;
