@@ -210,6 +210,9 @@ async function start() {
     createShuffleArr()
     createTimerArray()
     getquestion()
+    exportPDF+='<p><strong>Number of questions: </strong>'+numberOfQuestions+'</p><br>'
+    exportPDF+='<p><strong>Topic of questions: </strong>'+topic+'</p><br>'
+    exportPDF+='<p><strong>Difficulty of questions: </strong>'+difficultyDropdown.value+'</p><br>'
 }
 
 function quiz() {
@@ -410,7 +413,7 @@ function getquestion() {
         radioDiv.appendChild(labelTag)
         optionsContainer.appendChild(radioDiv)
 
-        exportPDF += 'option ' + i + ' ' + labelTag.outerHTML + '<br>'
+        exportPDF +='<div class="export-radio-div">'+labelTag.outerHTML +'</div>'
     }
     exportPDF += '<br><br>'
     activate()

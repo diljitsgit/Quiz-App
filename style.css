@@ -133,6 +133,22 @@ nav {
     transition: 0.5s;
 }
 
+.export-radio-div{
+    border-width: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    height: 3rem;
+    border-style: solid;
+    border-color: #969696;
+    border-radius: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 0.4rem;
+    background-color: #EFEFEF;
+    border-radius: 1rem;
+    width: 90%;
+}
+
 .radio-div:hover {
     background-color: #dadada;
     border-color: darkgray;
