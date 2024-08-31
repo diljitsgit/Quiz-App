@@ -115,7 +115,7 @@ muteButton.addEventListener("click", () => {
 })
 
 reportButton.addEventListener('click', ()=>{
-    window.location.href = '/reports.html'
+    window.location.href = window.location.pathname+'/reports.html'
 })
 
 function playSound(sound) {
@@ -200,7 +200,7 @@ homeConfirmbtn.addEventListener('click', home)
 logo.addEventListener('click', home)
 
 function home() {
-    window.location.href = '/'
+    window.location.href = window.location.pathname+'/'
 }
 
 async function start() {
