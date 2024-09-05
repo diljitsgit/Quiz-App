@@ -114,8 +114,8 @@ muteButton.addEventListener("click", () => {
     }
 })
 
-reportButton.addEventListener('click', ()=>{
-    window.location.href = window.location.pathname+'/reports.html'
+reportButton.addEventListener('click', () => {
+    window.location.href = window.location.pathname + '/reports.html'
 })
 
 function playSound(sound) {
@@ -200,7 +200,7 @@ homeConfirmbtn.addEventListener('click', home)
 logo.addEventListener('click', home)
 
 function home() {
-    window.location.href = window.location.pathname+'/'
+    window.location.href = window.location.pathname + '/'
 }
 
 async function start() {
@@ -210,9 +210,6 @@ async function start() {
     createShuffleArr()
     createTimerArray()
     getquestion()
-    exportPDF+='<p><strong>Number of questions: </strong>'+numberOfQuestions+'</p><br>'
-    exportPDF+='<p><strong>Topic of questions: </strong>'+topic+'</p><br>'
-    exportPDF+='<p><strong>Difficulty of questions: </strong>'+difficultyDropdown.value+'</p><br>'
 }
 
 function quiz() {
@@ -364,7 +361,7 @@ function displayCurrResult() {
         correctKey: correct,
         incorrectKey: numberOfQuestions - correct,
         timeTakenKey: timetaken,
-        topicKey:topic,
+        topicKey: topic,
         numberOfQuestionsKey: numberOfQuestions,
         difficultyKey: difficultyDropdown.value
     }
@@ -387,11 +384,9 @@ function getquestion() {
     document.getElementById('timer').classList.remove('red')
     codeSpace.classList.add('hide')
     questionSpace.innerHTML = jsonData.questions[questionArray[qNo]].question
-    exportPDF += '<strong>Question ' + (qNo + 1) + ':</strong><br>' + questionSpace.outerHTML
     if (Object.keys(jsonData.questions[questionArray[qNo]]).length == 5) {
         codeSpace.classList.remove('hide')
         code.innerHTML = jsonData.questions[questionArray[qNo]].code
-        exportPDF += codeSpace.outerHTML
     }
 
     optionsContainer.innerHTML = ''
@@ -412,10 +407,7 @@ function getquestion() {
         radioDiv.appendChild(inputTag)
         radioDiv.appendChild(labelTag)
         optionsContainer.appendChild(radioDiv)
-
-        exportPDF +='<div class="export-radio-div">'+labelTag.outerHTML +'</div>'
     }
-    exportPDF += '<br><br>'
     activate()
     document.getElementById('timer').innerHTML = timerArray[qNo]
 }
@@ -517,7 +509,46 @@ function getRadio(a) {
     return optionsContainer.children[a].firstChild
 }
 
-downloadPDF.addEventListener("click", () => {
+downloadPDF.addEventListener("click", async () => {
+    exportPDF=''
+
+    exportPDF += '<p><strong>Number of questions: </strong>' + questionNumbers[numberOfQuestionsDropdown.value] + '</p><br>'
+    exportPDF += '<p><strong>Topic of questions: </strong>' + topicsDropdown.value + '</p><br>'
+    exportPDF += '<p><strong>Difficulty of questions: </strong>' + difficultyDropdown.value + '</p><br>'
+    let tempJSON = await fetchJSONData(topicsDropdown.value)
+    for (var i = 0; i < questionNumbers[numberOfQuestionsDropdown.value]; i++) {
+        let exportQuestionDiv = document.createElement('div')
+        exportQuestionDiv.classList.add('questionSpace')
+        let exportQuestion = document.createElement('p')
+        exportQuestion.classList.add('question')
+        exportQuestion.innerHTML = tempJSON.questions[i].question
+        exportQuestionDiv.appendChild(exportQuestion)
+        exportPDF += '<strong>Question ' + (i + 1) + ':</strong><br>' + exportQuestionDiv.outerHTML
+
+
+        if (Object.keys(tempJSON.questions[i]).length == 5) {
+            let exportCodeDiv = document.createElement('div')
+            exportCodeDiv.classList.add('codeSpace')
+            let exportCodePre = document.createElement('pre')
+            let exportCodeCode = document.createElement('code')
+            exportCodeCode.innerHTML = tempJSON.questions[i].code
+            exportCodePre.style.padding = '0rem 1rem'
+            exportCodePre.appendChild(exportCodeCode)
+            exportCodeDiv.appendChild(exportCodePre)
+            exportPDF += '<br>'+exportCodeDiv.outerHTML
+        }
+
+        for (var j = 0; j < tempJSON.questions[i].options.length; j++) {
+            let optionsExportDiv = document.createElement('div')
+            optionsExportDiv.setAttribute('class', 'radio-div')
+            let labelTag = document.createElement('label')
+            labelTag.innerHTML = tempJSON.questions[i].options[j]
+            optionsExportDiv.appendChild(labelTag)
+            exportPDF += '<div class="export-radio-div">' + labelTag.outerHTML + '</div>'
+        }
+
+        exportPDF += '<br><br>'
+    }
     var opt = {
         margin: 1,
         filename: 'Quiz-app-result.pdf',
