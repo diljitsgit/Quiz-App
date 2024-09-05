@@ -10,13 +10,14 @@ const currResult = document.getElementById('curr-result')
 let numberOfQuestionsReport = document.getElementById("number-of-questions-report")
 let topicReport = document.getElementById("topic-of-questions-report")
 let difficultyReport = document.getElementById("difficulty-report")
+let TakeQuizbtn = document.getElementById('Take-Quiz')
 
 let pop = new Audio('./audio/pop.mp3')
 let tick = new Audio('./audio/Tick.mp3')
 pop.volume = 0.2
 tick.volume = 0.5
 
-let reportNo = localStorage.length-1
+let reportNo = localStorage.length - 1
 let soundsOn = true
 
 muteButton.addEventListener("click", () => {
@@ -87,6 +88,7 @@ currResult.addEventListener("click", () => {
 })
 
 logo.addEventListener('click', home)
+TakeQuizbtn.addEventListener('click', home)
 
 function home() {
     window.location.href = '/'
@@ -99,14 +101,21 @@ function timeTakenConvertUnits(t) {
 }
 
 function initalize() {
-    let data = JSON.parse(localStorage.getItem(reportNo))
-    report.innerHTML = data.reportKey
-    correctOut.innerHTML = data.correctKey
-    incorrectOut.innerHTML = data.incorrectKey
-    timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
-    topicReport.innerHTML = data.topicKey
-    numberOfQuestionsReport.innerHTML = data.numberOfQuestionsKey
-    difficultyReport.innerHTML = data.difficultyKey
+    if (localStorage.length!==0) {
+        document.getElementById('report-container-2').classList.add('hide')
+        document.getElementById('report-container').classList.remove('hide')
+        let data = JSON.parse(localStorage.getItem(reportNo))
+        report.innerHTML = data.reportKey
+        correctOut.innerHTML = data.correctKey
+        incorrectOut.innerHTML = data.incorrectKey
+        timerTakenOut.innerHTML = timeTakenConvertUnits(data.timeTakenKey)
+        topicReport.innerHTML = data.topicKey
+        numberOfQuestionsReport.innerHTML = data.numberOfQuestionsKey
+        difficultyReport.innerHTML = data.difficultyKey
+    }
+    else{
+        console.log('hello')
+    }
 }
 
 initalize()

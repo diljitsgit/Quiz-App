@@ -242,6 +242,13 @@ label {
     cursor: pointer;
 }
 
+.report-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .dropdown-master {
     margin-left: 1rem;
     border-width: 3px;
