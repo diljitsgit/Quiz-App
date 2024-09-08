@@ -35,39 +35,11 @@
         </div>
     </nav>
 
-
-    <div class="modal hide" id="restart-modal">
-        <span class="material-symbols-outlined" id="close-modal">
-            close
-        </span>
-        <h2>Would you like to change paramaters of the test?</h2>
-        <button class="btn-dark" id="restart-confirm">Restart Quiz Anyway</button>
-        <button class="btn" id="home-confirm">Change Parameters</button>
-    </div>
-
     <div class="app-div">
         <div class="app-container">
-
             <div class="start-container" id="start-container">
-                <div class="number-of-questions-div start-container-subdiv">
-                    <p>Choose the number of questions you wish to answer:</p>
-                    <select name="QuestionNumbers" class="dropdown-master" id="number-of-questions"></select>
-                </div>
-
-                <div class="choose-topic-div start-container-subdiv">
-                    <p>Choose the topic of the questions:</p>
-                    <select name="QuestionTopic" class="dropdown-master" id="topic-of-questions"></select>
-                </div>
-
-                <div class="difficulty-of-questions-div start-container-subdiv">
-                    <p>Choose the difficulty of the questions:</p>
-                    <select name="QuestionDifficulty" class="dropdown-master" id="difficulty-of-questions"></select>
-                </div>
-
-
                 <div class="navigate-div">
                     <button class="btn-dark" id="start">Start Quiz</button>
-                    <button class="btn-dark" id="download">Download PDF</button>
                 </div>
             </div>
 
@@ -86,12 +58,6 @@
 
                 <div class="action">
                     <div class="options-div" id="options-div"></div>
-                    <div class="timer-div">
-                        <h3 class="Timer" id="timer">Time</h3>
-                    </div>
-                    <div class="input-container hide" id="input-container">
-                        <input type="text" id="input" class="input-answer">
-                    </div>
                     <div class="navigate-div">
                         <button class="btn" id="previous-btn">Previous</button>
                         <button class="btn" id="next-btn">Next</button>
@@ -108,17 +74,7 @@
                         <div class="left-report">
                             <p><strong>Correct: </strong><span id="correct"></span></p>
                             <p><strong>Incorrect: </strong><span id="incorrect"></span></p>
-                            <p><strong>Time taken: </strong><span id="time-taken"></span></p>
-                            <p><strong>Language of Quiz: </strong><span id="topic-of-questions-report"></span></p>
                             <p><strong>Number Of Questions: </strong><span id="number-of-questions-report"></span></p>
-                            <p><strong>Difficulty: </strong><span id="difficulty-report"></span></p>
-                        </div>
-                        <div class="right-report-left right-report">
-                            <button class="btn" id="prev-result">Previous Result</button>
-                            <button class="btn hide" id="curr-result">Next Result</button>
-                        </div>
-                        <div class="right-report-right right-report">
-                            <button class="btn-dark" id="restart">Restart Quiz</button>
                         </div>
                     </div>
                 </div>
@@ -152,7 +108,7 @@
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="practice.js"></script>
 </body>
 
 </html>

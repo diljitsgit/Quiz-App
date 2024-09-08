@@ -18,6 +18,7 @@ let report = document.getElementById('report')
 const prevResult = document.getElementById('prev-result')
 const currResult = document.getElementById('curr-result')
 const optionsContainer = document.getElementById('options-div')
+const practiceButton = document.getElementById('practice-btn')
 const muteButton = document.getElementById('mute-btn')
 const reportButton = document.getElementById('report-btn')
 const logo = document.getElementById('logo')
@@ -116,6 +117,10 @@ muteButton.addEventListener("click", () => {
 
 reportButton.addEventListener('click', () => {
     window.location.href = window.location.pathname + '/reports.html'
+})
+
+practiceButton.addEventListener('click', () => {
+    window.location.href = window.location.pathname + '/practice.html'
 })
 
 function playSound(sound) {
@@ -469,25 +474,24 @@ function goToNextValidQuestion() {
 }
 
 function activate() {
-    if (getQuestionType(qNo) == 'mcq') {
-        if (answerArray[qNo] == '0') {
-            getRadio(0).checked = true
-        }
-        else if (answerArray[qNo] == '1') {
-            getRadio(1).checked = true
-        }
-        else if (answerArray[qNo] == '2') {
-            getRadio(2).checked = true
-        }
-        else if (answerArray[qNo] == '3') {
-            getRadio(3).checked = true
-        } else {
-            getRadio(3).checked = true
-            getRadio(3).checked = false
-        }
+    if (answerArray[qNo] == '0') {
+        getRadio(0).checked = true
+        getRadio(0).parentElement.classList.add('selected')
     }
-    else {
-        input.value = answerArray[qNo]
+    else if (answerArray[qNo] == '1') {
+        getRadio(1).checked = true
+        getRadio(1).parentElement.classList.add('selected')
+    }
+    else if (answerArray[qNo] == '2') {
+        getRadio(2).checked = true
+        getRadio(2).parentElement.classList.add('selected')
+    }
+    else if (answerArray[qNo] == '3') {
+        getRadio(3).checked = true
+        getRadio(3).parentElement.classList.add('selected')
+    } else {
+        getRadio(3).checked = true
+        getRadio(3).checked = false
     }
 }
 

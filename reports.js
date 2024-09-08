@@ -1,5 +1,6 @@
 const muteButton = document.getElementById('mute-btn')
 const reportButton = document.getElementById('report-btn')
+const practiceButton = document.getElementById('practice-btn')
 const logo = document.getElementById('logo')
 let correctOut = document.getElementById('correct')
 let incorrectOut = document.getElementById('incorrect')
@@ -30,6 +31,10 @@ muteButton.addEventListener("click", () => {
         soundsOn = true
         muteButton.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'
     }
+})
+
+practiceButton.addEventListener('click', () => {
+    window.location.href = window.location.pathname + '/practice.html'
 })
 
 reportButton.addEventListener('click', () => {
