@@ -1,0 +1,334 @@
+{
+    "questions": [
+      {
+        "question": "What is TypeScript primarily used for?",
+        "type": "mcq",
+        "options": [
+          "Memory Management",
+          "Dynamic Typing",
+          "Static Typing",
+          "Asynchronous operations"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following is NOT a valid TypeScript data type?",
+        "type": "mcq",
+        "options": [
+          "void",
+          "any",
+          "dynamic",
+          "tuple"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "How do you denote a variable as readonly in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "const",
+          "static",
+          "readonly",
+          "fixed"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "How do you specify that a function does not return anything in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "function myFunc(): undefined",
+          "function myFunc(): void",
+          "function myFunc(): null",
+          "function myFunc(): None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How do you define a custom type in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "interface",
+          "typedef",
+          "type",
+          "Both A and C"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is the primary purpose of TypeScript interfaces?",
+        "type": "mcq",
+        "options": [
+          "To create new classes",
+          "To describe the shape of an object",
+          "To generate HTML templates",
+          "To manage asynchronous code"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is a union type in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "A type that can be any value",
+          "A type that can be one of several types",
+          "A type that can be both a string and a number simultaneously",
+          "A type that can be an object"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which TypeScript feature allows for checking the type of a variable at runtime?",
+        "type": "mcq",
+        "options": [
+          "Type guard",
+          "Runtime type",
+          "Dynamic type",
+          "Typeof"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What TypeScript compiler option ensures strict type checking?",
+        "type": "mcq",
+        "options": [
+          "--strict",
+          "--strictTypes",
+          "--typeCheck",
+          "--enforceTypes"
+        ],
+        "answer": 0
+      },
+      {
+        "question": " How do you define an optional parameter in the TypeScript function?",
+        "type": "mcq",
+        "options": [
+          "function foo(param: string?)",
+          "function foo(param?: string)",
+          "function foo(param string=)",
+          "function foo(param string?)"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " Which of the following will transpile a TypeScript file (example.ts) to JavaScript?",
+        "type": "mcq",
+        "options": [
+          "typescript example.ts",
+          "ts-compile example.ts",
+          "tsc example.ts",
+          "ts example.ts"
+        ],
+        "answer": 2
+      },
+      {
+        "question": " How do you declare a variable that can be either a string or null in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "let variable: string || null;",
+          "let variable: string | null;",
+          "let variable: string & null;",
+          "let variable: string && null;"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " What is the purpose of the never type in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "To indicate that a variable can be any type.",
+          "To represent the absence of values.",
+          "To indicate a function always throws an exception or never returns.",
+          "To represent the absence of a type."
+        ],
+        "answer": 2
+      },
+      {
+        "question": " How can you allow an object to have any number of properties of a given type in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "{ [key: any]: string; }",
+          "{ [key: string]: any; }",
+          "{ [property: string]: string; }",
+          "{ [value: string]: string; }"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " Which command would you use to install TypeScript globally using npm?",
+        "type": "mcq",
+        "options": [
+          "npm install typescript",
+          "npm global install typescript",
+          "npm install -g typescript",
+          "npm typescript install global"
+        ],
+        "answer": 2
+      },
+      {
+        "question": " How do you define private property in a TypeScript class?",
+        "type": "mcq",
+        "options": [
+          "def property: string;",
+          "private property: string;",
+          "#property: string;",
+          "property: private string;"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " In TypeScript, what does an enum allow you to do?",
+        "type": "mcq",
+        "options": [
+          "Store a list of numeric values.",
+          "Store a set of named constants, numeric or string.",
+          "Define a new data type.",
+          "Assign multiple types to a variable."
+        ],
+        "answer": 1
+      },
+      {
+        "question": " Which TypeScript feature allows for declaring new names for existing types?",
+        "type": "mcq",
+        "options": [
+          "Aliases",
+          "Enums",
+          "Interfaces",
+          "Decorators"
+        ],
+        "answer": 0
+      },
+      {
+        "question": " How do you specify a function type in TypeScript that takes in a number and returns a string?",
+        "type": "mcq",
+        "options": [
+          "function(num: number) -> string",
+          "function: (number) => string",
+          "(num: number) => string",
+          "Function(number): string"
+        ],
+        "answer": -1
+      },
+      {
+        "question": " What does the extends keyword allow you to do in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "Add methods to an existing function.",
+          "Increase the value of a number variable.",
+          "Create a subclass from a superclass.",
+          "Extend the length of an array."
+        ],
+        "answer": 2
+      },
+      {
+        "question": " Which TypeScript keyword allows for a child class to override a method of its parent class?",
+        "type": "mcq",
+        "options": [
+          "override",
+          "super",
+          "over",
+          "extends"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " How do you define an array of strings in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "Array<string>",
+          "string[]",
+          "Both A and B",
+          "List<string>"
+        ],
+        "answer": 2
+      },
+      {
+        "question": " In TypeScript, how do you enforce a variable to be of a specific type at compile time?",
+        "type": "mcq",
+        "options": [
+          "Using the force keyword.",
+          "Using the type keyword.",
+          "By using type annotations.",
+          "By casting the variable."
+        ],
+        "answer": 2
+      },
+      {
+        "question": " Which TypeScript feature provides static typings for dynamic properties in objects and arrays?",
+        "type": "mcq",
+        "options": [
+          "Generics",
+          "Type guards",
+          "Dynamic types",
+          "Index signatures"
+        ],
+        "answer": 3
+      },
+      {
+        "question": " In TypeScript, how can a subclass access a method from its superclass?",
+        "type": "mcq",
+        "options": [
+          "Using the extends keyword",
+          "Using the inherits keyword",
+          "Using the super keyword",
+          "Using the base keyword"
+        ],
+        "answer": 2
+      },
+      {
+        "question": " How do you declare a class in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "def ClassName:",
+          "class ClassName {}",
+          "new Class ClassName {}",
+          "object ClassName {}"
+        ],
+        "answer": 1
+      },
+      {
+        "question": " How do you create an instance of a TypeScript class?",
+        "type": "mcq",
+        "options": [
+          "new MyClass()",
+          "MyClass.new()",
+          "MyClass.create()",
+          "instance MyClass()"
+        ],
+        "answer": 0
+      },
+      {
+        "question": " What does the extends keyword do in TypeScript?",
+        "type": "mcq",
+        "options": [
+          "It imports a module.",
+          "It creates an alias for a type.",
+          "It allows a class to inherit from another class.",
+          "It allows extending an array."
+        ],
+        "answer": 2
+      },
+      {
+        "question": " What is the purpose of a constructor in TypeScript classes?",
+        "type": "mcq",
+        "options": [
+          "To create a static method.",
+          "To initialize object properties.",
+          "To destroy an object.",
+          "To run asynchronous code."
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following TypeScript types can the unknown type be assigned to without type assertion?",
+        "type": "mcq",
+        "options": [
+          "String",
+          "Number",
+          "Any",
+          "Void"
+        ],
+        "answer": 2
+      }
+    ]
+  }
