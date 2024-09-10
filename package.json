@@ -1,6 +1,9 @@
 {
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "deploy": "gh-pages -d dist"
-  }
+    "gh-pages": "^6.1.1"
+  },
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "deploy": "gh-pages -d ./"
+}
 }
