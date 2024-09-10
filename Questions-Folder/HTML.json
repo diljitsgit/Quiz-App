@@ -1,0 +1,554 @@
+{
+    "questions": [
+      {
+        "question": "Which of the following colors contain equal amounts of RBG?",
+        "type": "mcq",
+        "options": [
+          "White",
+          "Gray",
+          "Black",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is the correct syntax to write an HTML comment?",
+        "type": "mcq",
+        "options": [
+          "&lt;!-- Comment --&gt;",
+          "// Comment",
+          "# Comment",
+          "/* Comment */"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the effect of the &lt;b&gt; tag?",
+        "type": "mcq",
+        "options": [
+          "It converts the text within it to bold font.",
+          "It is used to write black-colored font.",
+          "It is used to change the font size.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the function of the HTML style attribute?",
+        "type": "mcq",
+        "options": [
+          "It is used to add styles to an HTML element.",
+          "It is used to uniquely identify some specific styles of some element.",
+          "Both A and B.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the select tag used for?",
+        "type": "mcq",
+        "options": [
+          "Creates a combo box.",
+          "Select some attributes and change their style.",
+          "Change text font.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the smallest header in HTML by default?",
+        "type": "mcq",
+        "options": [
+          "h1",
+          "h2",
+          "h6",
+          "h4"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What is the speciality about the &lt;small&gt; and &lt;big&gt; tags in HTML?",
+        "type": "mcq",
+        "options": [
+          "They work on anything.",
+          "They can be used for text only.",
+          "They can be repeated.",
+          "None of the above."
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What tag is used to render an image on a webpage?",
+        "type": "mcq",
+        "options": [
+          "img",
+          "src",
+          "image",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which attribute is used to provide a unique name to an HTML element?",
+        "type": "mcq",
+        "options": [
+          "id",
+          "class",
+          "type",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which HTML element is used to define description data?",
+        "type": "mcq",
+        "options": [
+          "&lt;li&gt;",
+          "&lt;ol&gt;",
+          "&lt;dd&gt;",
+          "&lt;dl&gt;"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which HTML tag is called the root element of an HTML document?",
+        "type": "mcq",
+        "options": [
+          "&lt;html&gt;",
+          "&lt;body&gt;",
+          "&lt;title&gt;",
+          "&lt;head&gt;"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which HTML tag is used to set up a Javascript-like client-side scripting language?",
+        "type": "mcq",
+        "options": [
+          "&lt;script&gt;",
+          "&lt;select&gt;",
+          "&lt;anchor&gt;",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are examples of block-level elements in HTML?",
+        "type": "mcq",
+        "options": [
+          "&lt;div&gt;",
+          "&lt;p&gt;",
+          "&lt;h1&gt;",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is meant by an empty tag in HTML?",
+        "type": "mcq",
+        "options": [
+          "There is no such concept of an empty tag in HTML",
+          "An empty tag does not require a closing tag",
+          "An empty tag cannot have any content within it",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following is correct about HTML?",
+        "type": "mcq",
+        "options": [
+          "HTML uses User Defined Tags.",
+          "HTML uses tags defined within the language.",
+          "Both A and B.",
+          "None of the above."
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following is the correct syntax for using the HTML style attribute?",
+        "type": "mcq",
+        "options": [
+          "&lt;tagname style = “property: value;”&gt;",
+          "&lt;tagname style = “property;”&gt;",
+          "&lt;tagname style &gt;",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following is true about HTML tags?",
+        "type": "mcq",
+        "options": [
+          "Are case sensitive",
+          "Are not case sensitive",
+          "Are in uppercase",
+          "Are in lowercase"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following properties is used to change the font of text?",
+        "type": "mcq",
+        "options": [
+          "font-family",
+          "font-size",
+          "text-align",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following tags doesn’t require a closing tag?",
+        "type": "mcq",
+        "options": [
+          "&lt;br&gt;",
+          "&lt;hr&gt;",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following tags is used to add a row to a table in HTML?",
+        "type": "mcq",
+        "options": [
+          "&lt;tr&gt;",
+          "&lt;td&gt;",
+          "&lt;th&gt;",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following tags is used to indicate the page’s start and endpoints?",
+        "type": "mcq",
+        "options": [
+          "&lt;body&gt;",
+          "&lt;html&gt;",
+          "&lt;head&gt;",
+          "&lt;doctype&gt;"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following things are necessary to create an HTML page?",
+        "type": "mcq",
+        "options": [
+          "A text editor.",
+          "Web Browser",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which property allows an image link to show a text label?",
+        "type": "mcq",
+        "options": [
+          "alt",
+          "str",
+          "alternative",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which property is used to set border colors in HTML?",
+        "type": "mcq",
+        "options": [
+          "border-color",
+          "border",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which property is used to set colors in HTML?",
+        "type": "mcq",
+        "options": [
+          "color",
+          "background-color",
+          "font-color",
+          "text-color"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "The most basic part of any HTML page is?",
+        "type": "mcq",
+        "options": [
+          "ASCII Text",
+          "Binary Text",
+          "Text",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Colors are defined in HTML using?",
+        "type": "mcq",
+        "options": [
+          "RGB Values",
+          "HEX Values",
+          "RGBA values",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "How are quotations defined in HTML?",
+        "type": "mcq",
+        "options": [
+          "&lt;quote&gt;",
+          "&lt;block&gt;",
+          "&lt;blockquote&gt;",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "How is black color represented in terms of RGB values?",
+        "type": "mcq",
+        "options": [
+          "RGB(0, 0, 0)",
+          "RGB(100, 100, 100)",
+          "RGB(100, 100, 0)",
+          "RGB(100, 0, 0)"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How many characters can be written in 1KB?",
+        "type": "mcq",
+        "options": [
+          "1048",
+          "1024",
+          "1000",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How many sizes of headers are available in HTML by default?",
+        "type": "mcq",
+        "options": [
+          "5",
+          "1",
+          "3",
+          "6"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "How to create an ordered list in HTML?",
+        "type": "mcq",
+        "options": [
+          "&lt;ul&gt;",
+          "&lt;ol&gt;",
+          "&lt;href&gt;",
+          "&lt;b&gt;"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How to display preformatted text in HTML?",
+        "type": "mcq",
+        "options": [
+          "&lt;p&gt;",
+          "&lt;pre&gt;",
+          "&lt;hr&gt;",
+          "All of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How to set a font for a whole page?",
+        "type": "mcq",
+        "options": [
+          "&lt;targetfont&gt;",
+          "&lt;defaultfont&gt;",
+          "&lt;font&gt;",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "HTML files are saved by default with the extension?",
+        "type": "mcq",
+        "options": [
+          ".html",
+          ".h",
+          ".ht",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "If a background image is smaller than the screen on which it is being displayed, what will occur on the webpage?",
+        "type": "mcq",
+        "options": [
+          "The blank space will be shown in black.",
+          "The image will be stretched",
+          "The image will be repeated",
+          "The image won’t be displayed"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "The CSS inside HTML elements used alongside style attribute is called?",
+        "type": "mcq",
+        "options": [
+          "Inline CSS",
+          "Internal CSS",
+          "External CSS",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "The default value of the BORDER attribute is?",
+        "type": "mcq",
+        "options": [
+          "1pixel",
+          "2pixel",
+          "4pixel",
+          "8pixel"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Apart from &lt;i&gt; tag, which of the following tag is used to render a text in italics?",
+        "type": "mcq",
+        "options": [
+          "&lt;em&gt;",
+          "&lt;strong&gt;",
+          "&lt;b&gt;",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "We enclose HTML tags within?",
+        "type": "mcq",
+        "options": [
+          "{ }",
+          "&lt; &gt;",
+          "! !",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What are some valid character sets available?",
+        "type": "mcq",
+        "options": [
+          "UTF-8",
+          "ANSI",
+          "ASCII",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What are the attributes used to change the size of an image?",
+        "type": "mcq",
+        "options": [
+          "Width and height",
+          "Big and Small",
+          "Top and bottom",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What are the main components of the front end of any working website?",
+        "type": "mcq",
+        "options": [
+          "HTML, CSS, Javascript.",
+          "HTML only.",
+          "Javascript only.",
+          "Node.js."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What are the properties of block-level elements?",
+        "type": "mcq",
+        "options": [
+          "It always starts on a new line.",
+          "It always takes the full width available.",
+          "It has a top and bottom margin.",
+          "All of the above."
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What are the types of lists available in HTML?",
+        "type": "mcq",
+        "options": [
+          "Ordered, Unordered Lists.",
+          "Bulleted, Numbered Lists.",
+          "Named, Unnamed Lists.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What are the types of unordered lists in HTML?",
+        "type": "mcq",
+        "options": [
+          "Circle, square, disc.",
+          "Triangle, Square, disc.",
+          "Triangle, Circle, Disc.",
+          "All of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What are those objects called which are used for storing data on the client provided by the HTML local storage?",
+        "type": "mcq",
+        "options": [
+          "Windows.localStorage",
+          "Window.sessionStorage",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What does the abbreviation HTML stand for?",
+        "type": "mcq",
+        "options": [
+          "HyperText Markup Language.",
+          "HighText Markup Language.",
+          "HyperText Markdown Language.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What does the Alpha value in RGBA represent?",
+        "type": "mcq",
+        "options": [
+          "Opacity value for a color.",
+          "The shade of a color.",
+          "Both A and B.",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What does the Alpha value of 0.0 represent?",
+        "type": "mcq",
+        "options": [
+          "Fully Opaque.",
+          "Fully Transparent.",
+          "50% transparent.",
+          "None of the above."
+        ],
+        "answer": 1
+      }
+    ]
+  }

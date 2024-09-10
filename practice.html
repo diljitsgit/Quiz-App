@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <base href="/Quiz-App" target="_blank"></base>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.svg">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo" id="logo">
+            <img src="favicon.svg" style="filter: invert(1);" alt="Logo Here!">
+            <p style="padding-left: 0.2rem;">Quiz App</p>
+        </div>
+        <div class="mute-btn" id="mute-btn">
+            <span class="material-symbols-outlined">
+                volume_up
+            </span>
+        </div>
+        <div style="cursor:pointer; margin-right: 2rem;" id="report-btn">
+            <span class="material-symbols-outlined">
+                Description
+            </span>
+        </div>
+        <div style="cursor:pointer;" id="practice-btn">
+            <span class="material-symbols-outlined">
+                target
+            </span>
+        </div>
+    </nav>
+
+    <div class="app-div">
+        <div class="app-container">
+            <div class="start-container" id="start-container">
+                <div class="navigate-div">
+                    <button class="btn-dark" id="start">Start Quiz</button>
+                </div>
+            </div>
+
+
+
+            <div class="quiz-container hide" id="quiz-container">
+                <div class="questionSpace">
+                    <p class="question" id="question">
+                        Question Comes Here
+                    </p>
+
+                    <div class="codeSpace" id="codeSpace">
+                        <pre style="padding: 0rem 1rem; font-size: 1rem;"><code id="code"></code></pre>
+                    </div>
+                </div>
+
+                <div class="action">
+                    <div class="options-div" id="options-div"></div>
+                    <div class="navigate-div">
+                        <button class="btn" id="previous-btn">Previous</button>
+                        <button class="btn" id="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="report-container hide" id="report-container">
+                <div class="report-container-summary-text">
+                    <h2>Report</h2>
+                    <div class="report-container-summary-text-sub">
+                        <div class="left-report">
+                            <p><strong>Correct: </strong><span id="correct"></span></p>
+                            <p><strong>Incorrect: </strong><span id="incorrect"></span></p>
+                            <p><strong>Number Of Questions: </strong><span id="number-of-questions-report"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-container-main-text">
+                    <h4 style="margin: 0; padding: 1rem 2rem;">How can i improve?</h4>
+                    <p class="report" id="report">
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let flip = (e) => {
+            let allDiv = document.querySelectorAll('.radio-div')
+            allDiv.forEach((a) => {
+                a.classList.remove('selected')
+            })
+            let getDiv = document.getElementById(e)
+            let getElement = document.getElementById(getDiv.children[0].id)
+            if (getElement.checked == true) {
+                getElement.checked = false
+                getDiv.classList.remove('selected')
+            }
+            else {
+                getElement.checked = true
+                getDiv.classList.add('selected')
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script type="module" src="practice.js"></script>
+</body>
+
+</html>

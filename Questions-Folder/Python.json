@@ -1,0 +1,586 @@
+{
+    "questions": [
+      {
+        "question": "What is the maximum length of a Python identifier?",
+        "type": "mcq",
+        "options": [
+          "32",
+          "16",
+          "128",
+          "No fixed length is specified."
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "print(2**3 + (5 + 6)**(1 + 1))",
+        "type": "mcq",
+        "options": [
+          "129",
+          "8",
+          "121",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the datatype of the var in the below code snippet?",
+        "code": "var = 10\nprint(type(var))\nvar = \"Hello\"\nprint(type(var))",
+        "type": "mcq",
+        "options": [
+          "str and int",
+          "int and int",
+          "str and str",
+          "int and str"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "How is a code block indicated in Python?",
+        "type": "mcq",
+        "options": [
+          "Brackets.",
+          "Indentation.",
+          "Key.",
+          "None of the above."
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = [1, 2, 3]\na = tuple(a)\na[0] = 2\nprint(a)",
+        "type": "mcq",
+        "options": [
+          "[2, 2, 3]",
+          "(2, 2, 3)",
+          "(1, 2, 3)",
+          "Error."
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "print(type(5 / 2))\nprint(type(5 // 2))",
+        "type": "mcq",
+        "options": [
+          "float and int",
+          "int and float",
+          "float and float",
+          "int and int"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = [1, 2, 3, 4, 5]\nsum = 0\nfor ele in a:\n   sum += ele \nprint(sum)",
+        "type": "mcq",
+        "options": [
+          "15",
+          "0",
+          "20",
+          "None of these"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = 3\nb = 1 \nprint(a, b)\na, b = b, a \nprint(a, b)",
+        "type": "mcq",
+        "options": [
+          "3 1 &nbsp; &nbsp;1 3",
+          "3 1 &nbsp; &nbsp;3 1",
+          "1 3 &nbsp; &nbsp;1 3",
+          "1 3 &nbsp; &nbsp;3 1"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = [1, 2]\nprint(a * 3)",
+        "type": "mcq",
+        "options": [
+          "Error",
+          "[1, 2]",
+          "[1, 2, 1, 2]",
+          "[1, 2, 1, 2, 1, 2]"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following types of loops are not supported in Python?",
+        "type": "mcq",
+        "options": [
+          "for",
+          "while",
+          "do-while",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "example = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\"];\ndel example[2]\nprint(example)",
+        "type": "mcq",
+        "options": [
+          "['Sunday', 'Monday', 'Tuesday', 'Wednesday']",
+          "['Sunday', 'Monday', 'Wednesday']",
+          "['Monday', 'Tuesday', 'Wednesday']",
+          "['Sunday', 'Monday', 'Tuesday']"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following is the proper syntax to check if a particular element is present in a list?",
+        "type": "mcq",
+        "options": [
+          "if ele in list",
+          "if not ele not in list",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What will be the type of the variable sorted_numbers in the below code snippet?",
+        "code": "numbers = (4, 7, 19, 2, 89, 45, 72, 22)\nsorted_numbers = sorted(numbers)\nprint(sorted_numbers)",
+        "type": "mcq",
+        "options": [
+          "List",
+          "Tuple",
+          "String",
+          "Int"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def thrive(n):\n if n % 15 == 0:\n   print(\"thrive\", end = “ ”)\n elif n % 3 != 0 and n % 5 != 0:\n   print(\"neither\", end = “ ”)\n elif n % 3 == 0:\n   print(\"three\", end = “ ”)\n elif n % 5 == 0:\n   print(\"five\", end = “ ”)\nthrive(35)\nthrive(56)\nthrive(15)\nthrive(39)",
+        "type": "mcq",
+        "options": [
+          "five neither thrive three",
+          "five neither three thrive",
+          "three three three three",
+          "five neither five neither"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "numbers = (4, 7, 19, 2, 89, 45, 72, 22)\nsorted_numbers = sorted(numbers)\neven = lambda a: a % 2 == 0\neven_numbers = filter(even, sorted_numbers)\nprint(type(even_numbers))",
+        "type": "mcq",
+        "options": [
+          "filter",
+          "int",
+          "list",
+          "tuple"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "numbers = (4, 7, 19, 2, 89, 45, 72, 22)\nsorted_numbers = sorted(numbers)\nodd_numbers = [x for x in sorted_numbers if x % 2 != 0]\nprint(odd_numbers)",
+        "type": "mcq",
+        "options": [
+          "[7, 19, 45, 89]",
+          "[2, 4, 22, 72]",
+          "[4, 7, 19, 2, 89, 45,72, 22]",
+          "[2, 4, 7, 19, 22, 45, 72, 89]"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def check(a):\n   print(\"Even\" if a % 2 == 0 else \"Odd\")\n   \ncheck(12)",
+        "type": "mcq",
+        "options": [
+          "Even",
+          "Odd",
+          "Error",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "example = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\"];\nprint(example[-3:-1])",
+        "type": "mcq",
+        "options": [
+          "['Monday', 'Tuesday']",
+          "['Sunday', 'Monday']",
+          "['Tuesday', 'Wednesday']",
+          "['Wednesday', 'Monday']"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def is_even(number):\n  message =  f\"{number} is an even number\" if number % 2 == 0 else  f\"{number} is an odd number\"\n return message\nprint(is_even(54))",
+        "type": "mcq",
+        "options": [
+          "54 is an even number",
+          "54 is an odd number",
+          "number is an even number",
+          "number is an odd number"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "dict1 = {'first' : 'sunday', 'second' : 'monday'}\ndict2 = {1: 3, 2: 4}\ndict1.update(dict2)\nprint(dict1)",
+        "type": "mcq",
+        "options": [
+          "{'first': 'sunday', 'second': 'monday', 1: 3, 2: 4}",
+          "{'first': 'sunday', 'second': 'monday'}",
+          "{1: 3, 2: 4}",
+          "None of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "s = {1, 2, 3, 3, 2, 4, 5, 5}\nprint(s)",
+        "type": "mcq",
+        "options": [
+          "{1, 2, 3, 3, 2, 4, 5, 5}",
+          "{1, 2, 3, 4, 5}",
+          "None",
+          "{1, 5}"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = {'Hello':'World', 'First': 1}\nb = {val: k for k , val in a.items()}\nprint(b)",
+        "type": "mcq",
+        "options": [
+          "{'Hello':'World', 'First': 1}",
+          "{'World': 'Hello', 1: 'First'}",
+          "Can be both A or B",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following functions converts date to corresponding time in Python?",
+        "type": "mcq",
+        "options": [
+          "strptime()",
+          "strftime()",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "word = \"Python Programming\"\nn = len(word)\nword1 = word.upper()\nword2 = word.lower()\nconverted_word = \"\"\nfor i in range(n):\n if i % 2 == 0:\n   converted_word += word2[i]\n else:\n   converted_word += word1[i]\nprint(converted_word)",
+        "type": "mcq",
+        "options": [
+          "pYtHoN PrOgRaMmInG",
+          "Python Programming",
+          "python programming",
+          "PYTHON PROGRAMMING"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = \"4, 5\"\nnums = a.split(',')\nx, y = nums\nint_prod = int(x) * int(y)\nprint(int_prod)",
+        "type": "mcq",
+        "options": [
+          "20",
+          "45",
+          "54",
+          "4,5"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "square = lambda x: x ** 2\na = []\nfor i in range(5):\n   a.append(square(i))\n   \nprint(a)",
+        "type": "mcq",
+        "options": [
+          "[0, 1, 4, 9, 16]",
+          "[1, 4, 9, 16, 25]",
+          "[0, 1, 2, 3, 4]",
+          "[1, 2, 3, 4, 5]"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def tester(*argv):\n   for arg in argv:\n       print(arg, end = ' ')\ntester('Sunday', 'Monday', 'Tuesday', 'Wednesday')",
+        "type": "mcq",
+        "options": [
+          "Sunday",
+          "Wednesday",
+          "Sunday Monday Tuesday Wednesday",
+          "None of the above."
+        ],
+        "answer": 2
+      },
+      {
+        "question": "As what datatype are the *args stored, when passed into a function?",
+        "type": "mcq",
+        "options": [
+          "List.",
+          "Tuple.",
+          "Dictionary.",
+          "None of the above."
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def tester(**kwargs):\n   for key, value in kwargs.items():\n       print(key, value, end = \" \")\ntester(Sunday = 1, Monday = 2, Tuesday = 3, Wednesday = 4)",
+        "type": "mcq",
+        "options": [
+          "Sunday 1 Monday 2 Tuesday 3 Wednesday 4",
+          "Sunday 1",
+          "Wednesday 4",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "As what datatype are the *kwargs stored, when passed into a function?",
+        "type": "mcq",
+        "options": [
+          "Lists.",
+          "Tuples.",
+          "Dictionary.",
+          "None of the above."
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following blocks will always be executed whether an exception is encountered or not in a program?",
+        "type": "mcq",
+        "options": [
+          "try",
+          "except",
+          "finally",
+          "None of These"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "from math import *\na = 2.19\nb = 3.999999\nc = -3.30\nprint(int(a), floor(b), ceil(c), fabs(c))",
+        "type": "mcq",
+        "options": [
+          "2 3 -3 3.3",
+          "3 4 -3 3",
+          "2 3 -3 3",
+          "2 3 -3 -3.3"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "set1 = {1, 3, 5}\nset2 = {2, 4, 6}\nprint(len(set1 + set2))",
+        "type": "mcq",
+        "options": [
+          "3",
+          "6",
+          "0",
+          "Error"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What keyword is used in Python to raise exceptions?",
+        "type": "mcq",
+        "options": [
+          "raise",
+          "try",
+          "goto",
+          "except"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "s1 = {1, 2, 3, 4, 5}\ns2 = {2, 4, 6}\nprint(s1 ^ s2)",
+        "type": "mcq",
+        "options": [
+          "{1, 2, 3, 4, 5}",
+          "{1, 3, 5, 6}",
+          "{2, 4}",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following is not a valid set operation in python?",
+        "type": "mcq",
+        "options": [
+          "Union",
+          "Intersection",
+          "Difference",
+          "None of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = [1, 2, 3, 4]\nb = [3, 4, 5, 6]\nc = [x for x in a if x not in b]\nprint(c)",
+        "type": "mcq",
+        "options": [
+          "[1, 2]",
+          "[5, 6]",
+          "[1, 2, 5, 6]",
+          "[3, 4]"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are valid escape sequences in Python?",
+        "type": "mcq",
+        "options": [
+          "\\n",
+          "\\t",
+          "\\\\",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following are valid string manipulation functions in Python?",
+        "type": "mcq",
+        "options": [
+          "count()",
+          "upper()",
+          "strip()",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following modules need to be imported to handle date time computations in Python?",
+        "type": "mcq",
+        "options": [
+          "datetime",
+          "date",
+          "time",
+          "timedate"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can assertions be disabled in Python?",
+        "type": "mcq",
+        "options": [
+          "Passing -O when running Python.",
+          "Assertions are disabled by default.",
+          "Both A and B are wrong.",
+          "Assertions cannot be disabled in Python."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "a = [[], \"abc\", [0], 1, 0]\nprint(list(filter(bool, a)))",
+        "type": "mcq",
+        "options": [
+          "['abc', [0], 1]",
+          "[1]",
+          "[“abc”]",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "In which language is Python written?",
+        "type": "mcq",
+        "options": [
+          "C++",
+          "C",
+          "Java",
+          "None of these"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What will be the result of the following expression in Python “2 ** 3 + 5 ** 2”?",
+        "type": "mcq",
+        "options": [
+          "65536",
+          "33",
+          "169",
+          "None of these"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "count = 0\nwhile(True):\n   if count % 3 == 0:\n       print(count, end = \" \")\n   if(count &gt; 15):\n       break;\n   count += 1",
+        "type": "mcq",
+        "options": [
+          "0 1 2 ….. 15",
+          "Infinite Loop",
+          "0 3 6 9 12 15",
+          "0 3 6 9 12"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following concepts is not a part of Python?",
+        "type": "mcq",
+        "options": [
+          "Pointers.",
+          "Loops.",
+          "Dynamic Typing.",
+          "All of the above."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def solve(a, b):\n   return b if a == 0 else solve(b % a, a)\nprint(solve(20, 50))",
+        "type": "mcq",
+        "options": [
+          "10",
+          "20",
+          "50",
+          "1"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def func():\n   global value\n   value = \"Local\"\n   \nvalue = \"Global\"\nfunc()\nprint(value)",
+        "type": "mcq",
+        "options": [
+          "Local",
+          "Global",
+          "None",
+          "Cannot be predicted"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What will be the output of the following code snippet?",
+        "code": "def solve(a):\n   a = [1, 3, 5]\na = [2, 4, 6]\nprint(a)\nsolve(a)\nprint(a)",
+        "type": "mcq",
+        "options": [
+          "[2, 4, 6]. [2, 4, 6]",
+          "[2, 4, 6], [1, 3, 5]",
+          "[1. 3. 5], [1, 3, 5]",
+          "None of these."
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following statements are used in Exception Handling in Python?",
+        "type": "mcq",
+        "options": [
+          "try",
+          "except",
+          "finally",
+          "All of the above"
+        ],
+        "answer": 3
+      }
+    ]
+  }

@@ -1,0 +1,584 @@
+{
+    "questions": [
+      {
+        "question": "What is an object in c++?",
+        "type": "mcq",
+        "options": [
+          "It is function of class",
+          "It is instance of class",
+          "It is datatype of class",
+          "It is part of the syntax of class"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the incorrect constructor type.",
+        "type": "mcq",
+        "options": [
+          "Friend constructor",
+          "Default constructor",
+          "Parameterized constructor",
+          "Copy constructor"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the logical AND operator.",
+        "type": "mcq",
+        "options": [
+          "||",
+          "&amp;&amp;",
+          "&amp;",
+          "!"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the scope resolution operator.",
+        "type": "mcq",
+        "options": [
+          ":",
+          "::",
+          "?",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the size of int datatype in C++.",
+        "type": "mcq",
+        "options": [
+          "1 byte",
+          "2 bytes",
+          "4 bytes",
+          "Depends on compiler"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the storage classes that have global visibility.",
+        "type": "mcq",
+        "options": [
+          "extern",
+          "auto",
+          "register",
+          "static"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Size of wchat_t is.",
+        "type": "mcq",
+        "options": [
+          "2",
+          "4",
+          "2 or 4",
+          "Depends on number of bits in system"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "The constants in C++ are also known as?",
+        "type": "mcq",
+        "options": [
+          "pre-processor",
+          "literals",
+          "const",
+          "none"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Total types of constructors in C++ are?",
+        "type": "mcq",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Total types of errors in C++.",
+        "type": "mcq",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Under which pillar of OOPS does base class and derived class relationship come?",
+        "type": "mcq",
+        "options": [
+          "Polymorphism",
+          "Inheritance",
+          "Encapsulation",
+          "Abstraction"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Using which of the following data type can 19.54 be represented?",
+        "type": "mcq",
+        "options": [
+          "void",
+          "double",
+          "int",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Using which of the following keywords can an exception be generated?",
+        "type": "mcq",
+        "options": [
+          "threw",
+          "throws",
+          "throw",
+          "catch"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What does a C++ class hold?",
+        "type": "mcq",
+        "options": [
+          "Function",
+          "Data",
+          "Arrays",
+          "Both a and b"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the format string among the following.",
+        "type": "mcq",
+        "options": [
+          "&amp;",
+          "\\n",
+          "%d",
+          "None"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What is do-while loop also known as?",
+        "type": "mcq",
+        "options": [
+          "Exit control",
+          "Entry control",
+          "Per tested",
+          "All of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the ASCII value of ‘\\0’ character?",
+        "type": "mcq",
+        "options": [
+          "32",
+          "24",
+          "48",
+          "0"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is the number of parameters that a default constructor requires?",
+        "type": "mcq",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "When can an inline function be expanded?",
+        "type": "mcq",
+        "options": [
+          "Runtime",
+          "Compile time",
+          "Never gets expanded",
+          "All of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following data type is supported in C++ but not in C?",
+        "type": "mcq",
+        "options": [
+          "int",
+          "bool",
+          "double",
+          "float"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following functions can be inherited from base class?",
+        "type": "mcq",
+        "options": [
+          "Constructor",
+          "Destructor",
+          "Static",
+          "None"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following is not a type of inheritance?",
+        "type": "mcq",
+        "options": [
+          "Multiple",
+          "Multilevel",
+          "Distributed",
+          "Heirarchical"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following is the correct identifier?",
+        "type": "mcq",
+        "options": [
+          "2var_name",
+          "2VAR_NAME",
+          "$varname",
+          "var_name12"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following is “address of operator”?.",
+        "type": "mcq",
+        "options": [
+          "*",
+          "&amp;",
+          "[]",
+          "&amp;&amp;"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following loops is best when we know the number of iterations?",
+        "type": "mcq",
+        "options": [
+          "While loop",
+          "Do while",
+          "For loop",
+          "All of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following types is the language C++?",
+        "type": "mcq",
+        "options": [
+          "Procedural",
+          "Statically typed language",
+          "Dynamically typed language",
+          "All of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Why are comments used?",
+        "type": "mcq",
+        "options": [
+          "Make the program run faster",
+          "To help others read &amp; understand the program",
+          "Increase the size of the executable program",
+          "Make a program compile easier"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n char ch[] = “Interviewbit Scaler”; \n int l = strlen(ch);\n cout &lt;&lt; l &lt;&lt; endl;\n}",
+        "type": "mcq",
+        "options": [
+          "18",
+          "19",
+          "20",
+          "21"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "C++ uses which approach?",
+        "type": "mcq",
+        "options": [
+          "right -left",
+          "Top-down",
+          "left-right",
+          "bottom -up"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Choose the correct default return value of function.",
+        "type": "mcq",
+        "options": [
+          "int",
+          "void",
+          "char",
+          "float"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Choose the correct option which is mandatory in a function.",
+        "type": "mcq",
+        "options": [
+          "return_type",
+          "parameters",
+          "function_name",
+          "Both a and c"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Choose the correct subscript operator.",
+        "type": "mcq",
+        "options": [
+          "[ ]",
+          "{ }",
+          "*",
+          "( )"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Choose the option below which is not a member of class.",
+        "type": "mcq",
+        "options": [
+          "Friend function",
+          "Static function",
+          "Virtual function",
+          "Const function"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Choose the size of the below struct.",
+        "code": "Struct{\nInt a;\nChar b;\nFloat c;\n}",
+        "type": "mcq",
+        "options": [
+          "2",
+          "4",
+          "7",
+          "10"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Choose the type of loop which is guaranteed to execute at-least once?",
+        "type": "mcq",
+        "options": [
+          "for loop",
+          "do-while",
+          "while",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Data members and member functions of a class are private by.default. True or False?",
+        "type": "mcq",
+        "options": [
+          "True",
+          "False",
+          "Depends on code",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n int i = (1, 2, 3);\n cout &lt;&lt; i &lt;&lt; endl;\n}",
+        "type": "mcq",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "Error"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n  int a, b = 10;\n  a = 95 / 10;\n  cout &lt;&lt; a &lt;&lt; endl;\n}",
+        "type": "mcq",
+        "options": [
+          "9",
+          "9.5",
+          "10",
+          "9.0"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n int a = 10 / 0;\n}",
+        "type": "mcq",
+        "options": [
+          "0",
+          "Compilation error",
+          "exception",
+          "None"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n  int a = 10, b, c;\n  b  = a++;\n  c = a;\n  cout &lt;&lt; a &lt;&lt; “ “ &lt;&lt;b &lt;&lt;” “&lt;&lt; c &lt;&lt; endl;\n}",
+        "type": "mcq",
+        "options": [
+          "10 11 11",
+          "11 11 11",
+          "11 10 11",
+          "10 10 10"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "By which of the following can the if-else statement be replaced?",
+        "type": "mcq",
+        "options": [
+          "Bitwise operator",
+          "Logical operator",
+          "Conditional operator",
+          "Arithmetic operator"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "main(){\n  Float a = 5;\n  switch(a){\n     Case 5: cout &lt;&lt;”Interviewbit”;\n     Default: cout &lt;&lt;”Scaler”;\n  }\n}",
+        "type": "mcq",
+        "options": [
+          "Interviewbit",
+          "Scaler",
+          "InterviewbitScaler",
+          "Error"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "goto can be classified into?",
+        "type": "mcq",
+        "options": [
+          "label",
+          "variable",
+          "operator",
+          "function"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How many times will the print statement be executed?",
+        "code": "main(){\n  int i = 0;\n  label:\n  cout &lt;&lt; “Interviewbit;\n  i++;\n  if(i &lt; 3){\n    goto label;\n  }\n}",
+        "type": "mcq",
+        "options": [
+          "1 time",
+          "2 times",
+          "3 times",
+          "Error"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "How much bytes of memory does void occupy?",
+        "type": "mcq",
+        "options": [
+          "1",
+          "0",
+          "2",
+          "4"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the correct definition of ‘*’ operator in pointer.",
+        "type": "mcq",
+        "options": [
+          "Address of operator",
+          "Value of address operator",
+          "Multiplication operator",
+          "All of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the correct escape sequence used for the new line.",
+        "type": "mcq",
+        "options": [
+          "\\t",
+          "\\n",
+          "\\a",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the correct example for a pre-increment operator.",
+        "type": "mcq",
+        "options": [
+          "++n",
+          "n++",
+          "&nbsp;- -n",
+          "+n"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the correct extension of the user-defined header file in C++.",
+        "type": "mcq",
+        "options": [
+          ".cpp",
+          ".hg",
+          ".h",
+          ".hf"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Identify the correct function from which the execution of C++ program starts?",
+        "type": "mcq",
+        "options": [
+          "new()",
+          "start()",
+          "pow()",
+          "main()"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the correct range of signed char.",
+        "type": "mcq",
+        "options": [
+          "-256 to 255",
+          "-128 to 127",
+          "0 to 255",
+          "0 to 127"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the correct syntax for declaring arrays in C++.",
+        "type": "mcq",
+        "options": [
+          "array arr[10]",
+          "array{10}",
+          "int arr[10]",
+          "int arr"
+        ],
+        "answer": 2
+      }
+    ]
+  }

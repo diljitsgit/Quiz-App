@@ -1,0 +1,573 @@
+{
+    "questions": [
+      {
+        "question": "Number of primitive data types in Java are?",
+        "type": "mcq",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What is the size of float and double in java?",
+        "type": "mcq",
+        "options": [
+          "32 and 64",
+          "32 and 32",
+          "64 and 64",
+          "64 and 32"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Automatic type conversion is possible in which of the possible cases?",
+        "type": "mcq",
+        "options": [
+          "Byte to int",
+          "Int to long",
+          "Long to int",
+          "Short to int"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Find the output of the following code.",
+        "code": "int Integer = 24;\nchar String  = ‘I’;\nSystem.out.print(Integer);\nSystem.out.print(String);",
+        "type": "mcq",
+        "options": [
+          "Compile error",
+          "Throws exception",
+          "I",
+          "24 I"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "public class Solution{\n       public static void main(String[] args){\n                     short x = 10;\n                     x =  x * 5;\n                     System.out.print(x);\n       }\n}",
+        "type": "mcq",
+        "options": [
+          "50",
+          "10",
+          "Compile error",
+          "Exception"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "public class Solution{\n       public static void main(String[] args){\n                     byte x = 127;\n                     x++;\n                     x++;\n                     System.out.print(x);\n       }\n}",
+        "type": "mcq",
+        "options": [
+          "-127",
+          "127",
+          "129",
+          "2"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Select the valid statement.",
+        "type": "mcq",
+        "options": [
+          "char[] ch = new char(5)",
+          "char[] ch = new char[5]",
+          "char[] ch = new char()",
+          "char[] ch = new char[]"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Find the output of the following program.",
+        "code": "public class Solution{\n       public static void main(String[] args){\n               int[]  x = {120, 200, 016};\n               for(int i = 0; i &lt; x.length; i++){\n                        System.out.print(x[i] + “ “);\n               }                   \n       }\n}",
+        "type": "mcq",
+        "options": [
+          "120 200 016",
+          "120 200 14",
+          "120 200 16",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "When an array is passed to a method, what does the method receive?",
+        "type": "mcq",
+        "options": [
+          "The reference of the array",
+          "A copy of the array",
+          "Length of the array",
+          "Copy of first element"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Select the valid statement to declare and initialize an array.",
+        "type": "mcq",
+        "options": [
+          "int[] A = {}",
+          "int[] A = {1, 2, 3}",
+          "int[] A = (1, 2, 3)",
+          "int[][] A = {1,2,3}"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Find the value of A[1] after execution of the following program.",
+        "code": "<span class=\"hljs-keyword\">int</span>[] A = {<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">4</span>,<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">3</span>};\n<span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; A.length; i++){\nA[i] = A[(A[i] + <span class=\"hljs-number\">3</span>) % A.length];\n}",
+        "type": "mcq",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Arrays in java are-",
+        "type": "mcq",
+        "options": [
+          "Object references",
+          "objects",
+          "Primitive data type",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "When is the object created with new keyword?",
+        "type": "mcq",
+        "options": [
+          "At run time",
+          "At compile time",
+          "Depends on the code",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the corrected definition of a package.",
+        "type": "mcq",
+        "options": [
+          "A package is a collection of editing tools",
+          "A package is a collection of classes",
+          "A package is a collection of classes and interfaces",
+          "A package is a collection of interfaces"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Identify the correct restriction on static methods.",
+        "code": "They must access only static data",
+        "type": "mcq",
+        "options": [
+          "I and II",
+          "II and III",
+          "Only III",
+          "I, II and III"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the keyword among the following that makes a variable belong to a class,rather than being defined for each instance of the class.",
+        "type": "mcq",
+        "options": [
+          "final",
+          "static",
+          "volatile",
+          "abstract"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify what can directly access and change the value of the variable res.",
+        "code": "package com.mypackage;\npublic class Solution{\n       private int res = 100;\n}",
+        "type": "mcq",
+        "options": [
+          "Any class",
+          "Only Solution class",
+          "Any class that extends Solution",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "In which of the following is toString() method defined?",
+        "type": "mcq",
+        "options": [
+          "java.lang.Object",
+          "java.lang.String",
+          "java.lang.util",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "compareTo() returns",
+        "type": "mcq",
+        "options": [
+          "True",
+          "False",
+          "An int value",
+          "None"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Identify the output of the following program.",
+        "code": "String str = “abcde”;\nSystem.out.println(str.substring(1, 3));",
+        "type": "mcq",
+        "options": [
+          "abc",
+          "bc",
+          "bcd",
+          "cd"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the output of the following program.",
+        "code": "String str = “Hellow”;\nSystem.out.println(str.indexOf(‘t));",
+        "type": "mcq",
+        "options": [
+          "0",
+          "1",
+          "true",
+          "-1"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the output of the following program.",
+        "code": "Public class Test{\n          Public static void main(String argos[]){\n                   String str1 = “one”;\n                   String str2 = “two”;\n                   System.out.println(str1.concat(str2));\n          }\n}",
+        "type": "mcq",
+        "options": [
+          "one",
+          "two",
+          "onetwo",
+          "twoone"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What does the following string do to given string str1.",
+        "code": "String str1 = “Interviewbit”.replace(‘e’,’s’);",
+        "type": "mcq",
+        "options": [
+          "Replaces single occurrence of ‘e’ to ‘s’.",
+          "Replaces all occurrences of ‘e’ to ‘s’.",
+          "Replaces single occurrence of ‘s’ to ‘e’.",
+          "None."
+        ],
+        "answer": 1
+      },
+      {
+        "question": "To which of the following does the class string belong to.",
+        "type": "mcq",
+        "options": [
+          "java.lang",
+          "java.awt",
+          "java.applet",
+          "java.string"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How many objects will be created in the following?",
+        "code": "String a = new String(“Interviewbit”);\nString b = new String(“Interviewbit”);\nStrinc c = “Interviewbit”;\nString d = “Interviewbit”;",
+        "type": "mcq",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Total constructor string class have?",
+        "type": "mcq",
+        "options": [
+          "3",
+          "7",
+          "13",
+          "20"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Find the output of the following code.",
+        "code": "int ++a = 100;\nSystem.out.println(++a);",
+        "type": "mcq",
+        "options": [
+          "101",
+          "Compile error as ++a is not valid identifier",
+          "100",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Find the output of the following code.",
+        "code": "if(1 + 1 + 1 + 1 + 1 == 5){\n  System.out.print(“TRUE”);\n}\nelse{\n  System.out.print(“FALSE”);\n}",
+        "type": "mcq",
+        "options": [
+          "TRUE",
+          "FALSE",
+          "Compile error",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Find the output of the following code.",
+        "code": "Public class Solution{\n      Public static void main(String… argos){\n             Int x = 5;\n             x * = (3 + 7);\n             System.out.println(x);",
+        "type": "mcq",
+        "options": [
+          "50",
+          "22",
+          "10",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the return type of a method that does not return any value.",
+        "type": "mcq",
+        "options": [
+          "int",
+          "void",
+          "double",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Output of Math.floor(3.6)?",
+        "type": "mcq",
+        "options": [
+          "3",
+          "3.0",
+          "4",
+          "4.0"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Where does the system stores parameters and local variables whenever a method is invoked?",
+        "type": "mcq",
+        "options": [
+          "Heap",
+          "Stack",
+          "Array",
+          "Tree"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Identify the modifier which cannot be used for constructor.",
+        "type": "mcq",
+        "options": [
+          "public",
+          "protected",
+          "private",
+          "static"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is the variables declared in a class for the use of all methods of the class called?",
+        "type": "mcq",
+        "options": [
+          "Object",
+          "Instance variables",
+          "Reference variable",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the implicit return type of constructor?",
+        "type": "mcq",
+        "options": [
+          "No return type",
+          "A class object in which it is defined",
+          "void",
+          "None"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "When is the finalize() method called?",
+        "type": "mcq",
+        "options": [
+          "Before garbage collection",
+          "Before an object goes out of scope",
+          "Before a variable goes out of scope",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the prototype of the default constructor.",
+        "code": "Public class Solution {}",
+        "type": "mcq",
+        "options": [
+          "Solution(void)",
+          "Solution()",
+          "public Solution(void)",
+          "public Solution()"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the correct way of declaring constructor.",
+        "code": "Public class Solution {}",
+        "type": "mcq",
+        "options": [
+          "Solution(){}",
+          "public Solution(){}",
+          "Solution(void){}",
+          "Both (A) and (B)"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Find the output of the following code.",
+        "code": "Public class Solution{\n         Public static void main(String args[]){\n                 Int i;\n                 for(i = 1; i &lt; 6; i++){ \n                     if(i &gt; 3) continue;\n                 }\n                 System.out.println(i);\n          }\n}",
+        "type": "mcq",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "How many times will “Interviewbit” be printed.",
+        "code": "Int count = 0;\ndo{\n  System.out.println(“Interviewbit”);\n  count++;\n} while(count &lt; 10);",
+        "type": "mcq",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Identify the infinite loop.",
+        "type": "mcq",
+        "options": [
+          "for(; ;)",
+          "for(int i = 0; i &lt; 1; i--)",
+          "for(int i = 0; ;i++)",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What is Runnable?",
+        "type": "mcq",
+        "options": [
+          "Abstract class",
+          "Interface",
+          "Class",
+          "Method"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Exception created by <strong>try </strong>block is caught in which block",
+        "type": "mcq",
+        "options": [
+          "catch",
+          "throw",
+          "final",
+          "none"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following exception is thrown when divided by zero statement is executed?",
+        "type": "mcq",
+        "options": [
+          "NullPointerException",
+          "NumberFormatException",
+          "ArithmeticException",
+          "None"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Where is System class defined?",
+        "type": "mcq",
+        "options": [
+          "java.lang.package",
+          "java.util.package",
+          "java.io.package",
+          "None"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Identify the interface which is used to declare core methods in java?",
+        "type": "mcq",
+        "options": [
+          "Comparator",
+          "EventListener",
+          "Set",
+          "Collection"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following statements are true about finalize() method?",
+        "type": "mcq",
+        "options": [
+          "It can be called Zero or one times",
+          "It can be called Zero or more times",
+          "It can be called Exactly once",
+          "&nbsp;It can be calledOne or more times"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What does the operator &gt;&gt;&gt;&gt; do?",
+        "type": "mcq",
+        "options": [
+          "Right shift operator",
+          "Left shift operator",
+          "Zero fill left shift",
+          "Zero fill right shift"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Identify the incorrect Java feature.",
+        "type": "mcq",
+        "options": [
+          "Object oriented",
+          "Use of pointers",
+          "Dynamic",
+          "Architectural neural"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which of the following is used to find and fix bugs in the program?",
+        "type": "mcq",
+        "options": [
+          "JDK",
+          "JRE",
+          "JVM",
+          "JDB"
+        ],
+        "answer": 3
+      }
+    ]
+  }

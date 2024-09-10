@@ -1,0 +1,557 @@
+{
+    "questions": [
+      {
+        "question": "The full form of CSS is:",
+        "type": "mcq",
+        "options": [
+          "Cascading Style Sheets",
+          "Coloured Special Sheets",
+          "Color and Style Sheets",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can we change the background color of an element?",
+        "type": "mcq",
+        "options": [
+          "background-color",
+          "color",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can we change the text color of an element?",
+        "type": "mcq",
+        "options": [
+          "background-color",
+          "color",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "In how many ways can CSS be written in?",
+        "type": "mcq",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What type of CSS is the following code snippet?",
+        "code": "&lt;h1 style=<span class=\"hljs-string\">\"color:blue;\"</span>&gt;A Blue Heading&lt;/h1&gt;",
+        "type": "mcq",
+        "options": [
+          "Inline",
+          "Internal",
+          "External",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What type of CSS is generally recommended for designing large web pages?",
+        "type": "mcq",
+        "options": [
+          "Inline",
+          "Internal",
+          "External",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which HTML tag is used to declare internal CSS?",
+        "type": "mcq",
+        "options": [
+          "&lt;style&gt;",
+          "&lt;link&gt;",
+          "&lt;script&gt;",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can we select an element with a specific ID in CSS?",
+        "type": "mcq",
+        "options": [
+          "#",
+          ".",
+          "^",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can we select an element with a specific Class in CSS?",
+        "type": "mcq",
+        "options": [
+          "#",
+          ".",
+          "^",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How can we write comments in CSS?",
+        "type": "mcq",
+        "options": [
+          "/* */",
+          "//",
+          "#",
+          "All of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "In the below code snippet, in what order will the margins be added?",
+        "code": "p {\n  margin: <span class=\"hljs-number\">25</span>px <span class=\"hljs-number\">50</span>px <span class=\"hljs-number\">75</span>px <span class=\"hljs-number\">100</span>px;\n}",
+        "type": "mcq",
+        "options": [
+          "Top, Right, Bottom, Left",
+          "Top, Left, Bottom, Right",
+          "Top, Bottom, Right, Left",
+          "Right, Left, Top, Bottom"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Can negative values be allowed in padding property?",
+        "type": "mcq",
+        "options": [
+          "Yes",
+          "No",
+          "Depends on property",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "The CSS property used to specify the transparency of an element is?",
+        "type": "mcq",
+        "options": [
+          "opacity",
+          "visibility",
+          "filter",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How can we specify the spacing between each letter in a text in CSS?",
+        "type": "mcq",
+        "options": [
+          "alpha-spacing",
+          "letter-spacing",
+          "character-spacing",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the correct syntax for referring an external CSS?",
+        "type": "mcq",
+        "options": [
+          "&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"&gt;",
+          "&lt;style rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"&gt;",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are valid ways to represent a colour in CSS?",
+        "type": "mcq",
+        "options": [
+          "A valid color name",
+          "RGB values",
+          "HEX values",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following is the correct way to select all h1 headers in a div element?",
+        "type": "mcq",
+        "options": [
+          "div h1",
+          "div-h1",
+          "h1",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "We can make rounded borders around elements using which CSS element?",
+        "type": "mcq",
+        "options": [
+          "border-collapse",
+          "border-round",
+          "border-radius",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "How can we set the maximum width of the elements content box using CSS?",
+        "type": "mcq",
+        "options": [
+          "height property",
+          "max-height property",
+          "max-width property",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which CSS property is used to specify different border styles?",
+        "type": "mcq",
+        "options": [
+          "border-style",
+          "border",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following property specifies the look and design of an outline?",
+        "type": "mcq",
+        "options": [
+          "outline-style",
+          "outline",
+          "outline-font",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are valid CSS position property values?",
+        "type": "mcq",
+        "options": [
+          "static",
+          "relative",
+          "fixed",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What does the inherit value for a property do?",
+        "type": "mcq",
+        "options": [
+          "Inherits the value of the parent element.",
+          "Invalid property name.",
+          "Changes the value of the parent element’s property.",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Setting an inline-block in CSS requires which of the following properties?",
+        "type": "mcq",
+        "options": [
+          "display",
+          "color",
+          "block",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following CSS property is used for controlling the layout?",
+        "type": "mcq",
+        "options": [
+          "display",
+          "color",
+          "text",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following CSS property specifies the origin of the background image?",
+        "type": "mcq",
+        "options": [
+          "background-origin",
+          "background-size",
+          "origin",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How are custom fonts defined using CSS?",
+        "type": "mcq",
+        "options": [
+          "@font-face rule.",
+          "Custom fonts cannot be defined.",
+          "src tags.",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are parts of the CSS box model?",
+        "type": "mcq",
+        "options": [
+          "Margins",
+          "Borders",
+          "Padding",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following components of the CSS box model are transparent?",
+        "type": "mcq",
+        "options": [
+          "Padding",
+          "Margin",
+          "Both A and B",
+          "Content"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What will be the width of the div element given below?",
+        "code": "div {\n  width: <span class=\"hljs-number\">310</span>px;\n  padding: <span class=\"hljs-number\">20</span>px;\n  border: <span class=\"hljs-number\">5</span>px solid blue;\n  margin: <span class=\"hljs-number\">0</span>;\n}",
+        "type": "mcq",
+        "options": [
+          "310px",
+          "350px",
+          "360px",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following can be achieved with CSS lists?",
+        "type": "mcq",
+        "options": [
+          "Set different list item markers for ordered lists",
+          "Set different list item markers for unordered lists",
+          "Set an image as the list item marker",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which of the following CSS property specifies the type of list item marker?",
+        "type": "mcq",
+        "options": [
+          "list",
+          "list-style-type",
+          "ul",
+          "ol"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What value should be passed to the width parameter if we want an element, say a table, to span the entire width of the screen?",
+        "type": "mcq",
+        "options": [
+          "100%",
+          "50%",
+          "0%",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following properties is used to align text in CSS?",
+        "type": "mcq",
+        "options": [
+          "text-align",
+          "text-alignment",
+          "text",
+          "text-position"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following is the correct approach to make a table responsive?",
+        "type": "mcq",
+        "options": [
+          "overflow-x: auto",
+          "overflow-x: none",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following CSS properties specifies the stack order of elements?",
+        "type": "mcq",
+        "options": [
+          "z-index",
+          "overlap",
+          "No such specific property is present",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following CSS property creates a clipping region and specifies the visible area of the element?",
+        "type": "mcq",
+        "options": [
+          "visibility",
+          "clip-path",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What are the uses of CSS pseudo-elements?",
+        "type": "mcq",
+        "options": [
+          "Style specified parts of an element.",
+          "Style the first letter or line of an element.",
+          "Insert content before or after the element.",
+          "All of the above."
+        ],
+        "answer": 3
+      },
+      {
+        "question": "How can we select elements with a specified attribute in CSS?",
+        "type": "mcq",
+        "options": [
+          "[attribute] selector",
+          "[property] selector",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which of the following are types of length units in CSS?",
+        "type": "mcq",
+        "options": [
+          "Absolute",
+          "Relative",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Which of the following are units of relative length in CSS?",
+        "type": "mcq",
+        "options": [
+          "em",
+          "rem",
+          "vmax",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "What parameter does the calc() function in CSS take?",
+        "type": "mcq",
+        "options": [
+          "A sentence",
+          "A mathematical expression",
+          "A number",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How can we add more importance to a property/value than normal?",
+        "type": "mcq",
+        "options": [
+          "!important",
+          "important",
+          "bold",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which CSS property specifies the painting area of the background?",
+        "type": "mcq",
+        "options": [
+          "background-size",
+          "background-clip",
+          "background-image",
+          "None of the above"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What are the different types of gradients in CSS?",
+        "type": "mcq",
+        "options": [
+          "Linear Gradients",
+          "Conic Gradients",
+          "Radial Gradients",
+          "All of the above"
+        ],
+        "answer": 3
+      },
+      {
+        "question": "Which CSS property is used to create an image reflection?",
+        "type": "mcq",
+        "options": [
+          "box-reflect",
+          "image-reflect",
+          "reflect-img",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "The transparent keyword is equivalent to which RGBA() value in CSS?",
+        "type": "mcq",
+        "options": [
+          "RGBA(0, 0, 0, 1)",
+          "RGBA(255, 255, 255, 1)",
+          "RGBA(0, 0, 0, 0)",
+          "RGBA(255, 255, 255, 0)"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What function is used to insert values of a CSS variable?",
+        "type": "mcq",
+        "options": [
+          "var()",
+          "rand()",
+          "varchar()",
+          "calc()"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What is the general syntax of writing the var() function?",
+        "type": "mcq",
+        "options": [
+          "var(--name, value)",
+          "var(--name)",
+          "var(value)",
+          "None of the above"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "How many layout modes were there before the Flexbox Layout Module was introduced in CSS?",
+        "type": "mcq",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 3
+      }
+    ]
+  }
