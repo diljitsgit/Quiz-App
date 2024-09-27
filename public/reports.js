@@ -1,50 +1,29 @@
-const muteButton = document.getElementById('mute-btn')
-const reportButton = document.getElementById('report-btn')
-const practiceButton = document.getElementById('practice-btn')
-const logo = document.getElementById('logo')
-let correctOut = document.getElementById('correct')
-let incorrectOut = document.getElementById('incorrect')
-let timerTakenOut = document.getElementById('time-taken')
-let report = document.getElementById('report')
-const prevResult = document.getElementById('prev-result')
-const currResult = document.getElementById('curr-result')
+import {timeTakenConvertUnits} from "./result-storing.js";
+import { playSound, pop } from "./audio.js";
+
 let numberOfQuestionsReport = document.getElementById("number-of-questions-report")
 let topicReport = document.getElementById("topic-of-questions-report")
 let difficultyReport = document.getElementById("difficulty-report")
+let correctOut = document.getElementById('correct')
+let incorrectOut = document.getElementById('incorrect')
+let timerTakenOut = document.getElementById('time-taken')
 let TakeQuizbtn = document.getElementById('Take-Quiz')
-
-let pop = new Audio('./audio/pop.mp3')
-let tick = new Audio('./audio/Tick.mp3')
-pop.volume = 0.2
-tick.volume = 0.5
+let report = document.getElementById('report')
+const prevResult = document.getElementById('prev-result')
+const currResult = document.getElementById('curr-result')
 
 let reportNo = localStorage.length - 1
-let soundsOn = true
+export let soundsOn = true;
 
-muteButton.addEventListener("click", () => {
-    playSound(pop)
-    if (soundsOn) {
-        soundsOn = false
-        muteButton.innerHTML = '<span class="material-symbols-outlined">volume_mute</span>'
-    }
-    else {
-        soundsOn = true
-        muteButton.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'
-    }
-})
+export function setSoundsOn() {
+    soundsOn = (!soundsOn)
+}
 
-practiceButton.addEventListener('click', () => {
-    window.location.href = window.location.pathname + '/practice.html'
-})
+logo.addEventListener('click', home)
+TakeQuizbtn.addEventListener('click', home)
 
-reportButton.addEventListener('click', () => {
-    window.location.href = '/reports.html'
-})
-
-function playSound(sound) {
-    if (soundsOn) {
-        sound.play()
-    }
+function home() {
+    window.location.href = '/'
 }
 
 prevResult.addEventListener("click", () => {
@@ -91,19 +70,6 @@ currResult.addEventListener("click", () => {
         difficultyReport.innerHTML = data.difficultyKey
     }
 })
-
-logo.addEventListener('click', home)
-TakeQuizbtn.addEventListener('click', home)
-
-function home() {
-    window.location.href = '/'
-}
-
-function timeTakenConvertUnits(t) {
-    if (t > 60) {
-        return (Math.floor(t / 60)) + ' minute and ' + t % 60 + ' seconds'
-    } else return t + ' seconds'
-}
 
 function initalize() {
     if (localStorage.length!==0) {
